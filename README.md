@@ -1,1 +1,1 @@
-Zertify
+Zertify 1.0.
