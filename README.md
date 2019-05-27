@@ -1,1 +1,1 @@
-Zertify 1.0.
+Zertify 1.0.0
