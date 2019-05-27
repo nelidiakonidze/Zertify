@@ -1,1 +1,2 @@
-Zertify 1.0.
+#Zertify
+A certification generator WebApp with template, created in collaboration with Edera - online course company.
