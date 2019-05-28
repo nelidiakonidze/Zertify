@@ -7,6 +7,7 @@ import StudentTable from './studentTable';
 function Dashboard() {
   return (
     <div className='App'>
+      <NavBar />
       <h1>Hellllo zertify!</h1>
       <h2>Student Table</h2>
       <StudentTable />
