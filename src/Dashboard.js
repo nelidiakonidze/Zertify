@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import ZertifyForm from './Form';
 import MyButton from './ButtonCreate';
 import StudentTable from './studentTable';
 
@@ -10,6 +11,7 @@ function Dashboard() {
       <h2>Student Table</h2>
       <StudentTable />
       <h2>Form</h2>
+      <ZertifyForm />
       <h2>Template</h2>
       <MyButton />
     </div>

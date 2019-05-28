@@ -7,28 +7,11 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
-// CustomTable.defaultProps = {
-//   tableHeaderColor: 'gray',
-// };
-
-// CustomTable.propTypes = {
-//   tableHeaderColor: PropTypes.oneOf([
-//     'warning',
-//     'primary',
-//     'danger',
-//     'success',
-//     'info',
-//     'rose',
-//     'gray',
-//   ]),
-//   tableHead: PropTypes.arrayOf(PropTypes.string),
-//   tableData: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)),
-// };
-
 const StyledTableCell = withStyles(theme => ({
   head: {
-    backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white,
+    backgroundColor: '#FF8E53',
+    color: 'white',
+    fontSize: 18,
   },
   body: {
     fontSize: 16,
@@ -56,7 +39,7 @@ const rows = [
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: '100%',
+    width: '80%',
     overflowX: 'auto',
     padding: '50',
   },
