@@ -3,6 +3,7 @@ import './App.css';
 import ZertifyForm from './Form';
 import MyButton from './ButtonCreate';
 import StudentTable from './studentTable';
+import NavBar from './SideNav';
 
 function Dashboard() {
   return (
