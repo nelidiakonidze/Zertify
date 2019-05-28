@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import ZertifyForm from './Form';
 import MyButton from './ButtonCreate';
+import NavBar from './SideNav';
 
 function Dashboard() {
   return (
@@ -9,6 +10,7 @@ function Dashboard() {
       <h1>Hellllo zertify!</h1>
       <ZertifyForm />
       <MyButton />
+      <NavBar />
     </div>
   );
 }
