@@ -2,11 +2,8 @@ import React from 'react';
 import './App.css';
 import ZertifyForm from './Form';
 import MyButton from './ButtonCreate';
-<<<<<<< HEAD
 import NavBar from './SideNav';
-=======
 import StudentTable from './studentTable';
->>>>>>> e2aec861becc04bd7f35b1ef17b7e97574f6096c
 
 function Dashboard() {
   return (
