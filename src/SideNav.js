@@ -10,10 +10,7 @@ import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 
 function NavBar() {
   return (
-    <SideNav
-      onSelect={selected => {
-        // Add your code here
-      }}>
+    <SideNav onSelect={selected => {}}>
       <SideNav.Toggle />
       <SideNav.Nav defaultSelected='home'>
         <NavItem eventKey='home'>
@@ -24,25 +21,19 @@ function NavBar() {
         </NavItem>
         <NavItem eventKey='students'>
           <NavIcon>
-            <i className='fa fa-fw fa-home' style={{fontSize: '1.75em'}} />
+            <i class='fas fa-user-graduate' style={{fontSize: '1.75em'}} />
           </NavIcon>
           <NavText>Students</NavText>
         </NavItem>
         <NavItem eventKey='forms'>
           <NavIcon>
-            <i
-              className='fa fa-fw fa-line-chart'
-              style={{fontSize: '1.75em'}}
-            />
+            <i className='far fa-file-alt' style={{fontSize: '1.75em'}} />
           </NavIcon>
           <NavText>Forms</NavText>
         </NavItem>
         <NavItem eventKey='templates'>
           <NavIcon>
-            <i
-              className='fa fa-fw fa-line-chart'
-              style={{fontSize: '1.75em'}}
-            />
+            <i class='fas fa-award' style={{fontSize: '1.75em'}} />
           </NavIcon>
           <NavText>Templates</NavText>
         </NavItem>
