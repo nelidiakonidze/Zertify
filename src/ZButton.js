@@ -2,7 +2,7 @@ import React from 'react';
 import {styled} from '@material-ui/styles';
 import Button from '@material-ui/core/Button';
 
-const MyButton = styled(Button)({
+const ZButton = styled(Button)({
   background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
   border: 0,
   borderRadius: 3,
@@ -13,5 +13,5 @@ const MyButton = styled(Button)({
 });
 
 export default function StyledComponents() {
-  return <MyButton>Create certificate</MyButton>;
+  return <ZButton>Create certificate</ZButton>;
 }
