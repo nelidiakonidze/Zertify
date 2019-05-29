@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import './Dashboard.css';
 import ZForm from './ZForm';
 import ZButton from './ZButton';
 import ZSideNav from './ZSideNav';
@@ -16,6 +17,14 @@ function Dashboard() {
       <h2>Template</h2>
       <ZButton />
       <ZSideNav />
+      <div className='footer'>
+        <div>
+          <span>Copyright &copy; 2019 By </span>
+          <a target='_blank' href='https://www.ed-era.com/'>
+            EdEra
+          </a>
+        </div>
+      </div>
     </div>
   );
 }
