@@ -48,7 +48,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function StudentTable() {
+function ZStudentTable() {
   const classes = useStyles();
   return (
     <Paper className={classes.root}>
@@ -74,4 +74,4 @@ function StudentTable() {
   );
 }
 
-export default StudentTable;
+export default ZStudentTable;
