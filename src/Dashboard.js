@@ -4,7 +4,6 @@ import ZertifyForm from './Form';
 import MyButton from './ButtonCreate';
 import NavBar from './SideNav';
 import StudentTable from './studentTable';
-import NavBar from './SideNav';
 
 function Dashboard() {
   return (
