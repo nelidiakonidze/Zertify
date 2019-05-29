@@ -24,14 +24,14 @@ function ZSideNav() {
         </NavItem>
         <NavItem eventKey='students'>
           <NavIcon>
-            <i className='fas fa-user-graduate' style={{fontSize: '1.75em'}} />
+            <i className='fa fa-fw fa-home' style={{fontSize: '1.75em'}} />
           </NavIcon>
           <NavText>Students</NavText>
         </NavItem>
         <NavItem eventKey='forms'>
           <NavIcon>
             <i
-              className='far fa-file-alt'
+              className='fa fa-fw fa-line-chart'
               style={{fontSize: '1.75em'}}
             />
           </NavIcon>
@@ -40,7 +40,7 @@ function ZSideNav() {
         <NavItem eventKey='templates'>
           <NavIcon>
             <i
-              className='fas fa-certificate'
+              className='fa fa-fw fa-line-chart'
               style={{fontSize: '1.75em'}}
             />
           </NavIcon>
