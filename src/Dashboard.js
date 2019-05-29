@@ -4,10 +4,12 @@ import ZertifyForm from './Form';
 import MyButton from './ButtonCreate';
 import NavBar from './SideNav';
 import StudentTable from './studentTable';
+import NavBar from './SideNav';
 
 function Dashboard() {
   return (
     <div className='App'>
+      <NavBar />
       <h1>Hellllo zertify!</h1>
       <h2>Student Table</h2>
       <StudentTable />
