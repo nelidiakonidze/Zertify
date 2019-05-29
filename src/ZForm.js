@@ -20,7 +20,7 @@ const theme = createMuiTheme({
   },
 });
 
-function ZertifyForm() {
+function ZForm() {
   const classes = useStyles();
 
   return (
@@ -61,4 +61,4 @@ function ZertifyForm() {
   );
 }
 
-export default ZertifyForm;
+export default ZForm;

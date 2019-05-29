@@ -1,22 +1,21 @@
 import React from 'react';
 import './App.css';
-import ZertifyForm from './Form';
-import MyButton from './ButtonCreate';
-import NavBar from './SideNav';
-import StudentTable from './studentTable';
+import ZForm from './ZForm';
+import ZButton from './ZButton';
+import ZSideNav from './ZSideNav';
+import ZStudentTable from './ZStudentTable';
 
 function Dashboard() {
   return (
     <div className='App'>
-      <NavBar />
       <h1>Hellllo zertify!</h1>
       <h2>Student Table</h2>
-      <StudentTable />
+      <ZStudentTable />
       <h2>Form</h2>
-      <ZertifyForm />
+      <ZForm />
       <h2>Template</h2>
-      <MyButton />
-      <NavBar />
+      <ZButton />
+      <ZSideNav />
     </div>
   );
 }
