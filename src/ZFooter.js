@@ -1,4 +1,5 @@
 import React from 'react';
+import './ZFooter.css';
 
 function ZFooter() {
   return (

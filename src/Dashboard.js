@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import './Dashboard.css';
 import ZForm from './ZForm';
 import ZButton from './ZButton';
@@ -19,8 +18,8 @@ function Dashboard() {
         <ZForm />
         <h2>Template</h2>
         <ZButton />
+        <ZFooter />
       </section>
-      <ZFooter />
     </div>
   );
 }
