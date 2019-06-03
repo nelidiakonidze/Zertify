@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .flex-children {
   display: flex;
   flex-direction: column;
@@ -6,4 +7,19 @@
   /* add a padding to not be overlapped by SideBar (64px large) + 30px padding*/
   padding-left: 94px;
   padding-right: 30px;
+=======
+.footer {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  height: 30px;
+  width: 100%;
+  color: black;
+}
+.footer-link:link {
+  color: black;
+}
+.footer-link:visited {
+  color: purple;
+>>>>>>> a8ce2c163aa779e5c09b6145327b31429a1e6023
 }

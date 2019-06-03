@@ -1,9 +1,11 @@
 import React from 'react';
+import './App.css';
 import './Dashboard.css';
 import ZForm from './ZForm';
 import ZButton from './ZButton';
 import ZSideNav from './ZSideNav';
 import ZStudentTable from './ZStudentTable';
+import ZFooter from './ZFooter';
 
 function Dashboard() {
   return (
@@ -18,6 +20,7 @@ function Dashboard() {
         <h2>Template</h2>
         <ZButton />
       </section>
+      <ZFooter />
     </div>
   );
 }
