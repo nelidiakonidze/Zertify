@@ -39,16 +39,15 @@ const rows = [
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: '80%',
+    width: '100%',
     overflowX: 'auto',
-    padding: '50',
   },
   table: {
-    minWidth: 700,
+    minWidth: 'auto',
   },
 }));
 
-function StudentTable() {
+function ZStudentTable() {
   const classes = useStyles();
   return (
     <Paper className={classes.root}>
@@ -74,4 +73,4 @@ function StudentTable() {
   );
 }
 
-export default StudentTable;
+export default ZStudentTable;

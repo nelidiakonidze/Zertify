@@ -8,7 +8,7 @@ import SideNav, {
 } from '@trendmicro/react-sidenav';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 
-function NavBar() {
+function ZSideNav() {
   return (
     <SideNav onSelect={selected => {}}>
       <SideNav.Toggle />
@@ -42,4 +42,4 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+export default ZSideNav;
