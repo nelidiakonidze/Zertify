@@ -21,7 +21,7 @@ function NavBar() {
         </NavItem>
         <NavItem eventKey='students'>
           <NavIcon>
-            <i class='fas fa-user-graduate' style={{fontSize: '1.75em'}} />
+            <i className='fas fa-user-graduate' style={{fontSize: '1.75em'}} />
           </NavIcon>
           <NavText>Students</NavText>
         </NavItem>
@@ -33,7 +33,7 @@ function NavBar() {
         </NavItem>
         <NavItem eventKey='templates'>
           <NavIcon>
-            <i class='fas fa-award' style={{fontSize: '1.75em'}} />
+            <i className='fas fa-award' style={{fontSize: '1.75em'}} />
           </NavIcon>
           <NavText>Templates</NavText>
         </NavItem>
