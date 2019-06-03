@@ -20,6 +20,9 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "node": {
+    "version": "10.15.3"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
