@@ -7,12 +7,13 @@ import SideNav, {
   NavText,
 } from '@trendmicro/react-sidenav';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
+import './ZSideNav.css';
 
 function ZSideNav() {
   return (
     <SideNav onSelect={selected => {}}>
       <SideNav.Toggle />
-      <SideNav.Nav defaultSelected='home'>
+      <SideNav.Nav defaultSelected='home' className='side-nav'>
         <NavItem eventKey='home'>
           <NavIcon>
             <i className='fa fa-fw fa-home' style={{fontSize: '1.75em'}} />
