@@ -1,0 +1,36 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "first_name": "Neli",
+      "last_name": "Diakonidze",
+      "course": "History of Ukraine in the stories",
+      "hours": "300",
+      "teacher": "Olga Filipova"
+    },
+    {
+      "id": 2,
+      "first_name": "Camille",
+      "last_name": "Charteau",
+      "course": "History of Ukraine in the stories",
+      "hours": "300",
+      "teacher": "Olga Filipova"
+    },
+    {
+      "id": 3,
+      "first_name": "Raphael",
+      "last_name": "Lautenbacher",
+      "course": "History of Ukraine in the stories",
+      "hours": "300",
+      "teacher": "Olga Filipova"
+    },
+    {
+      "id": 3,
+      "first_name": "Betta",
+      "last_name": "Nycz",
+      "course": "History of Ukraine in the stories",
+      "hours": "300",
+      "teacher": "Olga Filipova"
+    }
+  ]
+}
