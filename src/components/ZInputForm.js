@@ -28,14 +28,6 @@ function ZForm() {
       <ThemeProvider theme={theme}>
         <TextField
           className={classes.margin}
-          label='Name'
-          variant='outlined'
-          id='mui-theme-provider-outlined-input'
-        />
-      </ThemeProvider>
-      <ThemeProvider theme={theme}>
-        <TextField
-          className={classes.margin}
           label='Course'
           variant='outlined'
           id='mui-theme-provider-outlined-input'
@@ -45,14 +37,6 @@ function ZForm() {
         <TextField
           className={classes.margin}
           label='Hours'
-          variant='outlined'
-          id='mui-theme-provider-outlined-input'
-        />
-      </ThemeProvider>
-      <ThemeProvider theme={theme}>
-        <TextField
-          className={classes.margin}
-          label='Teacher'
           variant='outlined'
           id='mui-theme-provider-outlined-input'
         />

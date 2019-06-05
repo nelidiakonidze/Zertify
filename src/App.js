@@ -5,6 +5,7 @@ import ZHomePage from './pages/Home/ZHomePage';
 import ZStudentsPage from './pages/Students/ZStudentsPage';
 import ZTemplatesPage from './pages/Templates/ZTemplatesPage';
 import ZNoPage from './pages/NoPage/ZNoPage';
+import ZCertifactePage from './pages/Certificate/ZCertificatePage';
 import './App.css';
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
           <Route path='/students' component={ZStudentsPage} />
           <Route path='/templates' component={ZTemplatesPage} />
           <Route path='/form' component={ZFormPage} />
+          <Route path='/certificate' component={ZCertifactePage} />
           <Route component={ZNoPage} />
         </Switch>
       </div>

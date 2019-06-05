@@ -7,7 +7,7 @@ function ZSideNav() {
   return (
     <SideNav onSelect={selected => {}}>
       <SideNav.Toggle />
-      <SideNav.Nav defaultSelected='home'>
+      <SideNav.Nav>
         <NavItem eventKey='home'>
           <NavIcon>
             <NavLink style={{textDecoration: 'none', color: 'white'}} to='/'>
