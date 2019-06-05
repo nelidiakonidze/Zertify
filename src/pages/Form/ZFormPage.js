@@ -2,6 +2,7 @@ import React from 'react';
 import ZSideNav from '../../components/ZSideNav';
 import ZInputForm from '../../components/ZInputForm';
 import ZFooter from '../../components/ZFooter';
+import './ZFormsPage.css';
 
 const ZFormsPage = () => {
   return (

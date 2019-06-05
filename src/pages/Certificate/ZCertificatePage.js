@@ -6,8 +6,10 @@ import ZCertificate from '../../components/ZCertificate';
 const ZCertificatePage = () => {
   return (
     <div>
+      <ZSideNav />
       <section className='flex-certificate'>
         <ZCertificate />
+        <ZFooter />
       </section>
     </div>
   );

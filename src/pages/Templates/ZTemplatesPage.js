@@ -2,14 +2,14 @@ import React from 'react';
 import ZSideNav from '../../components/ZSideNav';
 import ZTemplate from '../../components/ZTemplate';
 import ZFooter from '../../components/ZFooter';
+import './ZTemplatesPage.css';
 
 const ZTemplatePage = () => {
   return (
     <div>
-
       <ZSideNav />
       <section className='flex-templates'>
-        <ZTemplate/>
+        <ZTemplate />
         <ZFooter />
       </section>
     </div>
