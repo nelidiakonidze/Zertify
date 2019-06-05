@@ -1,10 +1,11 @@
 import React from 'react';
 import './Dashboard.css';
-import ZForm from './ZForm';
+import ZInputForm from './ZInputForm';
 import ZButton from './ZButton';
 import ZSideNav from './ZSideNav';
 import ZStudentTable from './ZStudentTable';
 import ZFooter from './ZFooter';
+import ZCertificate from './ZCertificate';
 
 function Dashboard() {
   return (
@@ -15,11 +16,12 @@ function Dashboard() {
         <h2>Student Table</h2>
         <ZStudentTable />
         <h2>Form</h2>
-        <ZForm />
+        <ZInputForm />
         <h2>Template</h2>
         <ZButton />
         <ZFooter />
       </section>
+      <ZCertificate />
     </div>
   );
 }

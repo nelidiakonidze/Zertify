@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Dashboard from './Dashboard';
-import ZTemplate from './components/ZTemplate/ZTemplate';
+import App from './App';
 
-ReactDOM.render(<ZTemplate />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
