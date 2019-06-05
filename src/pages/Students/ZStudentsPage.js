@@ -1,7 +1,7 @@
 import React from 'react';
-import ZSideNav from '../../ZSideNav';
-import ZStudentTable from '../../ZStudentTable';
-import ZFooter from '../../ZFooter';
+import ZSideNav from '../../components/ZSideNav';
+import ZStudentTable from '../../components/ZStudentTable';
+import ZFooter from '../../components/ZFooter';
 
 const ZStudentsPage = () => {
   return (

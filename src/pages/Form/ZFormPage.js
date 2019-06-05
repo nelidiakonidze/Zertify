@@ -1,7 +1,7 @@
 import React from 'react';
-import ZSideNav from '../../ZSideNav';
-import ZInputForm from '../../ZInputForm';
-import ZFooter from '../../ZFooter';
+import ZSideNav from '../../components/ZSideNav';
+import ZInputForm from '../../components/ZInputForm';
+import ZFooter from '../../components/ZFooter';
 
 const ZFormsPage = () => {
   return (

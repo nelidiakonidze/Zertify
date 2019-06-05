@@ -1,7 +1,7 @@
 import React from 'react';
-import ZSideNav from '../../ZSideNav';
+import ZSideNav from '../../components/ZSideNav';
 //import ZTemplate from '../..src/ZSideNav';
-import ZFooter from '../../ZFooter';
+import ZFooter from '../../components/ZFooter';
 
 const ZTemplatePage = () => {
   return (
