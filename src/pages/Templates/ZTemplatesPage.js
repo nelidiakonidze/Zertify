@@ -8,7 +8,6 @@ const ZTemplatePage = () => {
     <div>
       <ZSideNav />
       <section className='flex-templates'>
-        {/*<ZTemplate /> */}
         <ZFooter />
       </section>
     </div>
