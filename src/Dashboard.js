@@ -5,6 +5,7 @@ import ZButton from './ZButton';
 import ZSideNav from './ZSideNav';
 import ZStudentTable from './ZStudentTable';
 import ZFooter from './ZFooter';
+import ZCertificate from './ZCertificate';
 
 function Dashboard() {
   return (
@@ -20,6 +21,7 @@ function Dashboard() {
         <ZButton />
         <ZFooter />
       </section>
+      <ZCertificate />
     </div>
   );
 }
