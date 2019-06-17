@@ -13,9 +13,7 @@ class ZTemplate extends React.Component {
                   <span className='label'>TEMPLATE </span>
                   <span className='value'>ART COURSES</span>
                 </div>
-                <div className='cc-type'>
-                  
-                </div>
+                <div className='cc-type' />
               </div>
               <div className='line'>
                 <div className='cc-puce'>
@@ -23,9 +21,7 @@ class ZTemplate extends React.Component {
                 </div>
                 <div className='cc-code' />
               </div>
-              <div className='line'>
-               
-              </div>
+              <div className='line' />
             </div>
           </div>
           <div className='cc active'>
@@ -45,11 +41,7 @@ class ZTemplate extends React.Component {
                 </div>
                 <div className='cc-code' />
               </div>
-              <div className='line'>
-            
-              
-                
-              </div>
+              <div className='line' />
             </div>
           </div>
           <div className='cc'>
@@ -67,8 +59,7 @@ class ZTemplate extends React.Component {
                 <div className='cc-puce'>
                   <img src='http://img11.hostingpics.net/pics/734325puce.png' />
                 </div>
-               </div>
-              
+              </div>
             </div>
           </div>
         </div>
