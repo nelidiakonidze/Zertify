@@ -1,6 +1,7 @@
 import React, {Fragment} from 'react';
 import './ZTemplate.css';
 import ZButton from './ZButton';
+import {Link} from 'react-router-dom';
 
 class ZTemplate extends React.Component {
   render() {
@@ -77,7 +78,9 @@ class ZTemplate extends React.Component {
             </li>
           </ul>
         </div>
-        <ZButton />
+        <ZButton>
+          <Link to='/certificate'>Generate Certificate</Link>
+        </ZButton>
       </React.Fragment>
     );
   }

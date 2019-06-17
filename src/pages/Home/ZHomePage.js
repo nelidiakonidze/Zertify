@@ -9,7 +9,6 @@ const ZHomePage = () => {
     <div>
       <ZSideNav />
       <section className='flex-home'>
-        <ZCertificate />
         <ZFooter />
       </section>
     </div>

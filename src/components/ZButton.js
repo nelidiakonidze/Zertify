@@ -1,7 +1,6 @@
 import React from 'react';
 import {styled} from '@material-ui/styles';
 import Button from '@material-ui/core/Button';
-import {Link} from 'react-router-dom';
 
 const ZButton = styled(Button)({
   background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
@@ -14,10 +13,6 @@ const ZButton = styled(Button)({
   margin: 40,
 });
 
-export default function StyledComponents({}) {
-  return (
-    <ZButton>
-      <Link to='/certificate'>Generate Certificate</Link>
-    </ZButton>
-  );
+export default function StyledComponents({children}) {
+  return <ZButton>{children}</ZButton>;
 }
