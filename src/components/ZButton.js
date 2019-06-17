@@ -13,6 +13,8 @@ const ZButton = styled(Button)({
   margin: 40,
 });
 
+// Children props make it possible to write a new title in the button each time you reuse it
+// Check the example in the templates page
 export default function StyledComponents({children}) {
   return <ZButton>{children}</ZButton>;
 }
