@@ -1,6 +1,6 @@
 import React from 'react';
-import ZSideNav from '../../components/ZSideNav';
-import ZFooter from '../../components/ZFooter';
+import ZSideNav from '../../components/layout/ZSideNav';
+import ZFooter from '../../components/layout/ZFooter';
 import ZCertificate from '../../components/ZCertificate';
 
 const ZCertificatePage = () => {

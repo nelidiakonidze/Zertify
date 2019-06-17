@@ -1,8 +1,6 @@
 import React from 'react';
 import './ZCertificate.css';
 
-// TODO : create a route for this Certificate page
-
 class ZCertificate extends React.Component {
   constructor() {
     super();
