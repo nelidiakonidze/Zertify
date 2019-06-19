@@ -10,8 +10,11 @@ const ZButton = styled(Button)({
   color: 'white',
   height: 48,
   padding: '0 30px',
+  margin: 40,
 });
 
-export default function StyledComponents() {
-  return <ZButton>Create certificate</ZButton>;
+// Children props make it possible to write a new title in the button each time you reuse it
+// Check the example in the templates page
+export default function StyledComponents({children}) {
+  return <ZButton>{children}</ZButton>;
 }

@@ -20,7 +20,10 @@ class ZCertificate extends React.Component {
     return (
       <div className='flex-certificate'>
         <header>
-          <img src='https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/spaces%2F-LWNQxQf-dm-dr94dDMj%2Favatar.png?generation=1547672003797954&alt=media' />
+          <img
+            src='https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/spaces%2F-LWNQxQf-dm-dr94dDMj%2Favatar.png?generation=1547672003797954&alt=media'
+            alt='Edera logo'
+          />
         </header>
         <section className='side-certificate'>
           <h1>Certificate of completion</h1>
