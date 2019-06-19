@@ -1,9 +1,13 @@
-import React, {useState, useInput} from 'react';
+import React from 'react';
+//template
 import {makeStyles, createMuiTheme} from '@material-ui/core/styles';
 import {ThemeProvider} from '@material-ui/styles';
 import TextField from '@material-ui/core/TextField';
 import green from '@material-ui/core/colors/green';
-import ZButton from '../components/layout/ZButton';
+import ZButton from '../layout/ZButton';
+import './button.css';
+//hooks for the form
+import useZForm from './useZForm';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -22,19 +26,19 @@ const theme = createMuiTheme({
 });
 
 //to keep the style of this function AND pass props to the clid we must use hooks
-function ZForm() {
+const ZCourseForm = () => {
   const classes = useStyles();
 
-  //declare a state variable and a function to allow us to update this state later
-  //+ give an initial value to those variables
-  const [courseName, setCourseName] = useState('');
-  const [courseHours, setCourseHours] = useState('');
-
-  // declare functions
-  const handleSubmit = e => {
-    e.preventDefault();
-    alert(`The course "${courseName}" has been submitted`);
+  //callback
+  const courseCreated = () => {
+    alert(`New student ${inputs.studentName} created`);
   };
+
+  //initial values + callback
+  const {inputs, handleInputChange, handleSubmit} = useZForm(
+    {studentName: '', studentLastname: ''},
+    courseCreated,
+  );
 
   return (
     <React.Fragment>
@@ -42,38 +46,36 @@ function ZForm() {
         <ThemeProvider theme={theme}>
           <TextField
             className={classes.margin}
-            label='Course'
+            label='Name'
             variant='outlined'
             id='mui-theme-provider-outlined-input'
-            name='courseName'
-            value={courseName}
+            name='studentName'
             type='text'
-            onChange={e => setCourseName(e.target.value)}
+            onChange={handleInputChange}
+            value={inputs.studentName}
+            require
           />
         </ThemeProvider>
         <ThemeProvider theme={theme}>
           <TextField
             className={classes.margin}
-            label='Hours'
+            label='Last Name'
             variant='outlined'
             id='mui-theme-provider-outlined-input'
-            name='courseHours'
-            value={courseHours}
-            type='number'
-            onChange={e => setCourseHours(e.target.value)}
+            name='studentLastname'
+            type='text'
+            onChange={handleInputChange}
+            value={inputs.studentLastname}
           />
         </ThemeProvider>
-      </form>
-      <React.Fragment>
-        <ZButton type='submit' value='submit'>
-          Submit
+        <ZButton>
+          <button className='btn--transparent' type='submit'>
+            Create student
+          </button>
         </ZButton>
-      </React.Fragment>
-      <h2>
-        {courseName} {courseHours}
-      </h2>
+      </form>
     </React.Fragment>
   );
-}
+};
 
-export default ZForm;
+export default ZCourseForm;

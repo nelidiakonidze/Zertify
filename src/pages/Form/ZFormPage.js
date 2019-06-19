@@ -1,6 +1,7 @@
 import React from 'react';
 import ZSideNav from '../../components/layout/ZSideNav';
-import ZInputForm from '../../components/ZInputForm';
+import ZCourseForm from '../../components/Forms/ZCourseForm';
+import ZStudentForm from '../../components/Forms/ZStudentForm';
 import ZFooter from '../../components/layout/ZFooter';
 import './ZFormsPage.css';
 
@@ -9,7 +10,10 @@ const ZFormsPage = () => {
     <div>
       <ZSideNav />
       <section className='flex-form'>
-        <ZInputForm />
+        <h2>Add a new course to the course list</h2>
+        <ZCourseForm />
+        <h2>Add a new student to the student list</h2>
+        <ZStudentForm />
         <ZFooter />
       </section>
     </div>
