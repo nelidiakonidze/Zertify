@@ -30,9 +30,9 @@ class ZCertificate extends React.Component {
           <h2> student name </h2>
           <p>has successfully completed the online course:</p>
           {/* pass the {course name } props here inside the h2 */}
-          <h2>course name {this.courseName}</h2>
+          <h2>course name </h2>
           {/* pass the {course hours } props here inside the p */}
-          <p> of X hours {this.courseHours}</p>
+          <p> of X hours</p>
         </section>
       </div>
     );
