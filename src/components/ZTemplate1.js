@@ -46,8 +46,8 @@ class ZTemplate1 extends Component {
             <CardActions>
               <Button size='small' color='primary'>
                 Choose
+                <input type='radio' name='radioSelect' />
               </Button>
-              <input type='radio' name='radioSelect' />
             </CardActions>
           </Card>
         </div>
@@ -68,8 +68,8 @@ class ZTemplate1 extends Component {
             <CardActions>
               <Button size='small' color='primary'>
                 Choose
+                <input type='radio' name='radioSelect' />
               </Button>
-              <input type='radio' name='radioSelect' />
             </CardActions>
           </Card>
         </div>
@@ -90,8 +90,8 @@ class ZTemplate1 extends Component {
             <CardActions>
               <Button size='small' color='primary'>
                 Choose
+                <input type='radio' name='radioSelect' />
               </Button>
-              <input type='radio' name='radioSelect' />
             </CardActions>
           </Card>
         </div>
