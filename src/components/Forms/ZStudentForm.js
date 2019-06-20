@@ -8,7 +8,9 @@ import ZButton from '../layout/ZButton';
 import './button.css';
 //hooks for the form
 import useZForm from './useZForm';
+import validate from './FormValidationRules';
 
+//style
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
@@ -25,7 +27,8 @@ const theme = createMuiTheme({
   },
 });
 
-//to keep the style of this function AND pass props to the clid we must use hooks
+//to keep the style of this function AND have state we must use hooks
+// tutorial link : https://upmostly.com/tutorials/form-validation-using-custom-react-hooks/
 const ZCourseForm = () => {
   const classes = useStyles();
 
@@ -35,9 +38,10 @@ const ZCourseForm = () => {
   };
 
   //initial values + callback
-  const {inputs, handleInputChange, handleSubmit} = useZForm(
+  const {inputs, handleInputChange, handleSubmit, errors} = useZForm(
     {studentName: '', studentLastname: ''},
     courseCreated,
+    validate,
   );
 
   return (
@@ -45,6 +49,7 @@ const ZCourseForm = () => {
       <form className={classes.root} onSubmit={handleSubmit}>
         <ThemeProvider theme={theme}>
           <TextField
+            require
             className={classes.margin}
             label='Name'
             variant='outlined'
@@ -53,11 +58,12 @@ const ZCourseForm = () => {
             type='text'
             onChange={handleInputChange}
             value={inputs.studentName}
-            require
           />
+          {errors.studentName && <p>{errors.studentName}</p>}
         </ThemeProvider>
         <ThemeProvider theme={theme}>
           <TextField
+            require
             className={classes.margin}
             label='Last Name'
             variant='outlined'
@@ -67,6 +73,7 @@ const ZCourseForm = () => {
             onChange={handleInputChange}
             value={inputs.studentLastname}
           />
+          {errors.studentLastname && <p>{errors.studentLastname}</p>}
         </ThemeProvider>
         <ZButton>
           <button className='btn--transparent' type='submit'>

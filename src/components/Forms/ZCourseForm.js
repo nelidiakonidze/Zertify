@@ -65,6 +65,7 @@ const ZCourseForm = () => {
             type='number'
             onChange={handleInputChange}
             value={inputs.courseHours}
+            require
           />
         </ThemeProvider>
         <ZButton>
