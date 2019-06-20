@@ -70,7 +70,7 @@ const ZCourseForm = () => {
         </ThemeProvider>
         <ZButton>
           <button className='btn--transparent' type='submit'>
-            Create student
+            Submit student
           </button>
         </ZButton>
       </form>

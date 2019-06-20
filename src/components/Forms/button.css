@@ -4,4 +4,6 @@
   color: white;
   outline: none;
   cursor: pointer;
+  height: 48px;
+  padding: 0 30px;
 }
