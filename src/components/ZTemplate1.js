@@ -29,7 +29,7 @@ class ZTemplate1 extends Component {
   render() {
     return (
       <div className='CoverSlide '>
-        <div className=' dim '>
+        <div className='dim'>
           <Card className='responsiveCards'>
             <CardActionArea>
               <CardMedia
@@ -47,11 +47,7 @@ class ZTemplate1 extends Component {
               <Button size='small' color='primary'>
                 Choose
               </Button>
-              <input
-                type='checkbox'
-                checked={this.state.checked}
-                onChange={this.handleCheckClick}
-              />
+              <input type='radio' name='radioSelect' />
             </CardActions>
           </Card>
         </div>
@@ -73,11 +69,7 @@ class ZTemplate1 extends Component {
               <Button size='small' color='primary'>
                 Choose
               </Button>
-              <input
-                type='checkbox'
-                checked={this.state.checked}
-                onChange={this.handleCheckClick}
-              />
+              <input type='radio' name='radioSelect' />
             </CardActions>
           </Card>
         </div>
@@ -99,11 +91,7 @@ class ZTemplate1 extends Component {
               <Button size='small' color='primary'>
                 Choose
               </Button>
-              <input
-                type='checkbox'
-                checked={this.state.checked}
-                onChange={this.handleCheckClick}
-              />
+              <input type='radio' name='radioSelect' />
             </CardActions>
           </Card>
         </div>
