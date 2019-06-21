@@ -1,0 +1,9 @@
+.btn--transparent {
+  background-color: transparent;
+  border: 0px none;
+  color: white;
+  outline: none;
+  cursor: pointer;
+  height: 48px;
+  padding: 0 30px;
+}
