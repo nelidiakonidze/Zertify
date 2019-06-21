@@ -1,3 +1,7 @@
+////
+//  COURSE  //
+////
+
 import React from 'react';
 //template
 import {makeStyles, createMuiTheme} from '@material-ui/core/styles';
@@ -6,8 +10,8 @@ import TextField from '@material-ui/core/TextField';
 import green from '@material-ui/core/colors/green';
 import ZButton from '../layout/ZButton';
 //hooks for the form
-import useZForm from './useZForm';
-import validate from './FormValidationRules';
+import useZCForm from './useZCForm';
+import Cvalidate from './CFormValidationRules';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -36,10 +40,10 @@ const ZCourseForm = () => {
   };
 
   //initial values + callback
-  const {inputs, handleInputChange, handleSubmit, errors} = useZForm(
+  const {inputs, handleInputChange, handleSubmit, errors} = useZCForm(
     {courseName: '', courseHours: ''},
     courseCreated,
-    validate,
+    Cvalidate,
   );
 
   return (
