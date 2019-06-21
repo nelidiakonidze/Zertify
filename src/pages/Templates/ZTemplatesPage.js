@@ -1,6 +1,6 @@
 import React from 'react';
 import ZSideNav from '../../components/layout/ZSideNav';
-import ZTemplate from '../../components/ZTemplate';
+import ZTemplate1 from '../../components/ZTemplate1';
 import ZFooter from '../../components/layout/ZFooter';
 import './ZTemplatesPage.css';
 import ZButton from '../../components/layout/ZButton';
@@ -11,7 +11,7 @@ const ZTemplatePage = () => {
     <div>
       <ZSideNav />
       <section className='flex-templates'>
-        <ZTemplate />
+        <ZTemplate1 />
         <ZButton>
           <Link to='/certificate'>Generate Certificate</Link>
         </ZButton>

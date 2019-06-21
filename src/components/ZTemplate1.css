@@ -1,0 +1,30 @@
+.CoverSlide {
+  display: flex;
+  flex-direction: row;
+}
+
+.responsiveCards {
+  max-width: 500px;
+  min-width: 300px;
+  max-height: 500px;
+  margin: 70px;
+}
+
+.mediaCards {
+  height: 300px;
+}
+
+@media only screen and (max-width: 768px) {
+  .CoverSlide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .CoverSlide {
+    max-width: 270px;
+  }
+}
