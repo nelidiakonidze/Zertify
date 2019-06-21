@@ -1,16 +1,16 @@
 export default function validate(inputs) {
   let errors = {};
   if (!inputs.studentName) {
-    errors.studentName = 'name required';
+    errors.studentName = 'required';
   }
   if (!inputs.studentLastname) {
-    errors.studentLastname = 'lastname required';
+    errors.studentLastname = 'required';
   }
   if (!inputs.courseName) {
-    errors.courseName = 'course required';
+    errors.courseName = 'required';
   }
   if (!inputs.courseHours) {
-    errors.courseHours = 'hours required';
+    errors.courseHours = 'required';
   }
   return errors;
 }
