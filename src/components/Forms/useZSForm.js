@@ -1,3 +1,7 @@
+////
+//  STUDENT  //
+////
+
 import {useState, useEffect} from 'react';
 
 // custom Hook
@@ -8,18 +12,32 @@ const useZForm = (initialValues, callback, validate) => {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  //after a change in the input value and isSubmitting true, check if the errors object contains keys
-  useEffect(() => {
-    if (Object.keys(errors).length === 0 && isSubmitting) {
-      callback();
-      handleReset();
-    }
-  }, [errors]);
-
   // reset form field to inital values (empty)
   const handleReset = () => {
     setInputs({...initialValues});
   };
+
+  //after a change in the input value and isSubmitting true, check if the errors object contains keys
+  useEffect(() => {
+    console.log('useEffect');
+    console.log('errors ', Object.keys(errors).length);
+    console.log(
+      'inputs',
+      inputs.studentName,
+      inputs.studentLastname,
+      'initialvalues',
+      initialValues,
+    );
+    if (
+      Object.keys(errors).length === 0 &&
+      isSubmitting &&
+      inputs.studentName != '' &&
+      inputs.studentLastname != ''
+    ) {
+      callback();
+      handleReset();
+    }
+  });
 
   const handleSubmit = event => {
     console.log('handle submit', inputs);
