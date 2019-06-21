@@ -7,6 +7,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
+// component style : theme for cells
 const StyledTableCell = withStyles(theme => ({
   head: {
     backgroundColor: '#FF8E53',
@@ -18,6 +19,7 @@ const StyledTableCell = withStyles(theme => ({
   },
 }))(TableCell);
 
+// component style : theme for rows
 const StyledTableRow = withStyles(theme => ({
   root: {
     '&:nth-of-type(odd)': {
@@ -26,17 +28,7 @@ const StyledTableRow = withStyles(theme => ({
   },
 }))(TableRow);
 
-function createData(FirstName, Course) {
-  return {FirstName, Course};
-}
-
-const rows = [
-  createData('Camille', 'Zertify'),
-  createData('Neli', 'Zertify'),
-  createData('Bernadetta', 'Zertify'),
-  createData('Raphael', 'Zertify'),
-];
-
+// component style
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
@@ -47,6 +39,19 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+// component props
+function createData(FirstName, Course) {
+  return {FirstName, Course};
+}
+// // component content
+const rows = [
+  createData('Camille', 'Zertify'),
+  createData('Neli', 'Zertify'),
+  createData('Bernadetta', 'Zertify'),
+  createData('Raphael', 'Zertify'),
+];
+
+// component structure
 function ZStudentTable() {
   const classes = useStyles();
   return (

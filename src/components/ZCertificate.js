@@ -1,11 +1,10 @@
 import React from 'react';
 import './ZCertificate.css';
 
-// TODO : create a route for this Certificate page
-
 class ZCertificate extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+
     const today = new Date(),
       date =
         today.getFullYear() +
@@ -34,9 +33,9 @@ class ZCertificate extends React.Component {
           <h2> student name </h2>
           <p>has successfully completed the online course:</p>
           {/* pass the {course name } props here inside the h2 */}
-          <h2>course name</h2>
+          <h2>course name </h2>
           {/* pass the {course hours } props here inside the p */}
-          <p> of X hours </p>
+          <p> of X hours</p>
         </section>
       </div>
     );
