@@ -1,4 +1,5 @@
 import React from 'react';
+import './ZSplashScreen.css';
 
 const ZSplashScreen = () => {
   return (
