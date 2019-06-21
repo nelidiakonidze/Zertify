@@ -1,6 +1,7 @@
 import React from 'react';
 import ZSideNav from '../../components/layout/ZSideNav';
 import ZFooter from '../../components/layout/ZFooter';
+import ZSplashScreen from '../../components/ZSplashScreen';
 import './ZHomePage.css';
 
 const ZHomePage = () => {
@@ -8,6 +9,7 @@ const ZHomePage = () => {
     <div>
       <ZSideNav />
       <section className='flex-home'>
+        <ZSplashScreen />
         <ZFooter />
       </section>
     </div>
