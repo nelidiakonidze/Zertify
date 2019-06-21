@@ -33,14 +33,14 @@ const ZCourseForm = () => {
   const classes = useStyles();
 
   //callback
-  const courseCreated = () => {
+  const studentCreated = () => {
     alert(`New student ${inputs.studentName} created`);
   };
 
   //initial values + callback
   const {inputs, handleInputChange, handleSubmit, errors} = useZForm(
     {studentName: '', studentLastname: ''},
-    courseCreated,
+    studentCreated,
     validate,
   );
 

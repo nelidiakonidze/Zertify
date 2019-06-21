@@ -7,6 +7,7 @@ import green from '@material-ui/core/colors/green';
 import ZButton from '../layout/ZButton';
 //hooks for the form
 import useZForm from './useZForm';
+import validate from './FormValidationRules';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -24,7 +25,8 @@ const theme = createMuiTheme({
   },
 });
 
-//to keep the style of this function AND pass props to the clid we must use hooks
+//to keep the style of this function AND have state we must use hooks
+// tutorial link : https://upmostly.com/tutorials/form-validation-using-custom-react-hooks/
 const ZCourseForm = () => {
   const classes = useStyles();
 
@@ -34,9 +36,10 @@ const ZCourseForm = () => {
   };
 
   //initial values + callback
-  const {inputs, handleInputChange, handleSubmit} = useZForm(
+  const {inputs, handleInputChange, handleSubmit, errors} = useZForm(
     {courseName: '', courseHours: ''},
     courseCreated,
+    validate,
   );
 
   return (
@@ -55,6 +58,7 @@ const ZCourseForm = () => {
             require
           />
         </ThemeProvider>
+        {errors.courseName && <p>{errors.courseName}</p>}
         <ThemeProvider theme={theme}>
           <TextField
             className={classes.margin}
@@ -68,6 +72,7 @@ const ZCourseForm = () => {
             require
           />
         </ThemeProvider>
+        {errors.courseHours && <p>{errors.courseHours}</p>}
         <ZButton>
           <button className='btn--transparent' type='submit'>
             Submit course
