@@ -44,7 +44,7 @@ function ZSideNav() {
             <NavLink
               style={{textDecoration: 'none', color: 'white'}}
               to='/courses'>
-              <i className='fas fa-leanpub' style={{fontSize: '1.75em'}} />
+              <i className='fas fa-book-open' style={{fontSize: '1.75em'}} />
             </NavLink>
           </NavIcon>
           <NavText>
