@@ -3,6 +3,7 @@ import {Route, Switch, BrowserRouter as Router} from 'react-router-dom';
 import ZFormPage from './pages/Form/ZFormPage';
 import ZHomePage from './pages/Home/ZHomePage';
 import ZStudentsPage from './pages/Students/ZStudentsPage';
+import ZCoursesPage from './pages/Courses/ZCoursesPage';
 import ZTemplatesPage from './pages/Templates/ZTemplatesPage';
 import ZNoPage from './pages/NoPage/ZNoPage';
 import ZCertifactePage from './pages/Certificate/ZCertificatePage';
@@ -13,17 +14,17 @@ class App extends React.Component {
     super();
     this.state = {
       listStudents: [],
-      //listCourses:[],
+      listCourses: [],
       //activeStudent:'',
       //activeCourse:''
     };
 
-    //fetch data
+    //fetch data for students
     //REMOTE WAITING FOR DEPLOY
-    let url = 'https://postgres-zertify-api.herokuapp.com/zstudents';
+    //let url = 'https://postgres-zertify-api.herokuapp.com/zstudents';
     // LOCAL
-    //let url = 'http://localhost:4000/zstudents';
-    fetch(url)
+    let urlStudents = 'http://localhost:4000/zstudents';
+    fetch(urlStudents)
       .then(response => response.json())
       .then(data => {
         this.setState({
@@ -31,8 +32,22 @@ class App extends React.Component {
           //listCourses: data.courses
         });
         console.log('fetch data ', this.state.listStudents);
-      });
+      })
+      .catch(error => console.log('error: ', error));
+
+    //fetch data for courses
+    let urlCourses = 'http://localhost:4000/zcourses';
+    fetch(urlCourses)
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          listCourses: data,
+        });
+        console.log('fetch data ', this.state.listStudents);
+      })
+      .catch(error => console.log('error: ', error));
   }
+
   render() {
     return (
       <Router>
@@ -45,6 +60,12 @@ class App extends React.Component {
               path='/students'
               render={() => (
                 <ZStudentsPage listStudents={this.state.listStudents} />
+              )}
+            />
+            <Route
+              path='/courses'
+              render={() => (
+                <ZCoursesPage listCourses={this.state.listCourses} />
               )}
             />
             <Route path='/templates' component={ZTemplatesPage} />
