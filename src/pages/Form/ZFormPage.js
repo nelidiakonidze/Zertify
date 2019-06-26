@@ -1,7 +1,7 @@
 import React from 'react';
 import ZSideNav from '../../components/layout/ZSideNav';
-import ZCourseForm from '../../components/Forms/ZCourseForm';
-import ZStudentForm from '../../components/Forms/ZStudentForm';
+import ZCourseForm from '../../components/forms/ZCourseForm';
+import ZStudentForm from '../../components/forms/ZStudentForm';
 import ZFooter from '../../components/layout/ZFooter';
 import './ZFormsPage.css';
 

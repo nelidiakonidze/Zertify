@@ -2,12 +2,15 @@
 //  COURSE  //
 ////
 
-import React from 'react';
+import React from './node_modules/react';
 //template
-import {makeStyles, createMuiTheme} from '@material-ui/core/styles';
-import {ThemeProvider} from '@material-ui/styles';
-import TextField from '@material-ui/core/TextField';
-import green from '@material-ui/core/colors/green';
+import {
+  makeStyles,
+  createMuiTheme,
+} from './node_modules/@material-ui/core/styles';
+import {ThemeProvider} from './node_modules/@material-ui/styles';
+import TextField from './node_modules/@material-ui/core/TextField';
+import green from './node_modules/@material-ui/core/colors/green';
 import ZButton from '../layout/ZButton';
 //hooks for the form
 import useZCForm from './useZCForm';
