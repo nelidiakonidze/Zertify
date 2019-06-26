@@ -39,20 +39,8 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-// component props
-function createData(FirstName, Course) {
-  return {FirstName, Course};
-}
-// // component content
-const rows = [
-  createData('Camille', 'Zertify'),
-  createData('Neli', 'Zertify'),
-  createData('Bernadetta', 'Zertify'),
-  createData('Raphael', 'Zertify'),
-];
-
 // component structure
-function ZStudentTable() {
+function ZStudentTable({listStudents}) {
   const classes = useStyles();
   return (
     <Paper className={classes.root}>
@@ -60,16 +48,16 @@ function ZStudentTable() {
         <TableHead>
           <TableRow>
             <StyledTableCell>FirstName</StyledTableCell>
-            <StyledTableCell>Course</StyledTableCell>
+            <StyledTableCell>LastName</StyledTableCell>
+            <StyledTableCell>id</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map(row => (
-            <StyledTableRow key={row.FirstName}>
-              <StyledTableCell component='th' scope='row'>
-                {row.FirstName}
-              </StyledTableCell>
-              <StyledTableCell>{row.Course}</StyledTableCell>
+          {listStudents.map(student => (
+            <StyledTableRow key={student.id}>
+              <StyledTableCell>{student.first_name}</StyledTableCell>
+              <StyledTableCell>{student.last_name}</StyledTableCell>
+              <StyledTableCell>{student.id}</StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>

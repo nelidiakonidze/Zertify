@@ -12,22 +12,25 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      listStudents: '',
-      //listCourses:'',
+      listStudents: [],
+      //listCourses:[],
+      //activeStudent:'',
+      //activeCourse:''
     };
 
     //fetch data
-    let url = 'https://zertify-api.herokuapp.com/zstudents';
+    //REMOTE WAITING FOR DEPLOY
+    //let url = 'https://zertify-api.herokuapp.com/zstudents';
+    // LOCAL
+    let url = 'http://localhost:4000/zstudents';
     fetch(url)
       .then(response => response.json())
       .then(data => {
         this.setState({
           listStudents: data,
           //listCourses: data.courses
-          //activeStudent:'',
-          //activeCourse:''
         });
-        console.log('list', this.state.listStudents);
+        console.log('fetch data ', this.state.listStudents);
       });
   }
   render() {
