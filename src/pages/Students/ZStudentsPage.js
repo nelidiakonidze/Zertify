@@ -4,12 +4,14 @@ import ZStudentTable from '../../components/ZStudentTable';
 import ZFooter from '../../components/layout/ZFooter';
 import './ZStudentsPage.css';
 
-const ZStudentsPage = () => {
+const ZStudentsPage = ({listStudents}) => {
   return (
     <div>
       <ZSideNav />
       <section className='flex-students'>
-        <ZStudentTable />
+        {/* getting state from app.js and then passing it to StudentTable */}
+        <ZStudentTable listStudents={listStudents} />
+        <p>students list {JSON.stringify(listStudents)}</p>
         <ZFooter />
       </section>
     </div>

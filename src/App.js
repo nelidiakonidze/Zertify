@@ -8,15 +8,13 @@ import ZNoPage from './pages/NoPage/ZNoPage';
 import ZCertifactePage from './pages/Certificate/ZCertificatePage';
 import './App.css';
 
-
-
 class App extends React.Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
       listStudents: '',
       //listCourses:'',
-    }
+    };
 
     //fetch data
     let url = 'https://zertify-api.herokuapp.com/zstudents';
@@ -26,29 +24,35 @@ class App extends React.Component {
         this.setState({
           listStudents: data,
           //listCourses: data.courses
-        })
-      })
-
+          //activeStudent:'',
+          //activeCourse:''
+        });
+        console.log('list', this.state.listStudents);
+      });
   }
   render() {
-  return (
-    <Router>
-      <div className='App'>
-        <Switch>
-          <Route exact path='/' component={ZHomePage} />
-          {/* <Route path='/students' component={ZStudentsPage} /> */}
-          {/* passing state to router component to pass them to the page and then to the component */}
-          <Route path='/students' render={() => <ZStudentsPage listStudents={this.state.listStudents} />}
-          />
-          <Route path='/templates' component={ZTemplatesPage} />
-          <Route path='/form' component={ZFormPage} />
-          <Route path='/certificate' component={ZCertifactePage} />
-          <Route component={ZNoPage} />
-        </Switch>
-      </div>
-    </Router>
-  );
+    return (
+      <Router>
+        <div className='App'>
+          <Switch>
+            <Route exact path='/' component={ZHomePage} />
+            {/* <Route path='/students' component={ZStudentsPage} /> */}
+            {/* passing state to router component to pass them to the page and then to the component */}
+            <Route
+              path='/students'
+              render={() => (
+                <ZStudentsPage listStudents={this.state.listStudents} />
+              )}
+            />
+            <Route path='/templates' component={ZTemplatesPage} />
+            <Route path='/form' component={ZFormPage} />
+            <Route path='/certificate' component={ZCertifactePage} />
+            <Route component={ZNoPage} />
+          </Switch>
+        </div>
+      </Router>
+    );
   }
-};
+}
 
 export default App;
