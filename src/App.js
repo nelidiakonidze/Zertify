@@ -1,6 +1,6 @@
 import React from 'react';
 import {Route, Switch, BrowserRouter as Router} from 'react-router-dom';
-import ZFormPage from './pages/Form/ZFormPage';
+import ZFormPage from './pages/Form2/ZFormPage';
 import ZHomePage from './pages/Home/ZHomePage';
 import ZStudentsPage from './pages/Students/ZStudentsPage';
 import ZCoursesPage from './pages/Courses/ZCoursesPage';
