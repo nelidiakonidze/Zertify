@@ -2,7 +2,7 @@
 //  STUDENT  //
 ////
 
-import {useState, useEffect} from './node_modules/react';
+import {useState, useEffect} from 'react';
 
 // custom Hook
 
@@ -31,8 +31,8 @@ const useZForm = (initialValues, callback, validate) => {
     if (
       Object.keys(errors).length === 0 &&
       isSubmitting &&
-      inputs.studentName != '' &&
-      inputs.studentLastname != ''
+      inputs.studentName !== '' &&
+      inputs.studentLastname !== ''
     ) {
       callback();
       handleReset();

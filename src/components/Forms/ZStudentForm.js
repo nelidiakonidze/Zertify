@@ -2,15 +2,12 @@
 //  STUDENT  //
 ////
 
-import React from './node_modules/react';
+import React from 'react';
 //template
-import {
-  makeStyles,
-  createMuiTheme,
-} from './node_modules/@material-ui/core/styles';
-import {ThemeProvider} from './node_modules/@material-ui/styles';
-import TextField from './node_modules/@material-ui/core/TextField';
-import green from './node_modules/@material-ui/core/colors/green';
+import {makeStyles, createMuiTheme} from '@material-ui/core/styles';
+import {ThemeProvider} from '@material-ui/styles';
+import TextField from '@material-ui/core/TextField';
+import green from '@material-ui/core/colors/green';
 import ZButton from '../layout/ZButton';
 import './button.css';
 //hooks for the form

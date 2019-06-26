@@ -20,7 +20,7 @@ class App extends React.Component {
 
     //fetch data
     //REMOTE WAITING FOR DEPLOY
-    let url = 'https://zertify-api.herokuapp.com/zstudents';
+    let url = 'https://postgres-zertify-api.herokuapp.com/zstudents';
     // LOCAL
     //let url = 'http://localhost:4000/zstudents';
     fetch(url)
