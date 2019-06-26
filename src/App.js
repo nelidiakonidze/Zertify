@@ -31,7 +31,7 @@ class App extends React.Component {
           listStudents: data,
           //listCourses: data.courses
         });
-        console.log('fetch data ', this.state.listStudents);
+        console.log('fetch students data ', this.state.listStudents);
       })
       .catch(error => console.log('error: ', error));
 
@@ -43,7 +43,7 @@ class App extends React.Component {
         this.setState({
           listCourses: data,
         });
-        console.log('fetch data ', this.state.listStudents);
+        console.log('fetch courses data ', this.state.listStudents);
       })
       .catch(error => console.log('error: ', error));
   }

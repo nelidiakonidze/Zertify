@@ -22,36 +22,67 @@ function ZSideNav() {
         </NavItem>
         <NavItem eventKey='students'>
           <NavIcon>
-            <NavLink style={{textDecoration: 'none', color: 'white'}} to='/students'>
-              <i className='fas fa-user-graduate' style={{fontSize: '1.75em'}} />
+            <NavLink
+              style={{textDecoration: 'none', color: 'white'}}
+              to='/students'>
+              <i
+                className='fas fa-user-graduate'
+                style={{fontSize: '1.75em'}}
+              />
             </NavLink>
           </NavIcon>
           <NavText>
-            <NavLink style={{textDecoration: 'none', color: 'white'}} to='/students'>
+            <NavLink
+              style={{textDecoration: 'none', color: 'white'}}
+              to='/students'>
               Students
+            </NavLink>
+          </NavText>
+        </NavItem>
+        <NavItem eventKey='courses'>
+          <NavIcon>
+            <NavLink
+              style={{textDecoration: 'none', color: 'white'}}
+              to='/courses'>
+              <i className='fas fa-leanpub' style={{fontSize: '1.75em'}} />
+            </NavLink>
+          </NavIcon>
+          <NavText>
+            <NavLink
+              style={{textDecoration: 'none', color: 'white'}}
+              to='/courses'>
+              Courses
             </NavLink>
           </NavText>
         </NavItem>
         <NavItem eventKey='form'>
           <NavIcon>
-            <NavLink style={{textDecoration: 'none', color: 'white'}} to='/form'>
+            <NavLink
+              style={{textDecoration: 'none', color: 'white'}}
+              to='/form'>
               <i className='far fa-file-alt' style={{fontSize: '1.75em'}} />
             </NavLink>
           </NavIcon>
           <NavText>
-            <NavLink style={{textDecoration: 'none', color: 'white'}} to='/form'>
+            <NavLink
+              style={{textDecoration: 'none', color: 'white'}}
+              to='/form'>
               Form
             </NavLink>
           </NavText>
         </NavItem>
         <NavItem eventKey='templates'>
           <NavIcon>
-            <NavLink style={{textDecoration: 'none', color: 'white'}} to='/templates'>
+            <NavLink
+              style={{textDecoration: 'none', color: 'white'}}
+              to='/templates'>
               <i className='fas fa-award' style={{fontSize: '1.75em'}} />
             </NavLink>
           </NavIcon>
           <NavText>
-            <NavLink style={{textDecoration: 'none', color: 'white'}} to='/templates'>
+            <NavLink
+              style={{textDecoration: 'none', color: 'white'}}
+              to='/templates'>
               Templates
             </NavLink>
           </NavText>
