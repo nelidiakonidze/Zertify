@@ -19,15 +19,6 @@ const useZForm = (initialValues, callback, validate) => {
 
   //after a change in the input value and isSubmitting true, check if the errors object contains keys
   useEffect(() => {
-    console.log('useEffect');
-    console.log('errors ', Object.keys(errors).length);
-    console.log(
-      'inputs',
-      inputs.courseName,
-      inputs.courseHours,
-      'initialvalues',
-      initialValues,
-    );
     if (
       Object.keys(errors).length === 0 &&
       isSubmitting &&
@@ -40,7 +31,6 @@ const useZForm = (initialValues, callback, validate) => {
   });
 
   const handleSubmit = event => {
-    console.log('handle submit', inputs);
     if (event) event.preventDefault();
     setIsSubmitting(true);
     setErrors(validate(inputs));
