@@ -20,7 +20,7 @@ class App extends React.Component {
     };
 
     //fetch data for students
-    let urlStudents = 'https://postgres-zertify-api.herokuapp.com/zstudents';
+    let urlStudents = 'https://postgres-zertify-api.herokuapp.com/students';
     fetch(urlStudents)
       .then(response => response.json())
       .then(data => {
@@ -33,7 +33,7 @@ class App extends React.Component {
       .catch(error => console.log('error: ', error));
 
     //fetch data for courses
-    let urlCourses = 'https://postgres-zertify-api.herokuapp.com/zcourses';
+    let urlCourses = 'https://postgres-zertify-api.herokuapp.com/courses';
     fetch(urlCourses)
       .then(response => response.json())
       .then(data => {
