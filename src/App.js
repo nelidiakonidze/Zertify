@@ -20,10 +20,7 @@ class App extends React.Component {
     };
 
     //fetch data for students
-    //REMOTE WAITING FOR DEPLOY
-    //let url = 'https://postgres-zertify-api.herokuapp.com/zstudents';
-    // LOCAL
-    let urlStudents = 'http://localhost:4000/zstudents';
+    let urlStudents = 'https://postgres-zertify-api.herokuapp.com/zstudents';
     fetch(urlStudents)
       .then(response => response.json())
       .then(data => {
@@ -36,14 +33,14 @@ class App extends React.Component {
       .catch(error => console.log('error: ', error));
 
     //fetch data for courses
-    let urlCourses = 'http://localhost:4000/zcourses';
+    let urlCourses = 'https://postgres-zertify-api.herokuapp.com/zcourses';
     fetch(urlCourses)
       .then(response => response.json())
       .then(data => {
         this.setState({
           listCourses: data,
         });
-        console.log('fetch courses data ', this.state.listStudents);
+        console.log('fetch courses data ', this.state.listCourses);
       })
       .catch(error => console.log('error: ', error));
   }
