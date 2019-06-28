@@ -1,11 +1,9 @@
 ////
 //  COURSE  //
 ////
-
 import {useState, useEffect} from 'react';
 
 // custom Hook
-
 const useZForm = (initialValues, callback, validate) => {
   //set inital state
   const [inputs, setInputs] = useState({initialValues});
@@ -25,8 +23,30 @@ const useZForm = (initialValues, callback, validate) => {
       inputs.courseName !== '' &&
       inputs.courseHours !== ''
     ) {
-      callback();
-      handleReset();
+      //to post the form data to update the database
+      const urlCourses = 'https://postgres-zertify-api.herokuapp.com/courses';
+      const Zconfig = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(inputs),
+      };
+      fetch(urlCourses, Zconfig)
+        .then(response => response.json())
+        .then(response => {
+          if (response.error) {
+            alert(response.error);
+          } else {
+            callback();
+            handleReset();
+            console.log('new course added to db');
+          }
+        })
+        .catch(event => {
+          console.error(event);
+          alert("Sorry, we're having trouble adding your new course");
+        });
     }
   });
 
