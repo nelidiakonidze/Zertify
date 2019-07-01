@@ -11,7 +11,7 @@ class ZCertificate extends React.Component {
         '-' +
         (today.getMonth() + 1) +
         '-' +
-        (today.getDay() + 2);
+        today.getUTCDate();
     this.state = {
       date: date,
     };
