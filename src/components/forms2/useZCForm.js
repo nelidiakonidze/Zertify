@@ -30,8 +30,14 @@ const useZForm = (initialValues, callback, validate) => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(inputs),
+        body: JSON.stringify({
+          name: inputs.courseName,
+          hours: inputs.courseHours,
+        }),
       };
+      console.log('inputs', JSON.stringify(inputs));
+      console.log('name', inputs.courseName);
+
       fetch(urlCourses, Zconfig)
         .then(response => response.json())
         .then(response => {
