@@ -20,12 +20,12 @@ class App extends React.Component {
     };
 
     //fetch data for students
-    let urlStudents = 'https://postgres-zertify-api.herokuapp.com/students';
+    let urlStudents = 'https://zertify-server.herokuapp.com/api/students/';
     fetch(urlStudents)
       .then(response => response.json())
       .then(data => {
         this.setState({
-          listStudents: data,
+          listStudents: data.students,
           //listCourses: data.courses
         });
         console.log('fetch students data ', this.state.listStudents);
@@ -59,12 +59,12 @@ class App extends React.Component {
                 <ZStudentsPage listStudents={this.state.listStudents} />
               )}
             />
-            <Route
+            {/* <Route
               path='/courses'
               render={() => (
                 <ZCoursesPage listCourses={this.state.listCourses} />
               )}
-            />
+            /> */}
             <Route path='/templates' component={ZTemplatesPage} />
             <Route path='/form' component={ZFormPage} />
             <Route path='/certificate' component={ZCertifactePage} />
