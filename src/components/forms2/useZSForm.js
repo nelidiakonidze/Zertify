@@ -25,8 +25,34 @@ const useZForm = (initialValues, callback, validate) => {
       inputs.studentName !== '' &&
       inputs.studentLastname !== ''
     ) {
-      callback();
-      handleReset();
+      //to post the form data to update the database
+      const urlStudents = 'https://zertify-server.herokuapp.com/api/students';
+      const Zconfig = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          first_name: inputs.studentName,
+          last_name: inputs.studentLastname,
+        }),
+      };
+
+      fetch(urlStudents, Zconfig)
+        .then(response => response.json())
+        .then(response => {
+          if (response.error) {
+            alert(response.error);
+          } else {
+            callback();
+            handleReset();
+            console.log('new student added to db');
+          }
+        })
+        .catch(event => {
+          console.error(event);
+          alert("Sorry, we're having trouble adding your new course");
+        });
     }
   });
 

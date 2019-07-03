@@ -79,6 +79,19 @@ const ZCourseForm = () => {
           />
           {errors.studentLastname && <p>{errors.studentLastname}</p>}
         </ThemeProvider>
+        <ThemeProvider theme={theme}>
+          <TextField
+            className={classes.margin}
+            label='Course'
+            variant='outlined'
+            id='mui-theme-provider-outlined-input'
+            name='courseName'
+            type='text'
+            onChange={handleInputChange}
+            value={inputs.courseName}
+            require
+          />
+        </ThemeProvider>
         <ZButton>
           <button className='btn--transparent' type='submit'>
             Submit student

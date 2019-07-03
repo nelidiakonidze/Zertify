@@ -14,7 +14,7 @@ class App extends React.Component {
     super();
     this.state = {
       listStudents: [],
-      listCourses: [],
+      //listCourses: [],
       //activeStudent:'',
       //activeCourse:''
     };
@@ -32,17 +32,17 @@ class App extends React.Component {
       })
       .catch(error => console.log('error: ', error));
 
-    //fetch data for courses
-    let urlCourses = 'https://postgres-zertify-api.herokuapp.com/courses';
-    fetch(urlCourses)
-      .then(response => response.json())
-      .then(data => {
-        this.setState({
-          listCourses: data,
-        });
-        console.log('fetch courses data ', this.state.listCourses);
-      })
-      .catch(error => console.log('error: ', error));
+    // //fetch data for courses
+    // let urlCourses = 'https://postgres-zertify-api.herokuapp.com/courses';
+    // fetch(urlCourses)
+    //   .then(response => response.json())
+    //   .then(data => {
+    //     this.setState({
+    //       listCourses: data,
+    //     });
+    //     console.log('fetch courses data ', this.state.listCourses);
+    //   })
+    //   .catch(error => console.log('error: ', error));
   }
 
   render() {
