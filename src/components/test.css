@@ -1,0 +1,202 @@
+body {
+    background-color: #a3ccff;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e088b1+0,a1dbff+100 */
+    background: #e088b1;
+    /* Old browsers */
+    /* FF3.6-15 */
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #e088b1 0%, #a1dbff 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e088b1', endColorstr='#a1dbff',GradientType=1 );
+    /* IE6-9 */
+    padding: 100px;
+  }
+  
+  .cc-slider {
+    width: 860px;
+    margin: auto;
+  }
+  .cc-slider .cc-list {
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 4px 20px 0 20px;
+  }
+  .cc-slider .cc-list > div {
+    display: inline-block;
+    margin-left: 0px;
+  }
+  .cc-slider .cc-list > div:first-child {
+    margin-left: 0;
+  }
+  .cc-slider .cc-dots {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+  .cc-slider .cc-dots > li {
+    display: inline-block;
+  }
+  .cc-slider .cc-dots > li button {
+    width: 7px;
+    height: 7px;
+    background-color: #272d37;
+    border: none;
+    border-radius: 7px;
+    padding: 0;
+    margin: 0 5px;
+    outline: none;
+  }
+  .cc-slider .cc-dots > li.active button {
+    width: 14px;
+    background-color: #ce0059;
+  }
+  
+  .cc {
+    width: 270px;
+    height: 170px;
+    border-radius: 4px;
+    mix-blend-mode: luminosity;
+    background: #026ac9;
+    cursor: pointer;
+    background: linear-gradient(135deg, #026ac9 0%, #ce0029 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#026ac9', endColorstr='#ce0029',GradientType=1 );
+    position: relative;
+    overflow: hidden;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    transition: -webkit-transform cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.5s;
+    transition: transform cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.5s;
+    transition: transform cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.5s, -webkit-transform cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.5s;
+  }
+  .cc:hover:before {
+    box-shadow: inset 0 0 300px rgba(255, 255, 255, 0.25);
+  }
+  .cc:before {
+    position: absolute;
+    content: "";
+    background: #12f8fc;
+    background: linear-gradient(135deg, #12f8fc 0%, #f900a8 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#12f8fc', endColorstr='#f900a8',GradientType=1 );
+    box-shadow: inset 0 0 150px rgba(255, 255, 255, 0.25);
+    mix-blend-mode: hard-light;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .cc.active {
+    mix-blend-mode: normal;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  .cc:after {
+    position: absolute;
+    content: "";
+    background-color: #ce0058;
+    -webkit-transform: skewX(-30deg) translateX(150px);
+            transform: skewX(-30deg) translateX(150px);
+    mix-blend-mode: luminosity;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .cc .cc-wrapper {
+    padding: 15px;
+    position: relative;
+    z-index: 2;
+  }
+  .cc .cc-wrapper:before {
+    position: absolute;
+    content: "";
+    background-color: #b50751;
+    -webkit-transform: skewX(-75deg) translateX(355px) scale(1.8);
+            transform: skewX(-75deg) translateX(355px) scale(1.8);
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .cc .cc-wrapper:after {
+    position: absolute;
+    content: "";
+    background-color: #81073b;
+    -webkit-transform: skewX(-60deg) translateX(365px) scale(1.8);
+            transform: skewX(-60deg) translateX(365px) scale(1.8);
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    mix-blend-mode: saturation;
+    opacity: 0.5;
+  }
+  .cc .cc-wrapper .line {
+    width: 100%;
+    height: 53px;
+    clear: both;
+  }
+  .cc .cc-wrapper .cc-holder, .cc .cc-wrapper .cc-expires {
+    float: left;
+  }
+  .cc .cc-wrapper .cc-holder .label, .cc .cc-wrapper .cc-expires .label {
+    color: #ce0058;
+    display: block;
+    text-transform: uppercase;
+    font-size: 10px;
+    margin-bottom: 7px;
+    text-shadow: 0 0 4px #2b1f6f;
+  }
+  .cc .cc-wrapper .cc-holder .value, .cc .cc-wrapper .cc-expires .value {
+    color: #fff;
+  }
+  .cc .cc-wrapper .cc-type {
+    float: right;
+    display: block;
+    width: 55px;
+    height: 35px;
+    text-align: right;
+  }
+  .cc .cc-wrapper .cc-puce {
+    float: left;
+    padding-top: 2px;
+  }
+  .cc .cc-wrapper .cc-code {
+    float: right;
+    color: #fff;
+    margin-top: -10px;
+    font-size: 18px;
+    position: relative;
+  }
+  .cc .cc-wrapper .cc-code:before {
+    content: "**** **** ****";
+    position: absolute;
+    left: -124px;
+    top: 20px;
+    font-size: 22px;
+  }
+  .cc .cc-wrapper .cc-cvv {
+    float: right;
+  }
+  .cc .cc-wrapper .cc-cvv label {
+    color: #fff;
+    text-shadow: 0 0 4px #ce0058;
+  }
+  .cc .cc-wrapper .cc-cvv input {
+    width: 35px;
+    height: 30px;
+    border: 1px solid #ce0058;
+    padding: 0 5px;
+    text-align: center;
+  }
+  .cc .cc-wrapper .cc-cvv input:focus {
+    outline: none;
+    box-shadow: inset 0 0 10px rgba(206, 0, 88, 0.5);
+  }
+  
