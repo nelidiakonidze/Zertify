@@ -14,35 +14,35 @@ class App extends React.Component {
     super();
     this.state = {
       listStudents: [],
-      listCourses: [],
+      //listCourses: [],
       //activeStudent:'',
       //activeCourse:''
     };
 
     //fetch data for students
-    const urlStudents = 'https://postgres-zertify-api.herokuapp.com/students';
+    let urlStudents = 'https://zertify-server.herokuapp.com/api/students/';
     fetch(urlStudents)
       .then(response => response.json())
       .then(data => {
         this.setState({
-          listStudents: data,
+          listStudents: data.students,
           //listCourses: data.courses
         });
         console.log('fetch students data ', this.state.listStudents);
       })
       .catch(error => console.log('error: ', error));
 
-    //fetch data for courses
-    const urlCourses = 'https://postgres-zertify-api.herokuapp.com/courses';
-    fetch(urlCourses)
-      .then(response => response.json())
-      .then(data => {
-        this.setState({
-          listCourses: data,
-        });
-        console.log('fetch courses data ', this.state.listCourses);
-      })
-      .catch(error => console.log('error: ', error));
+    // //fetch data for courses
+    // let urlCourses = 'https://postgres-zertify-api.herokuapp.com/courses';
+    // fetch(urlCourses)
+    //   .then(response => response.json())
+    //   .then(data => {
+    //     this.setState({
+    //       listCourses: data,
+    //     });
+    //     console.log('fetch courses data ', this.state.listCourses);
+    //   })
+    //   .catch(error => console.log('error: ', error));
   }
 
   render() {
@@ -59,12 +59,12 @@ class App extends React.Component {
                 <ZStudentsPage listStudents={this.state.listStudents} />
               )}
             />
-            <Route
+            {/* <Route
               path='/courses'
               render={() => (
                 <ZCoursesPage listCourses={this.state.listCourses} />
               )}
-            />
+            /> */}
             <Route path='/templates' component={ZTemplatesPage} />
             <Route path='/form' component={ZFormPage} />
             <Route path='/certificate' component={ZCertifactePage} />

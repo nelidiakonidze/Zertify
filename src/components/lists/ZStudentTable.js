@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../App.js';
 import {withStyles, makeStyles} from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -47,17 +48,25 @@ function ZStudentTable({listStudents}) {
       <Table className={classes.table}>
         <TableHead>
           <TableRow>
-            <StyledTableCell>FirstName</StyledTableCell>
-            <StyledTableCell>LastName</StyledTableCell>
-            <StyledTableCell>Reference</StyledTableCell>
+            <StyledTableCell>First Name</StyledTableCell>
+            <StyledTableCell>Last Name</StyledTableCell>
+            <StyledTableCell>Course</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {listStudents.map(student => (
             <StyledTableRow key={student.id}>
-              <StyledTableCell>{student.first_name}</StyledTableCell>
-              <StyledTableCell>{student.last_name}</StyledTableCell>
-              <StyledTableCell>{student.id}</StyledTableCell>
+              <StyledTableCell>
+                {JSON.stringify(student.firstName).slice(1, -1)}
+              </StyledTableCell>
+              <StyledTableCell>
+                {JSON.stringify(student.lastName).slice(1, -1)}
+              </StyledTableCell>
+              {student.courses.map(course => (
+                <StyledTableCell key={course.id}>
+                  {JSON.stringify(course.name).slice(1, -1)}
+                </StyledTableCell>
+              ))}
             </StyledTableRow>
           ))}
         </TableBody>

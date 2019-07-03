@@ -26,7 +26,7 @@ const useZForm = (initialValues, callback, validate) => {
       inputs.studentLastname !== ''
     ) {
       //to post the form data to update the database
-      const urlStudents = 'https://postgres-zertify-api.herokuapp.com/students';
+      const urlStudents = 'https://zertify-server.herokuapp.com/api/students';
       const Zconfig = {
         method: 'POST',
         headers: {
