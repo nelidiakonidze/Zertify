@@ -50,6 +50,7 @@ function ZStudentTable({listCourses}) {
             <StyledTableCell>Course</StyledTableCell>
             <StyledTableCell>Number of hours</StyledTableCell>
             <StyledTableCell>Reference</StyledTableCell>
+            <StyledTableCell />
           </TableRow>
         </TableHead>
         <TableBody>
@@ -58,6 +59,9 @@ function ZStudentTable({listCourses}) {
               <StyledTableCell>{course.name}</StyledTableCell>
               <StyledTableCell>{course.hours}</StyledTableCell>
               <StyledTableCell>{course.id}</StyledTableCell>
+              <StyledTableCell>
+                <button>Select</button>
+              </StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>

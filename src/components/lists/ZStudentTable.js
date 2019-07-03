@@ -7,6 +7,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import './ZStudenTable.css';
 
 // component style : theme for cells
 const StyledTableCell = withStyles(theme => ({
@@ -41,7 +42,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 // component structure
-function ZStudentTable({listStudents}) {
+function ZStudentTable({listStudents, onClickSelectBtn}) {
   const classes = useStyles();
   return (
     <Paper className={classes.root}>
@@ -51,22 +52,24 @@ function ZStudentTable({listStudents}) {
             <StyledTableCell>First Name</StyledTableCell>
             <StyledTableCell>Last Name</StyledTableCell>
             <StyledTableCell>Course</StyledTableCell>
+            <StyledTableCell />
           </TableRow>
         </TableHead>
         <TableBody>
           {listStudents.map(student => (
             <StyledTableRow key={student.id}>
-              <StyledTableCell>
-                {JSON.stringify(student.firstName).slice(1, -1)}
-              </StyledTableCell>
-              <StyledTableCell>
-                {JSON.stringify(student.lastName).slice(1, -1)}
-              </StyledTableCell>
+              <StyledTableCell>{JSON.stringify(student.firstName).slice(1, -1)}</StyledTableCell>
+              <StyledTableCell>{JSON.stringify(student.lastName).slice(1, -1)}</StyledTableCell>
               {student.courses.map(course => (
                 <StyledTableCell key={course.id}>
                   {JSON.stringify(course.name).slice(1, -1)}
                 </StyledTableCell>
               ))}
+              <StyledTableCell>
+                <button className='button select-table-btn' onClick={onClickSelectBtn}>
+                  Select
+                </button>
+              </StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>
