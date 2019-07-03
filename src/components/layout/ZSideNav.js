@@ -39,7 +39,7 @@ function ZSideNav() {
             </NavLink>
           </NavText>
         </NavItem>
-        <NavItem eventKey='courses'>
+        {/* <NavItem eventKey='courses'>
           <NavIcon>
             <NavLink
               style={{textDecoration: 'none', color: 'white'}}
@@ -54,7 +54,7 @@ function ZSideNav() {
               Courses
             </NavLink>
           </NavText>
-        </NavItem>
+        </NavItem> */}
         <NavItem eventKey='form'>
           <NavIcon>
             <NavLink

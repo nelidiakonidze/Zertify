@@ -40,6 +40,6 @@
   },
   "devDependencies": {
     "react-alice-carousel": "^1.14.0",
-    "tachyons": "^4.10.0"
+    "tachyons": "^4.11.1"
   }
 }

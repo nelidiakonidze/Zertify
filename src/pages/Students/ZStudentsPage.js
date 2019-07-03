@@ -11,6 +11,7 @@ const ZStudentsPage = ({listStudents}) => {
       <section className='flex-students'>
         {/* getting state from app.js and then passing it to StudentTable */}
         <ZStudentTable listStudents={listStudents} />
+        {/* <p>{JSON.stringify(listStudents)}</p> */}
         <ZFooter />
       </section>
     </div>
