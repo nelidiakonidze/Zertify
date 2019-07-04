@@ -11,7 +11,7 @@ import Paper from '@material-ui/core/Paper';
 // component style : theme for cells
 const StyledTableCell = withStyles(theme => ({
   head: {
-    backgroundColor: '#FF8E53',
+    backgroundColor: 'rgb(219, 61, 68)',
     color: 'white',
     fontSize: 18,
   },
@@ -33,7 +33,10 @@ const StyledTableRow = withStyles(theme => ({
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
-    overflowX: 'auto',
+    height: 400,
+    width: '100%',
+    marginTop: theme.spacing.unit * 3,
+    overflow: 'auto',
   },
   table: {
     minWidth: 'auto',

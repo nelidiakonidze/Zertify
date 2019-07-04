@@ -10,11 +10,8 @@ export default function Svalidate(inputs) {
   if (!inputs.studentLastname) {
     errors.studentLastname = 'required';
   }
-  //   if (!inputs.courseName) {
-  //     errors.courseName = 'required';
-  //   }
-  //   if (!inputs.courseHours) {
-  //     errors.courseHours = 'required';
-  //   }
+  // if (!inputs.courseId) {
+  //   errors.courseId = 'required course id';
+  // }
   return errors;
 }
