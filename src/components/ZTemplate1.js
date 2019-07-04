@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import ReactDOM from 'react-dom';
 import './ZTemplate1.css';
 const ZTemplate1 = () => {
   let [selectedCard, setSelectedCard] = useState(0);
