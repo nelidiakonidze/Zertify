@@ -14,7 +14,6 @@ import FormControl from '@material-ui/core/FormControl';
 import TextField from '@material-ui/core/TextField';
 import green from '@material-ui/core/colors/green';
 import ZButton from '../layout/ZButton';
-import '../../App';
 import './button.css';
 //hooks for the form
 import useZSForm from './useZSForm';

@@ -32,7 +32,6 @@ const StyledTableRow = withStyles(theme => ({
 // component style
 const useStyles = makeStyles(theme => ({
   root: {
-    width: '100%',
     height: 400,
     width: '100%',
     marginTop: theme.spacing.unit * 3,
@@ -40,6 +39,11 @@ const useStyles = makeStyles(theme => ({
   },
   table: {
     minWidth: 'auto',
+  },
+  head: {
+    minWidth: 'auto !important',
+    position: 'sticky',
+    top: 0,
   },
 }));
 
@@ -51,9 +55,13 @@ function ZStudentTable({listStudents}) {
       <Table className={classes.table}>
         <TableHead>
           <TableRow>
-            <StyledTableCell>First Name</StyledTableCell>
-            <StyledTableCell>Last Name</StyledTableCell>
-            <StyledTableCell>Course</StyledTableCell>
+            <StyledTableCell className={classes.head}>
+              First Name
+            </StyledTableCell>
+            <StyledTableCell className={classes.head}>
+              Last Name
+            </StyledTableCell>
+            <StyledTableCell className={classes.head}>Course</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
