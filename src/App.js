@@ -63,8 +63,6 @@ class App extends React.Component {
         <div className='App'>
           <Switch>
             <Route exact path='/' component={ZHomePage} />
-            {/* <Route path='/students' component={ZStudentsPage} /> */}
-            {/* passing state to router component to pass them to the page and then to the component */}
             <Route
               path='/students'
               render={() => (
@@ -79,7 +77,6 @@ class App extends React.Component {
               render={() => <ZFormPage listCourses={this.state.listCourses} />}
             />
             <Route path='/templates' component={ZTemplatesPage} />
-            {/* <Route path='/form' component={ZFormPage} /> */}
             <Route path='/certificate' component={ZCertifactePage} />
             <Route component={ZNoPage} />
           </Switch>

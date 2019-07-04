@@ -64,7 +64,6 @@ function ZCourseForm({listCourses}) {
     studentCreated,
     Svalidate,
   );
-  console.log(listCourses);
   return (
     <React.Fragment>
       <form className={classes.root} onSubmit={handleSubmit}>
@@ -96,19 +95,6 @@ function ZCourseForm({listCourses}) {
           />
           {errors.studentLastname && <p>{errors.studentLastname}</p>}
         </ThemeProvider>
-        {/* <ThemeProvider theme={theme}>
-          <TextField
-            className={classes.margin}
-            label='Course-Id'
-            variant='outlined'
-            id='mui-theme-provider-outlined-input'
-            name='courseId'
-            type='text'
-            onChange={handleInputChange}
-            value={inputs.courseId}
-            require
-          />
-          {errors.courseId && <p>{errors.courseId}</p>} */}
         <ThemeProvider theme={theme}>
           <FormControl className={classes.margin}>
             <InputLabel htmlFor='age-customized-native-simple'>
@@ -143,7 +129,6 @@ function ZCourseForm({listCourses}) {
           </button>
         </ZButton>
       </form>
-      {/* <p>{JSON.stringify(listCourses)}</p> */}
     </React.Fragment>
   );
 }
