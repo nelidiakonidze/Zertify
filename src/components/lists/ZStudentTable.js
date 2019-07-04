@@ -7,6 +7,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import './ZStudenTable.css';
 
 // component style : theme for cells
 const StyledTableCell = withStyles(theme => ({
@@ -48,7 +49,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 // component structure
-function ZStudentTable({listStudents}) {
+function ZStudentTable({listStudents, onClickSelectBtn}) {
   const classes = useStyles();
   return (
     <Paper className={classes.root}>
@@ -78,6 +79,13 @@ function ZStudentTable({listStudents}) {
                   {JSON.stringify(course.name).slice(1, -1)}
                 </StyledTableCell>
               ))}
+              <StyledTableCell>
+                <button
+                  className='button select-table-btn'
+                  onClick={onClickSelectBtn}>
+                  Select
+                </button>
+              </StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>

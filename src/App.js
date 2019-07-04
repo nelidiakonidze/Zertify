@@ -3,7 +3,7 @@ import {Route, Switch, BrowserRouter as Router} from 'react-router-dom';
 import ZFormPage from './pages/Form2/ZFormPage';
 import ZHomePage from './pages/Home/ZHomePage';
 import ZStudentsPage from './pages/Students/ZStudentsPage';
-import ZCoursesPage from './pages/Courses/ZCoursesPage';
+// import ZCoursesPage from './pages/Courses/ZCoursesPage';
 import ZTemplatesPage from './pages/Templates/ZTemplatesPage';
 import ZNoPage from './pages/NoPage/ZNoPage';
 import ZCertifactePage from './pages/Certificate/ZCertificatePage';
@@ -16,8 +16,13 @@ class App extends React.Component {
       listStudents: [],
       listCourses: [],
       //activeStudent:'',
+      //listCourses: [],
+      activeStudent: [],
       //activeCourse:''
+      selectedStudent: [],
     };
+
+    this.handleSelectClickBtn = this.handleSelectClickBtn.bind(this);
 
     //fetch data for students
     let urlStudents = 'https://zertify-server.herokuapp.com/api/students/';
@@ -45,6 +50,13 @@ class App extends React.Component {
       .catch(error => console.log('error: ', error));
   }
 
+  handleSelectClickBtn(e) {
+    e.preventDefault();
+
+    this.setState({activeStudent: this.state.listStudents[1].id});
+    console.log('button clicked', this.state.listStudents[1].id);
+  }
+
   render() {
     return (
       <Router>
@@ -56,7 +68,10 @@ class App extends React.Component {
             <Route
               path='/students'
               render={() => (
-                <ZStudentsPage listStudents={this.state.listStudents} />
+                <ZStudentsPage
+                  listStudents={this.state.listStudents}
+                  onClickSelectBtn={this.handleSelectClickBtn}
+                />
               )}
             />
             <Route
