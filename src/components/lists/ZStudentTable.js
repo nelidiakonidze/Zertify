@@ -12,7 +12,7 @@ import './ZStudenTable.css';
 // component style : theme for cells
 const StyledTableCell = withStyles(theme => ({
   head: {
-    backgroundColor: '#FF8E53',
+    backgroundColor: 'rgb(219, 61, 68)',
     color: 'white',
     fontSize: 18,
   },
@@ -33,11 +33,18 @@ const StyledTableRow = withStyles(theme => ({
 // component style
 const useStyles = makeStyles(theme => ({
   root: {
+    height: 400,
     width: '100%',
-    overflowX: 'auto',
+    marginTop: theme.spacing.unit * 3,
+    overflow: 'auto',
   },
   table: {
     minWidth: 'auto',
+  },
+  head: {
+    minWidth: 'auto !important',
+    position: 'sticky',
+    top: 0,
   },
 }));
 
@@ -49,24 +56,33 @@ function ZStudentTable({listStudents, onClickSelectBtn}) {
       <Table className={classes.table}>
         <TableHead>
           <TableRow>
-            <StyledTableCell>First Name</StyledTableCell>
-            <StyledTableCell>Last Name</StyledTableCell>
-            <StyledTableCell>Course</StyledTableCell>
-            <StyledTableCell />
+            <StyledTableCell className={classes.head}>
+              First Name
+            </StyledTableCell>
+            <StyledTableCell className={classes.head}>
+              Last Name
+            </StyledTableCell>
+            <StyledTableCell className={classes.head}>Course</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {listStudents.map(student => (
             <StyledTableRow key={student.id}>
-              <StyledTableCell>{JSON.stringify(student.firstName).slice(1, -1)}</StyledTableCell>
-              <StyledTableCell>{JSON.stringify(student.lastName).slice(1, -1)}</StyledTableCell>
+              <StyledTableCell>
+                {JSON.stringify(student.firstName).slice(1, -1)}
+              </StyledTableCell>
+              <StyledTableCell>
+                {JSON.stringify(student.lastName).slice(1, -1)}
+              </StyledTableCell>
               {student.courses.map(course => (
                 <StyledTableCell key={course.id}>
                   {JSON.stringify(course.name).slice(1, -1)}
                 </StyledTableCell>
               ))}
               <StyledTableCell>
-                <button className='button select-table-btn' onClick={onClickSelectBtn}>
+                <button
+                  className='button select-table-btn'
+                  onClick={onClickSelectBtn}>
                   Select
                 </button>
               </StyledTableCell>

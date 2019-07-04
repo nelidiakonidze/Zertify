@@ -4,8 +4,13 @@
 
 import React from 'react';
 //template
-import {makeStyles, createMuiTheme} from '@material-ui/core/styles';
+import {makeStyles, createMuiTheme, withStyles} from '@material-ui/core/styles';
 import {ThemeProvider} from '@material-ui/styles';
+import InputLabel from '@material-ui/core/InputLabel';
+import Select from '@material-ui/core/Select';
+import NativeSelect from '@material-ui/core/NativeSelect';
+import InputBase from '@material-ui/core/InputBase';
+import FormControl from '@material-ui/core/FormControl';
 import TextField from '@material-ui/core/TextField';
 import green from '@material-ui/core/colors/green';
 import ZButton from '../layout/ZButton';
@@ -30,10 +35,22 @@ const theme = createMuiTheme({
     primary: green,
   },
 });
+const BootstrapInput = withStyles(theme => ({
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    borderRadius: 4,
+    border: '1px solid #ced4da',
+    transition: theme.transitions.create(['border-color', 'box-shadow']),
+  },
+  margin: {
+    margin: theme.spacing(1),
+  },
+}))(InputBase);
 
 //to keep the style of this function AND have state we must use hooks
 // tutorial link : https://upmostly.com/tutorials/form-validation-using-custom-react-hooks/
-const ZCourseForm = () => {
+function ZCourseForm({listCourses}) {
   const classes = useStyles();
 
   //callback
@@ -43,11 +60,10 @@ const ZCourseForm = () => {
 
   //initial values + callback
   const {inputs, handleInputChange, handleSubmit, errors} = useZSForm(
-    {studentName: '', studentLastname: ''},
+    {studentName: '', studentLastname: '', courseId: ''},
     studentCreated,
     Svalidate,
   );
-
   return (
     <React.Fragment>
       <form className={classes.root} onSubmit={handleSubmit}>
@@ -80,17 +96,32 @@ const ZCourseForm = () => {
           {errors.studentLastname && <p>{errors.studentLastname}</p>}
         </ThemeProvider>
         <ThemeProvider theme={theme}>
-          <TextField
-            className={classes.margin}
-            label='Course'
-            variant='outlined'
-            id='mui-theme-provider-outlined-input'
-            name='courseName'
-            type='text'
-            onChange={handleInputChange}
-            value={inputs.courseName}
-            require
-          />
+          <FormControl className={classes.margin}>
+            <InputLabel htmlFor='age-customized-native-simple'>
+              Course Id
+            </InputLabel>
+            <Select
+              native
+              className={classes.margin}
+              label='Course Id'
+              variant='outlined'
+              id='outlined-age-native-simple'
+              name='courseId'
+              type='text'
+              onChange={handleInputChange}
+              value={inputs.courseId}
+              input={<BootstrapInput />}>
+              <option disabled selected value>
+                {' '}
+                -- select an option --{' '}
+              </option>
+              {listCourses &&
+                listCourses.map(course => (
+                  <option value={course.id}>{course.name}</option>
+                ))}
+            </Select>
+          </FormControl>
+          {errors.courseId && <p>{errors.courseId}</p>}
         </ThemeProvider>
         <ZButton>
           <button className='btn--transparent' type='submit'>
@@ -100,6 +131,6 @@ const ZCourseForm = () => {
       </form>
     </React.Fragment>
   );
-};
+}
 
 export default ZCourseForm;

@@ -23,7 +23,8 @@ const useZForm = (initialValues, callback, validate) => {
       Object.keys(errors).length === 0 &&
       isSubmitting &&
       inputs.studentName !== '' &&
-      inputs.studentLastname !== ''
+      inputs.studentLastname !== '' &&
+      inputs.courseId !== ''
     ) {
       //to post the form data to update the database
       const urlStudents = 'https://zertify-server.herokuapp.com/api/students';
@@ -33,8 +34,9 @@ const useZForm = (initialValues, callback, validate) => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          first_name: inputs.studentName,
-          last_name: inputs.studentLastname,
+          firstName: inputs.studentName,
+          lastName: inputs.studentLastname,
+          courseId: inputs.courseId,
         }),
       };
 

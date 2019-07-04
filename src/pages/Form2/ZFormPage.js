@@ -5,7 +5,7 @@ import ZFooter from '../../components/layout/ZFooter';
 import ZStudentForm from '../../components/forms2/ZStudentForm';
 import './ZFormsPage.css';
 
-const ZFormsPage = () => {
+const ZFormsPage = ({listCourses}) => {
   return (
     <div>
       <ZSideNav />
@@ -13,7 +13,7 @@ const ZFormsPage = () => {
         <h2>Add a new course to the course list</h2>
         <ZCourseForm />
         <h2>Add a new student to the student list</h2>
-        <ZStudentForm />
+        <ZStudentForm listCourses={listCourses} />
         <ZFooter />
       </section>
     </div>
