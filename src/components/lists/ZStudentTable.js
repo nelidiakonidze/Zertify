@@ -63,6 +63,9 @@ function ZStudentTable({listStudents, onClickSelectBtn}) {
               Last Name
             </StyledTableCell>
             <StyledTableCell className={classes.head}>Course</StyledTableCell>
+            <StyledTableCell className={classes.head}>
+              Select eligible student
+            </StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
