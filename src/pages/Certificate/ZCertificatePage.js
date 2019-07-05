@@ -3,6 +3,7 @@ import ZCertificate from '../../components/certificates/ZCertificate';
 import {PDFViewer} from '@react-pdf/renderer';
 import ZpdfCertificate from '../../components/certificates/ZpdfCertificate';
 import './ZCertificatePage.css';
+import {Link} from 'react-router-dom';
 
 const ZCertificatePage = () => {
   return (
@@ -12,7 +13,9 @@ const ZCertificatePage = () => {
         <button className='button select-table-btn'>
           Send Certificate to student
         </button>
-        <button className='button select-back-btn'>Go back</button>
+        <Link to='/'>
+          <button className='button select-back-btn'>Go back</button>
+        </Link>
       </section>
       <PDFViewer className='size-pdf'>
         <ZpdfCertificate />

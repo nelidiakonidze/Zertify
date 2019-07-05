@@ -7,8 +7,6 @@ import {
   Image,
   StyleSheet,
 } from '@react-pdf/renderer';
-import {isAbsolute} from 'path';
-
 // Create Document Component
 class ZpdfCertificate extends React.Component {
   constructor(props) {
