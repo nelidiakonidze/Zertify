@@ -95,9 +95,9 @@ function ZCourseForm({listCourses}) {
         </ThemeProvider>
         <ThemeProvider theme={theme}>
           <FormControl className={classes.margin}>
-            <InputLabel htmlFor='age-customized-native-simple'>
+            {/* <InputLabel htmlFor='age-customized-native-simple'>
               Course Id
-            </InputLabel>
+            </InputLabel> */}
             <Select
               native
               className={classes.margin}
@@ -110,8 +110,7 @@ function ZCourseForm({listCourses}) {
               value={inputs.courseId}
               input={<BootstrapInput />}>
               <option disabled selected value>
-                {' '}
-                -- select an option --{' '}
+                Select a course
               </option>
               {listCourses &&
                 listCourses.map(course => (
