@@ -2,12 +2,12 @@
   background-color: #4caf50; /* Green */
   border: none;
   color: white;
-  padding: 16px 32px;
+  padding: 10px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 8px 14px;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   cursor: pointer;
@@ -24,8 +24,15 @@
 button:active {
   outline: none;
   border: none;
+  background-color: #ce5e23;
 }
 
 button:focus {
   outline: 0;
+}
+
+.select-back-btn {
+  background-color: #db3d44;
+  color: white;
+  border: 2px solid #db3d44;
 }

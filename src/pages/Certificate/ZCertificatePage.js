@@ -1,13 +1,25 @@
 import React from 'react';
-import ZCertificate from '../../components/ZCertificate';
+//import ZCertificate from '../../components/ZCertificate';
+import {PDFViewer} from '@react-pdf/renderer';
+import ZpdfCertificate from '../../components/certificates/ZpdfCertificate';
+import './ZCertificatePage.css';
 
 const ZCertificatePage = () => {
   return (
-    <div>
-      <section className='flex-certificate'>
+    <React.Fragment>
+      {/* <section className='flex-certificate'>
         <ZCertificate />
+      </section> */}
+      <section className='flex-btn'>
+        <button className='button select-table-btn'>
+          Send Certificate to student
+        </button>
+        <button className='button select-back-btn'>Go back</button>
       </section>
-    </div>
+      {/* <PDFViewer>
+        <ZpdfCertificate />
+      </PDFViewer> */}
+    </React.Fragment>
   );
 };
 
