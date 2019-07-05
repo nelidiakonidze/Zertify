@@ -6,9 +6,8 @@ import React from 'react';
 //template
 import {makeStyles, createMuiTheme, withStyles} from '@material-ui/core/styles';
 import {ThemeProvider} from '@material-ui/styles';
-import InputLabel from '@material-ui/core/InputLabel';
+//import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
-import NativeSelect from '@material-ui/core/NativeSelect';
 import InputBase from '@material-ui/core/InputBase';
 import FormControl from '@material-ui/core/FormControl';
 import TextField from '@material-ui/core/TextField';
