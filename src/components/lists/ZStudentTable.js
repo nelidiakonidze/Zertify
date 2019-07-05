@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../App.js';
 import {withStyles, makeStyles} from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -49,7 +48,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 // component structure
-function ZStudentTable({listStudents, onClickSelectBtn}) {
+function ZStudentTable({listStudents, selectStudent}) {
   const classes = useStyles();
   return (
     <Paper className={classes.root}>
@@ -85,7 +84,7 @@ function ZStudentTable({listStudents, onClickSelectBtn}) {
               <StyledTableCell>
                 <button
                   className='button select-table-btn'
-                  onClick={onClickSelectBtn}>
+                  onClick={() => selectStudent(student.id)}>
                   Select
                 </button>
               </StyledTableCell>
