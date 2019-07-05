@@ -13,8 +13,6 @@ import InputBase from '@material-ui/core/InputBase';
 import FormControl from '@material-ui/core/FormControl';
 import TextField from '@material-ui/core/TextField';
 import green from '@material-ui/core/colors/green';
-import ZButton from '../layout/ZButton';
-import './button.css';
 //hooks for the form
 import useZSForm from './useZSForm';
 import Svalidate from './SFormValidationRules';
@@ -123,11 +121,9 @@ function ZCourseForm({listCourses}) {
           </FormControl>
           {errors.courseId && <p>{errors.courseId}</p>}
         </ThemeProvider>
-        <ZButton>
-          <button className='btn--transparent' type='submit'>
-            Submit student
-          </button>
-        </ZButton>
+        <button className='button select-back-btn' type='submit'>
+          Submit student
+        </button>
       </form>
     </React.Fragment>
   );

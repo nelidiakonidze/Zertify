@@ -1,3 +1,6 @@
+/*****************
+**** Button for all components
+******************/
 .button {
   background-color: #4caf50; /* Green */
   border: 2px solid #4caf50;
@@ -21,21 +24,23 @@
   border: 2px solid #ff8e53;
 }
 
-button:active {
+.select-back-btn {
+  background-color: #db3d44;
+  color: white;
+  border: 2px solid #db3d44;
+}
+
+.button:active,
+.button:hover {
   outline: none;
-  border: none;
   background-color: white;
   border: 2px solid #ff8e53;
   color: #ff8e53;
 }
 
-button:focus {
-  outline: 0;
-  border: 2px solid #ff8e53;
-}
-
-.select-back-btn {
-  background-color: #db3d44;
-  color: white;
-  border: 2px solid #db3d44;
+.button:focus {
+  outline: none;
+  background-color: white;
+  border: 2px solid #4caf50;
+  color: #4caf50;
 }

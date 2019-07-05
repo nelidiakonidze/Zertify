@@ -8,7 +8,6 @@ import {makeStyles, createMuiTheme} from '@material-ui/core/styles';
 import {ThemeProvider} from '@material-ui/styles';
 import TextField from '@material-ui/core/TextField';
 import green from '@material-ui/core/colors/green';
-import ZButton from '../layout/ZButton';
 //hooks for the form
 import useZCForm from './useZCForm';
 import Cvalidate from './CFormValidationRules';
@@ -77,11 +76,9 @@ const ZCourseForm = () => {
           />
         </ThemeProvider>
         {errors.courseHours && <p>{errors.courseHours}</p>}
-        <ZButton>
-          <button className='btn--transparent' type='submit'>
-            Submit course
-          </button>
-        </ZButton>
+        <button className='button select-back-btn' type='submit'>
+          Submit course
+        </button>
       </form>
     </React.Fragment>
   );
