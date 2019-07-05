@@ -10,7 +10,10 @@ const ZStudentsPage = ({listStudents, onClickSelectBtn}) => {
       <ZSideNav />
       <section className='flex-students'>
         {/* getting state from app.js and then passing it to StudentTable */}
-        <ZStudentTable listStudents={listStudents} onClickSelectBtn={onClickSelectBtn} />
+        <ZStudentTable
+          listStudents={listStudents}
+          onClickSelectBtn={onClickSelectBtn}
+        />
         {/* <p>{JSON.stringify(listStudents)}</p> */}
         <ZFooter />
       </section>

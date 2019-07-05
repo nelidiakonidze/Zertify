@@ -6,15 +6,12 @@ import React from 'react';
 //template
 import {makeStyles, createMuiTheme, withStyles} from '@material-ui/core/styles';
 import {ThemeProvider} from '@material-ui/styles';
-import InputLabel from '@material-ui/core/InputLabel';
+//import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
-import NativeSelect from '@material-ui/core/NativeSelect';
 import InputBase from '@material-ui/core/InputBase';
 import FormControl from '@material-ui/core/FormControl';
 import TextField from '@material-ui/core/TextField';
 import green from '@material-ui/core/colors/green';
-import ZButton from '../layout/ZButton';
-import './button.css';
 //hooks for the form
 import useZSForm from './useZSForm';
 import Svalidate from './SFormValidationRules';
@@ -97,9 +94,9 @@ function ZCourseForm({listCourses}) {
         </ThemeProvider>
         <ThemeProvider theme={theme}>
           <FormControl className={classes.margin}>
-            <InputLabel htmlFor='age-customized-native-simple'>
+            {/* <InputLabel htmlFor='age-customized-native-simple'>
               Course Id
-            </InputLabel>
+            </InputLabel> */}
             <Select
               native
               className={classes.margin}
@@ -112,8 +109,7 @@ function ZCourseForm({listCourses}) {
               value={inputs.courseId}
               input={<BootstrapInput />}>
               <option disabled selected value>
-                {' '}
-                -- select an option --{' '}
+                Select a course
               </option>
               {listCourses &&
                 listCourses.map(course => (
@@ -123,11 +119,9 @@ function ZCourseForm({listCourses}) {
           </FormControl>
           {errors.courseId && <p>{errors.courseId}</p>}
         </ThemeProvider>
-        <ZButton>
-          <button className='btn--transparent' type='submit'>
-            Submit student
-          </button>
-        </ZButton>
+        <button className='button select-back-btn' type='submit'>
+          Submit student
+        </button>
       </form>
     </React.Fragment>
   );

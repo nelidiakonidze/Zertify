@@ -1,6 +1,6 @@
 import React from 'react';
 import ZSideNav from '../../components/layout/ZSideNav';
-import ZTemplate1 from '../../components/ZTemplate1';
+import ZTemplate1 from '../../components/templates/ZTemplate1';
 import ZFooter from '../../components/layout/ZFooter';
 import './ZTemplatesPage.css';
 import ZButton from '../../components/layout/ZButton';

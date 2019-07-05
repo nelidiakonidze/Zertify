@@ -15,11 +15,8 @@ class App extends React.Component {
     this.state = {
       listStudents: [],
       listCourses: [],
-      //activeStudent:'',
-      //listCourses: [],
       activeStudent: [],
       //activeCourse:''
-      selectedStudent: [],
     };
 
     this.handleSelectClickBtn = this.handleSelectClickBtn.bind(this);
@@ -49,10 +46,11 @@ class App extends React.Component {
       })
       .catch(error => console.log('error: ', error));
   }
-
+  //////////
+  // WIP //
+  /////////
   handleSelectClickBtn(e) {
     e.preventDefault();
-
     this.setState({activeStudent: this.state.listStudents[1].id});
     console.log('button clicked', this.state.listStudents[1].id);
   }

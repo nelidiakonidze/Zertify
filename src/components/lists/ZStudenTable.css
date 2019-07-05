@@ -1,13 +1,16 @@
+/*****************
+**** Button for all components
+******************/
 .button {
   background-color: #4caf50; /* Green */
-  border: none;
+  border: 2px solid #4caf50;
   color: white;
-  padding: 16px 32px;
+  padding: 10px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 8px 14px;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   cursor: pointer;
@@ -18,14 +21,26 @@
 .select-table-btn {
   background-color: #ff8e53;
   color: white;
-  border: 2px solid lightsalmon;
+  border: 2px solid #ff8e53;
 }
 
-button:active {
+.select-back-btn {
+  background-color: #db3d44;
+  color: white;
+  border: 2px solid #db3d44;
+}
+
+.button:active,
+.button:hover {
   outline: none;
-  border: none;
+  background-color: white;
+  border: 2px solid #ff8e53;
+  color: #ff8e53;
 }
 
-button:focus {
-  outline: 0;
+.button:focus {
+  outline: none;
+  background-color: white;
+  border: 2px solid #4caf50;
+  color: #4caf50;
 }
