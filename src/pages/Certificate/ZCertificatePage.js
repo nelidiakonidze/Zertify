@@ -6,15 +6,15 @@ import './ZCertificatePage.css';
 
 const ZCertificatePage = () => {
   return (
-    <div className='width-div'>
+    <div>
       {/* <ZCertificate /> */}
-      {/* <section className='flex-btn'>
+      <section className='flex-btn'>
         <button className='button select-table-btn'>
           Send Certificate to student
         </button>
         <button className='button select-back-btn'>Go back</button>
-      </section> */}
-      <PDFViewer>
+      </section>
+      <PDFViewer className='size-pdf'>
         <ZpdfCertificate />
       </PDFViewer>
     </div>

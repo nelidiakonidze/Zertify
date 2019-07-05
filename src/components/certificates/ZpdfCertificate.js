@@ -41,6 +41,10 @@ class ZpdfCertificate extends React.Component {
               </View>
             </View>
             <View style={styles.sectionRight}>
+              {/* <Image
+                style={styles.imageBackground}
+                src='https://cdn.pixabay.com/photo/2014/03/25/16/57/laurel-wreath-297675_960_720.png'
+              /> */}
               <Text style={styles.h1}> Certificate of completion</Text>
               <Text style={styles.p}>issued by EDERA on {this.state.date}</Text>
               <Text style={styles.p}> states that </Text>
@@ -89,7 +93,7 @@ const styles = StyleSheet.create({
   },
   sectionRight: {
     backgroundColor: '#E2EDF5',
-    padding: '100',
+    padding: '80',
     flexDirection: 'column',
     width: '75%',
     '@media max-width: 400': {
@@ -99,8 +103,17 @@ const styles = StyleSheet.create({
   image: {
     padding: '20',
   },
+  //   imageBackground: {
+  //     position: 'absolute',
+  //     right: '0',
+  //     top: '0',
+  //     zIndex: '3',
+  // minWidth: "100%",
+  //   minHeight: "100%",
+  //   display: "block",
+  //   },
   pLight: {
-    fontSize: '16',
+    fontSize: '14',
     color: 'white',
     paddingBottom: '10',
   },
@@ -115,9 +128,10 @@ const styles = StyleSheet.create({
     paddingBottom: '40',
   },
   h2: {
-    fontSize: '20',
+    fontSize: '30',
     color: '#0f5180',
-    paddingBottom: '35',
+    paddingBottom: '30',
+    paddingTop: '20',
   },
   p: {
     fontSize: '20',
