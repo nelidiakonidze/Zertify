@@ -75,7 +75,12 @@ class App extends React.Component {
               render={() => <ZFormPage listCourses={this.state.listCourses} />}
             />
             <Route path='/templates' component={ZTemplatesPage} />
-            <Route path='/certificate' component={ZCertifactePage} />
+            <Route
+              path='/certificate'
+              render={() => (
+                <ZCertifactePage selectedStudent={this.state.selectedStudent} />
+              )}
+            />
             <Route component={ZNoPage} />
           </Switch>
         </div>

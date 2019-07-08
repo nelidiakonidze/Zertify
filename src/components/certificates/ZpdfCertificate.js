@@ -39,19 +39,22 @@ class ZpdfCertificate extends React.Component {
               </View>
             </View>
             <View style={styles.sectionRight}>
-              {/* <Image
-                style={styles.imageBackground}
-                src='https://cdn.pixabay.com/photo/2014/03/25/16/57/laurel-wreath-297675_960_720.png'
-              /> */}
               <Text style={styles.h1}> Certificate of completion</Text>
               <Text style={styles.p}>issued by EDERA on {this.state.date}</Text>
               <Text style={styles.p}> states that </Text>
-              <Text style={styles.h2}> student name </Text>
+              <Text style={styles.h2}>
+                {this.props.selectedStudent.firstName}{' '}
+                {this.props.selectedStudent.lastName}
+              </Text>
               <Text style={styles.p}>
                 has successfully completed the online course:
               </Text>
-              <Text style={styles.h2}> course name</Text>
-              <Text style={styles.p}> of X hours</Text>
+              <Text style={styles.h2}>
+                {this.props.selectedStudent.courses[0].name}
+              </Text>
+              <Text style={styles.p}>
+                {this.props.selectedStudent.courses[0].hours} hours
+              </Text>
             </View>
           </View>
         </Page>
