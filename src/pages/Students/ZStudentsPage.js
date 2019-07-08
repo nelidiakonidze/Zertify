@@ -4,20 +4,18 @@ import ZStudentTable from '../../components/lists/ZStudentTable';
 import ZFooter from '../../components/layout/ZFooter';
 import './ZStudentsPage.css';
 
-const ZStudentsPage = ({listStudents, onClickSelectBtn}) => {
+const ZStudentsPage = ({listStudents, selectStudent}) => {
   return (
-    <div>
+    <React.Fragment>
       <ZSideNav />
       <section className='flex-students'>
-        {/* getting state from app.js and then passing it to StudentTable */}
         <ZStudentTable
           listStudents={listStudents}
-          onClickSelectBtn={onClickSelectBtn}
+          selectStudent={selectStudent}
         />
-        {/* <p>{JSON.stringify(listStudents)}</p> */}
         <ZFooter />
       </section>
-    </div>
+    </React.Fragment>
   );
 };
 

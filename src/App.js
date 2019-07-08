@@ -15,11 +15,10 @@ class App extends React.Component {
     this.state = {
       listStudents: [],
       listCourses: [],
-      activeStudent: [],
-      //activeCourse:''
+      selectedStudent: {},
     };
 
-    this.handleSelectClickBtn = this.handleSelectClickBtn.bind(this);
+    this.selectStudent = this.selectStudent.bind(this);
 
     //fetch data for students
     let urlStudents = 'https://zertify-server.herokuapp.com/api/students/';
@@ -46,13 +45,14 @@ class App extends React.Component {
       })
       .catch(error => console.log('error: ', error));
   }
-  //////////
-  // WIP //
-  /////////
-  handleSelectClickBtn(e) {
-    e.preventDefault();
-    this.setState({activeStudent: this.state.listStudents[1].id});
-    console.log('button clicked', this.state.listStudents[1].id);
+
+  /** update the state of the selected student in the list via its id (number)  */
+  selectStudent(id) {
+    const selectedStudent = this.state.listStudents.find(
+      student => student.id === id,
+    );
+    this.setState({selectedStudent});
+    //console.log('active student', selectedStudent);
   }
 
   render() {
@@ -66,7 +66,7 @@ class App extends React.Component {
               render={() => (
                 <ZStudentsPage
                   listStudents={this.state.listStudents}
-                  onClickSelectBtn={this.handleSelectClickBtn}
+                  selectStudent={this.selectStudent}
                 />
               )}
             />
