@@ -16,9 +16,14 @@ class App extends React.Component {
       listStudents: [],
       listCourses: [],
       selectedStudent: {},
+      selectedColor: 'red', // red by default
+      red: '#db3d44',
+      blue: '#02C8FA',
+      green: '#57B894',
     };
 
     this.selectStudent = this.selectStudent.bind(this);
+    this.selectTemplate = this.selectStudent.bind(this);
 
     //fetch data for students
     let urlStudents = 'https://zertify-server.herokuapp.com/api/students/';
@@ -54,6 +59,22 @@ class App extends React.Component {
     this.setState({selectedStudent});
     //console.log('active student', selectedStudent);
   }
+
+  //////////////////////////////////
+  /** update the state of the selected template via its css color class */
+  // selectTemplate() {}
+
+  // setColor() {
+  //   if (template one selected) {
+  //     return  selectedColor = green;
+  //   } else if  (template two selected) {
+  //     return selectedColor = blue
+  //   } else if (template three selected) {
+  //     return selectedColor = red
+  //   } else { return red }
+  //   this.setState({selectedColor});
+  // }
+  //////////////////////////////////
 
   render() {
     return (

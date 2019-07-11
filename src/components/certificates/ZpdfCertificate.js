@@ -67,7 +67,7 @@ export default ZpdfCertificate;
 
 const styles = StyleSheet.create({
   page: {
-    backgroundColor: '#db3d44',
+    backgroundColor: '#db3d44', // red
   },
   container: {
     flex: 1,
