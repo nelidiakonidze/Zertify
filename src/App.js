@@ -65,18 +65,19 @@ class App extends React.Component {
   /** update the state of the selected template via its css color style */
   selectTemplate(index) {
     this.setState({selectedTemplate: index});
-    this.setColor();
+    this.setColor(index);
   }
 
-  setColor() {
-    if (this.state.selectedTemplate === 0) {
-      this.setState({selectedColor: '#db3d44'}); //red
-    } else if (this.state.selectedTemplate === 1) {
-      this.setState({selectedColor: '#02C8FA'}); //blue
-    } else if (this.state.selectedTemplate === 2) {
-      this.setState({selectedColor: '#57B894'}); //green
-    } else {
-      return this.setState({selectedColor: '#57B894'}); //green
+  setColor(index) {
+    switch (index) {
+      case 0:
+        return this.setState({selectedColor: '#db3d44'}); //red
+      case 1:
+        return this.setState({selectedColor: '#02C8FA'}); //blue
+      case 2:
+        return this.setState({selectedColor: '#57B894'}); //green
+      default:
+        return this.setState({selectedColor: '#57B894'}); //green
     }
   }
 

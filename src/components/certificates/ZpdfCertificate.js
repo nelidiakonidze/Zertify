@@ -73,6 +73,7 @@ class ZpdfCertificate extends React.Component {
 export default ZpdfCertificate;
 
 const styles = StyleSheet.create({
+  // page + sectionLeft : background color defined in inline style with props
   container: {
     flex: 1,
     flexDirection: 'row',
