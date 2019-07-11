@@ -38,6 +38,7 @@
     ]
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^1.6.0",
     "react-alice-carousel": "^1.14.0",
     "tachyons": "^4.11.1"
   }
