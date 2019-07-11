@@ -44,3 +44,12 @@
   border: 2px solid #4caf50;
   color: #4caf50;
 }
+
+.delete-table-btn {
+  background-color: red;
+  border: red 1px solid;
+}
+
+.delete-table-btn:active,
+.button:hover {
+}
