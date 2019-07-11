@@ -1,9 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './ZTemplate1.css';
 
 const ZTemplate1 = ({selectedTemplate, selectTemplate}) => {
-  // let [selectedTemplate, selectTemplate] = useState(0);
-
   return (
     <div className='cc-slider'>
       <div className='cc-list draggable'>

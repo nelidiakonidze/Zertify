@@ -16,8 +16,8 @@ class App extends React.Component {
       listStudents: [],
       listCourses: [],
       selectedStudent: {},
-      selectedTemplate: 1,
-      // selectedColor: 'red', // red by default
+      selectedTemplate: 0, // first template by default
+      selectedColor: '#db3d44', // red by default
       // red: '#db3d44',
       // blue: '#02C8FA',
       // green: '#57B894',
@@ -25,6 +25,7 @@ class App extends React.Component {
 
     this.selectStudent = this.selectStudent.bind(this);
     this.selectTemplate = this.selectTemplate.bind(this);
+    this.setColor = this.setColor.bind(this);
 
     //fetch data for students
     let urlStudents = 'https://zertify-server.herokuapp.com/api/students/';
@@ -61,25 +62,27 @@ class App extends React.Component {
     //console.log('active student', selectedStudent);
   }
 
-  //////////////////////////////////
-  /** update the state of the selected template via its css color class */
+  /** update the state of the selected template via its css color style */
   selectTemplate(index) {
     this.setState({selectedTemplate: index});
+    this.setColor();
   }
 
-  // setColor() {
-  //   if (template one selected) {
-  //     return  selectedColor = green;
-  //   } else if  (template two selected) {
-  //     return selectedColor = blue
-  //   } else if (template three selected) {
-  //     return selectedColor = red
-  //   } else { return red }
-  //   this.setState({selectedColor});
-  // }
-  //////////////////////////////////
+  setColor() {
+    if (this.state.selectedTemplate === 0) {
+      this.setState({selectedColor: '#db3d44'}); //red
+    } else if (this.state.selectedTemplate === 1) {
+      this.setState({selectedColor: '#02C8FA'}); //blue
+    } else if (this.state.selectedTemplate === 2) {
+      this.setState({selectedColor: '#57B894'}); //green
+    } else {
+      return this.setState({selectedColor: '#57B894'}); //green
+    }
+  }
 
   render() {
+    console.log('color render', this.state.selectedColor);
+
     return (
       <Router>
         <div className='App'>
@@ -110,7 +113,10 @@ class App extends React.Component {
             <Route
               path='/certificate'
               render={() => (
-                <ZCertifactePage selectedStudent={this.state.selectedStudent} />
+                <ZCertifactePage
+                  selectedStudent={this.state.selectedStudent}
+                  selectedColor={this.state.selectedColor}
+                />
               )}
             />
             <Route component={ZNoPage} />
