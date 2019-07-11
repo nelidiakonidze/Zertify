@@ -1,24 +1,25 @@
 import React, {useState} from 'react';
 import './ZTemplate1.css';
-const ZTemplate1 = () => {
-  let [selectedTemplate, SelectTemplate] = useState(0);
+
+const ZTemplate1 = ({selectedTemplate, selectTemplate}) => {
+  // let [selectedTemplate, selectTemplate] = useState(0);
 
   return (
     <div className='cc-slider'>
       <div className='cc-list draggable'>
         <div
           className={`cc template1 ${selectedTemplate === 0 ? 'active' : ' '}`}
-          onClick={() => SelectTemplate(0)}
+          onClick={() => selectTemplate(0)}
         />
 
         <div
           className={`cc template2 ${selectedTemplate === 1 ? 'active' : ' '}`}
-          onClick={() => SelectTemplate(1)}
+          onClick={() => selectTemplate(1)}
         />
 
         <div
           className={`cc template3 ${selectedTemplate === 2 ? 'active' : ' '}`}
-          onClick={() => SelectTemplate(2)}
+          onClick={() => selectTemplate(2)}
         />
       </div>
       <ul className='cc-dots'>

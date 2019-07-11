@@ -6,12 +6,15 @@ import './ZTemplatesPage.css';
 import ZButton from '../../components/layout/ZButton';
 import {Link} from 'react-router-dom';
 
-const ZTemplatePage = () => {
+const ZTemplatePage = ({selectedTemplate, selectTemplate}) => {
   return (
     <div>
       <ZSideNav />
       <section className='flex-templates'>
-        <ZTemplate1 />
+        <ZTemplate1
+          selectTemplate={selectTemplate}
+          selectedTemplate={selectedTemplate}
+        />
         <ZButton>
           <Link to='/certificate'>Generate Certificate</Link>
         </ZButton>

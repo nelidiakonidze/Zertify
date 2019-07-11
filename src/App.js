@@ -16,14 +16,15 @@ class App extends React.Component {
       listStudents: [],
       listCourses: [],
       selectedStudent: {},
-      selectedColor: 'red', // red by default
-      red: '#db3d44',
-      blue: '#02C8FA',
-      green: '#57B894',
+      selectedTemplate: 1,
+      // selectedColor: 'red', // red by default
+      // red: '#db3d44',
+      // blue: '#02C8FA',
+      // green: '#57B894',
     };
 
     this.selectStudent = this.selectStudent.bind(this);
-    this.selectTemplate = this.selectStudent.bind(this);
+    this.selectTemplate = this.selectTemplate.bind(this);
 
     //fetch data for students
     let urlStudents = 'https://zertify-server.herokuapp.com/api/students/';
@@ -62,7 +63,9 @@ class App extends React.Component {
 
   //////////////////////////////////
   /** update the state of the selected template via its css color class */
-  // selectTemplate() {}
+  selectTemplate(index) {
+    this.setState({selectedTemplate: index});
+  }
 
   // setColor() {
   //   if (template one selected) {
@@ -95,7 +98,15 @@ class App extends React.Component {
               path='/form'
               render={() => <ZFormPage listCourses={this.state.listCourses} />}
             />
-            <Route path='/templates' component={ZTemplatesPage} />
+            <Route
+              path='/templates'
+              render={() => (
+                <ZTemplatesPage
+                  selectTemplate={this.selectTemplate}
+                  selectedTemplate={this.state.selectedTemplate}
+                />
+              )}
+            />
             <Route
               path='/certificate'
               render={() => (
