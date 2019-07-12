@@ -10,12 +10,14 @@ import ZCertifactePage from './pages/Certificate/ZCertificatePage';
 import './App.css';
 
 class App extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props)
     this.state = {
       listStudents: [],
       listCourses: [],
       selectedStudent: {},
+      loadingStudents: true,
+      loadingCourses: true,
     };
 
     this.selectStudent = this.selectStudent.bind(this);
@@ -27,6 +29,8 @@ class App extends React.Component {
       .then(data => {
         this.setState({
           listStudents: data.students,
+          loadingStudents: false,
+        
           //listCourses: data.courses
         });
         console.log('fetch students data ', this.state.listStudents);
@@ -40,6 +44,7 @@ class App extends React.Component {
       .then(data => {
         this.setState({
           listCourses: data.courses,
+          loadingCourses: false,
         });
         console.log('fetch courses data ', this.state.listCourses);
       })

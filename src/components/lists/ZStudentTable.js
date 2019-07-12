@@ -7,6 +7,8 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import './ZStudenTable.css';
+import CircularProgress from '@material-ui/core/CircularProgress';
+
 
 // component style : theme for cells
 const StyledTableCell = withStyles(theme => ({
@@ -48,8 +50,16 @@ const useStyles = makeStyles(theme => ({
 }));
 
 // component structure
+function pageload(isLoading) {
+  return (isLoading ? true : false);
+}
+
 function ZStudentTable({listStudents, selectStudent}) {
   const classes = useStyles();
+  const isLoading = pageload() 
+
+
+
   return (
     <Paper className={classes.root}>
       <Table className={classes.table}>
