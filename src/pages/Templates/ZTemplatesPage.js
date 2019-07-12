@@ -12,7 +12,7 @@ const ZTemplatePage = () => {
       <ZSideNav />
       <section className='flex-templates'>
         <ZTemplate1 />
-        <ZButton>
+        <ZButton className='btn-certificate'>
           <Link to='/certificate'>Generate Certificate</Link>
         </ZButton>
         <ZFooter />
