@@ -44,12 +44,60 @@
   border: 2px solid #4caf50;
   color: #4caf50;
 }
-
-.delete-table-btn {
-  background-color: red;
-  border: red 1px solid;
+.table {
+  margin-left: 10vh;
+  margin-right: 60vh;
+  margin-top: 4vh;
+}
+.title {
+  margin-left: 40vh;
+  margin-right: 40vh;
+  margin-top: 5vh;
+}
+@media (max-width: 1440px) {
+  .table {
+    width: 80vh;
+    height: auto;
+    margin-left: 15vh;
+    margin-top: 0vh;
+  }
+  .title {
+    margin-top: 1vh;
+  }
+}
+@media (max-width: 1024px) {
+  .table {
+    width: 70vh;
+    height: auto;
+    margin-left: 25vh;
+    margin-top: 1%;
+  }
 }
 
-/* .delete-table-btn:active,
-.button:hover {
-} */
+@media (max-width: 768px) {
+  .table {
+    width: 55vh;
+    height: 50vh;
+    margin-left: 32vh;
+  }
+}
+
+@media (max-width: 375px) {
+  .table {
+    width: 20vh;
+    height: 40vh;
+    margin-left: 50vh;
+  }
+  input[type='text'],
+  textarea {
+    width: 35%;
+  }
+}
+
+@media (max-width: 320px) {
+  .table {
+    width: 19vh;
+    height: 40vh;
+    margin-left: 50vh;
+  }
+}
