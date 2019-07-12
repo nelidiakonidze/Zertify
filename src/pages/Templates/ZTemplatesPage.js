@@ -15,7 +15,7 @@ const ZTemplatePage = ({selectedTemplate, selectTemplate}) => {
           selectTemplate={selectTemplate}
           selectedTemplate={selectedTemplate}
         />
-        <ZButton>
+        <ZButton className='btn-certificate'>
           <Link to='/certificate'>Generate Certificate</Link>
         </ZButton>
         <ZFooter />

@@ -8,9 +8,11 @@ const ZButton = styled(ButtonBase)({
   borderRadius: 3,
   boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
   color: 'white',
-  height: 48,
+  height: 58,
+  width: 120,
   padding: '0 10px',
-  margin: 40,
+  margin: 0,
+  justifyContent: 'center',
 });
 
 // Children props make it possible to write a new title in the button each time you reuse it
