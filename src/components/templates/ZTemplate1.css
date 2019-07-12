@@ -1,188 +1,77 @@
-
-/* body {
-  background-color: #a3ccff;
-  background: #e088b1;
-  background: linear-gradient(to right, #e088b1 0%, #a1dbff 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e088b1', endColorstr='#a1dbff',GradientType=1 );
-  padding: 100px;
-} */
-
-
 .template1 {
-
-  background-image: url("https://i.imgur.com/bGPq09E.png");
+  background-image: url('https://i.imgur.com/vnaYhhc.png');
   background-size: cover;
- 
 }
 
 .template2 {
-
-  background-image: url("https://i.imgur.com/bGPq09E.png");
+  background-image: url('https://i.imgur.com/mZTdBwO.png');
   background-size: cover;
-
 }
 
-.template3{
-
-  background-image: url("https://i.imgur.com/bGPq09E.png");
+.template3 {
+  background-image: url('https://i.imgur.com/o93R6r7.png');
   background-size: cover;
-
 }
-
 
 .cc-slider {
-  width: 1200px;
-  height: 60vh;
-  margin: auto;
-
-  background-color:transparent;
+  width: 90vw;
+  height: auto;
+  background-color: transparent;
   border-radius: 4px;
-  padding: 4px 20px 0 20px;
 }
-/* inblock display the cards */
+
 .cc-slider .cc-list > div {
   display: inline-block;
   margin-left: 0px;
 }
- 
-.cc-slider .cc-list > div:first-child {
-  margin-left: 0;
-}
 
 .cc-slider .cc-dots {
   list-style: none;
-  padding: 0;
+  padding: 10px;
   margin: 0;
   text-align: center;
 }
 .cc-slider .cc-dots > li {
   display: inline-block;
 }
+
 .cc-slider .cc-dots > li button {
   width: 7px;
   height: 7px;
-  background-color: #ebf0f7;
+  background-color: grey;
   border: none;
   border-radius: 7px;
   padding: 0;
   margin: 0 5px;
   outline: none;
 }
+
 .cc-slider .cc-dots > li.active button {
   width: 14px;
   background-color: #ce0059;
 }
 
 .cc {
-
-  width: 270px;
-  height: 170px;
+  width: 400px;
+  height: 280px;
   border-radius: 4px;
-  filter: grayscale(100%);
-
+  filter: grayscale(75%);
   mix-blend-mode: luminosity;
-  /* background: #026ac9; */
   cursor: pointer;
-  /* background: linear-gradient(135deg, #026ac9 0%, #ce0029 100%); */
-  /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#026ac9', endColorstr='#ce0029',GradientType=1 ); */
   position: relative;
   overflow: hidden;
-  -webkit-transform: scale(0.8);
   transform: scale(0.8);
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  transition: -webkit-transform cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.5s;
   transition: transform cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.5s;
-  transition: transform cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.5s,
-    -webkit-transform cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.5s;
+  box-shadow: 10px 10px 30px -8px rgba(0, 0, 0, 0.4);
 }
 
-
-.cc:hover:before {
-  box-shadow: inset 0 0 300px rgba(255, 255, 255, 0.25);
- }
-/* .cc:before {
-  position: absolute;
-  content: '';
-
-  background: linear-gradient(135deg, #12f8fc 0%, #f900a8 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#12f8fc', endColorstr='#f900a8',GradientType=1 );
-  box-shadow: inset 0 0 150px rgba(255, 255, 255, 0.25);
-  mix-blend-mode: hard-light;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-} */
-/* */
-/* .cc:after {
-  position: absolute;
-  /* content: ''; */
-  /* background-color: #ce0058; */
-  /* -webkit-transform: skewX(-30deg) translateX(150px);
-  transform: skewX(-30deg) translateX(150px);
-  mix-blend-mode: luminosity;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-*/
 .cc:hover {
   filter: opacity(80%);
- 
 }
+
 .cc.active {
-  /* mix-blend-mode: normal; */
-  -webkit-transform: scale(1);
   filter: none;
   transform: scale(1);
-  /* transition : all .2s ease-in-out; */
-} 
-.cc .cc-wrapper {
-  padding: 15px;
-  position: relative;
-  z-index: 2; 
+  box-shadow: 10px 10px 30px -8px rgba(0, 0, 0, 0.7);
 }
-/* /* .cc .cc-wrapper:before {
-  position: absolute;
-  /* content: '';
-  background-color: #b50751; */
-  /* -webkit-transform: skewX(-75deg) translateX(355px) scale(1.8);
-  transform: skewX(-75deg) translateX(355px) scale(1.8);
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0; */ 
-/* } */
-/* .cc .cc-wrapper:after {
-  position: absolute;
-  /* content: '';
-  background-color: #81073b; */
-  /* -webkit-transform: skewX(-60deg) translateX(365px) scale(1.8);
-  transform: skewX(-60deg) translateX(365px) scale(1.8);
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  mix-blend-mode: saturation;
-  opacity: 0.5;
-}  */  
-
-
-
-
-
-/* 
-create a block .card
-with title, paragraph
-.card --red
-.card --blue
-.card --yellow
-
-
-*/

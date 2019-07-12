@@ -26,9 +26,16 @@ class ZpdfCertificate extends React.Component {
   render() {
     return (
       <Document>
-        <Page size='A4' orientation='landscape' style={styles.page}>
+        <Page
+          size='A4'
+          orientation='landscape'
+          style={{backgroundColor: this.props.selectedColor}}>
           <View style={styles.container}>
-            <View style={styles.sectionLeft}>
+            <View
+              style={[
+                styles.sectionLeft,
+                {backgroundColor: this.props.selectedColor},
+              ]}>
               <Image
                 style={styles.image}
                 src='https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/spaces%2F-LWNQxQf-dm-dr94dDMj%2Favatar.png?generation=1547672003797954&alt=media'
@@ -66,9 +73,7 @@ class ZpdfCertificate extends React.Component {
 export default ZpdfCertificate;
 
 const styles = StyleSheet.create({
-  page: {
-    backgroundColor: '#db3d44',
-  },
+  // page + sectionLeft : background color defined in inline style with props
   container: {
     flex: 1,
     flexDirection: 'row',
@@ -82,7 +87,6 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
   },
   sectionLeft: {
-    backgroundColor: '#db3d44',
     flexDirection: 'column',
     width: '25%',
     padding: '10',

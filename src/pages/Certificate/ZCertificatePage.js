@@ -4,7 +4,7 @@ import ZpdfCertificate from '../../components/certificates/ZpdfCertificate';
 import './ZCertificatePage.css';
 import {Link} from 'react-router-dom';
 
-const ZCertificatePage = ({selectedStudent}) => {
+const ZCertificatePage = ({selectedStudent, selectedColor}) => {
   return (
     <div>
       <section className='flex-btn'>
@@ -16,7 +16,10 @@ const ZCertificatePage = ({selectedStudent}) => {
         </Link>
       </section>
       <PDFViewer className='size-pdf'>
-        <ZpdfCertificate selectedStudent={selectedStudent} />
+        <ZpdfCertificate
+          selectedStudent={selectedStudent}
+          selectedColor={selectedColor}
+        />
       </PDFViewer>
     </div>
   );
