@@ -1,5 +1,7 @@
 .footer {
-  position: absolute;
+  display: flex;
+  justify-content: center;
+  position: fixed;
   left: 0px;
   bottom: 0px;
   height: 30px;
@@ -12,4 +14,27 @@
 }
 .footer-link:visited {
   color: purple;
+}
+@media (max-width: 1024px) {
+  .footer {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 375px) {
+  .footer {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 320px) {
+  .footer {
+    margin-bottom: 0;
+  }
 }
