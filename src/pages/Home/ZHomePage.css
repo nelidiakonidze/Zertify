@@ -2,14 +2,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
+  justify-content: center;
   /* add a padding to not be overlapped by SideBar (64px large) + 30px padding*/
-  padding-left: 100px;
-  padding-right: 56px;
+  padding-left: 94px;
+  padding-right: 30px;
   height: 100vh;
-  position: fixed;
+  /* position: fixed;  */
 }
 
+/* 
 @media (max-width: 1024px) {
   .flex-home {
     width: 100%;
@@ -46,4 +47,4 @@
     font-size: 0.7rem;
     height: 100vh;
   }
-}
+} */

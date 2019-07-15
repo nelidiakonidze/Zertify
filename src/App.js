@@ -17,9 +17,6 @@ class App extends React.Component {
       selectedStudent: {},
       selectedTemplate: 0, // first template by default
       selectedColor: '#db3d44', // red by default
-      // red: '#db3d44',
-      // blue: '#02C8FA',
-      // green: '#57B894',
     };
 
     this.selectStudent = this.selectStudent.bind(this);

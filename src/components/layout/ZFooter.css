@@ -2,20 +2,18 @@
   display: flex;
   justify-content: center;
   position: fixed;
-  left: 0px;
   bottom: 0px;
-  height: 30px;
-  width: 100%;
   color: orange;
   padding: 30px;
+  padding-right: 0;
 }
-.footer-link:link {
+.footer__link:link {
   color: black;
 }
-.footer-link:visited {
+.footer__link:visited {
   color: purple;
 }
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
   .footer {
     margin-bottom: 0;
   }
@@ -37,4 +35,4 @@
   .footer {
     margin-bottom: 0;
   }
-}
+} */

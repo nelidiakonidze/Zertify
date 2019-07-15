@@ -10,8 +10,8 @@ const ZHomePage = () => {
       <ZSideNav />
       <section className='flex-home'>
         <ZSplashScreen />
+        <ZFooter />
       </section>
-      <ZFooter />
     </div>
   );
 };
