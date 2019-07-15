@@ -1,13 +1,12 @@
 import React from 'react';
 import {Route, Switch, BrowserRouter as Router} from 'react-router-dom';
-import ZFormPage from './pages/Form2/ZFormPage';
+import ZFormPage from './pages/Form/ZFormPage';
 import ZHomePage from './pages/Home/ZHomePage';
 import ZStudentsPage from './pages/Students/ZStudentsPage';
 // import ZCoursesPage from './pages/Courses/ZCoursesPage';
 import ZTemplatesPage from './pages/Templates/ZTemplatesPage';
 import ZNoPage from './pages/NoPage/ZNoPage';
 import ZCertifactePage from './pages/Certificate/ZCertificatePage';
-import './App.css';
 
 class App extends React.Component {
   constructor() {
@@ -18,9 +17,6 @@ class App extends React.Component {
       selectedStudent: {},
       selectedTemplate: 0, // first template by default
       selectedColor: '#db3d44', // red by default
-      // red: '#db3d44',
-      // blue: '#02C8FA',
-      // green: '#57B894',
     };
 
     this.selectStudent = this.selectStudent.bind(this);
@@ -70,10 +66,16 @@ class App extends React.Component {
         console.log(data);
         this.setState(state => {
           return {
-            listStudents: state.listStudents.filter(student => student.id !== id),
+            listStudents: state.listStudents.filter(
+              student => student.id !== id,
+            ),
           };
         });
-        window.confirm(`Are you sure to delete ${data.student.firstName} ${data.student.lastName}`);
+        window.confirm(
+          `Are you sure to delete ${data.student.firstName} ${
+            data.student.lastName
+          }`,
+        );
       })
       .catch(error => console.log(error));
     console.log('backend is calling');
@@ -99,7 +101,9 @@ class App extends React.Component {
   }
 
   selectStudent(id) {
-    const selectedStudent = this.state.listStudents.find(student => student.id === id);
+    const selectedStudent = this.state.listStudents.find(
+      student => student.id === id,
+    );
     this.setState({selectedStudent});
     //console.log('active student', selectedStudent);
   }
@@ -122,7 +126,10 @@ class App extends React.Component {
                 />
               )}
             />
-            <Route path='/form' render={() => <ZFormPage listCourses={this.state.listCourses} />} />
+            <Route
+              path='/form'
+              render={() => <ZFormPage listCourses={this.state.listCourses} />}
+            />
             <Route
               path='/templates'
               render={() => (

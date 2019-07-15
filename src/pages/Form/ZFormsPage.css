@@ -7,3 +7,17 @@
   padding-left: 94px;
   padding-right: 30px;
 }
+
+.flex-form .flex-main {
+  min-height: calc(100vh - 45px);
+}
+
+.flex-form h1 {
+  font-size: 2rem;
+  margin: 10px;
+}
+.flex-form h2 {
+  font-size: 1.5rem;
+  margin: 10px;
+  margin-top: 50px;
+}

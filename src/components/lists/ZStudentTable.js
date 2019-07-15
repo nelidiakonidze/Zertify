@@ -33,8 +33,8 @@ const StyledTableRow = withStyles(theme => ({
 // component style
 const useStyles = makeStyles(theme => ({
   root: {
-    height: 600,
-    width: '150%',
+    maxHeight: '70vh',
+    width: '85vw',
     marginTop: theme.spacing.unit * 3,
     overflow: 'auto',
     justifyContent: 'center',
@@ -47,15 +47,28 @@ const useStyles = makeStyles(theme => ({
     position: 'sticky',
     top: 0,
   },
+  h1: {
+    fontSize: '2rem',
+    margin: '10px',
+  },
+  container: {
+    minHeight: 'calc(100vh - 45px)',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 }));
 
 // component structure
 function ZStudentTable({listStudents, selectStudent, deleteOnClick}) {
   const classes = useStyles();
   return (
-    <React.Fragment>
-      <h1 className='title'>Eligible students</h1>
-      <div className='table'>
+    <div className={classes.container}>
+      <h1 className={classes.h1}>
+        Select the eligible students for a certification
+      </h1>
+      <div>
         <Paper className={classes.root}>
           <Table className={classes.table}>
             <TableHead>
@@ -105,7 +118,7 @@ function ZStudentTable({listStudents, selectStudent, deleteOnClick}) {
           </Table>
         </Paper>
       </div>
-    </React.Fragment>
+    </div>
   );
 }
 

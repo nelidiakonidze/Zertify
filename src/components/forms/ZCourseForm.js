@@ -11,22 +11,13 @@ import green from '@material-ui/core/colors/green';
 //hooks for the form
 import useZCForm from './useZCForm';
 import Cvalidate from './CFormValidationRules';
+import './ZForm.css';
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
   margin: {
     margin: theme.spacing(1),
   },
 }));
-
-const theme = createMuiTheme({
-  palette: {
-    primary: green,
-  },
-});
 
 //to keep the style of this function AND have state we must use hooks
 // tutorial link : https://upmostly.com/tutorials/form-validation-using-custom-react-hooks/
@@ -47,8 +38,8 @@ const ZCourseForm = () => {
 
   return (
     <React.Fragment>
-      <form className={classes.root} onSubmit={handleSubmit}>
-        <ThemeProvider theme={theme}>
+      <form className='flex-inputs' onSubmit={handleSubmit}>
+        <ThemeProvider>
           <TextField
             className={classes.margin}
             label='Course'
@@ -62,7 +53,7 @@ const ZCourseForm = () => {
           />
         </ThemeProvider>
         {errors.courseName && <p>{errors.courseName}</p>}
-        <ThemeProvider theme={theme}>
+        <ThemeProvider>
           <TextField
             className={classes.margin}
             label='Hours'
