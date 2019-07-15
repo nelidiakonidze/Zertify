@@ -60,10 +60,18 @@ function ZStudentTable({listStudents, selectStudent, deleteOnClick}) {
           <Table className={classes.table}>
             <TableHead>
               <TableRow>
-                <StyledTableCell className={classes.head}>First Name</StyledTableCell>
-                <StyledTableCell className={classes.head}>Last Name</StyledTableCell>
-                <StyledTableCell className={classes.head}>Course</StyledTableCell>
-                <StyledTableCell className={classes.head}>Select eligible student</StyledTableCell>
+                <StyledTableCell className={classes.head}>
+                  First Name
+                </StyledTableCell>
+                <StyledTableCell className={classes.head}>
+                  Last Name
+                </StyledTableCell>
+                <StyledTableCell className={classes.head}>
+                  Course
+                </StyledTableCell>
+                <StyledTableCell className={classes.head}>
+                  Select eligible student
+                </StyledTableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -72,7 +80,9 @@ function ZStudentTable({listStudents, selectStudent, deleteOnClick}) {
                   <StyledTableCell>
                     {JSON.stringify(student.firstName).slice(1, -1)}
                   </StyledTableCell>
-                  <StyledTableCell>{JSON.stringify(student.lastName).slice(1, -1)}</StyledTableCell>
+                  <StyledTableCell>
+                    {JSON.stringify(student.lastName).slice(1, -1)}
+                  </StyledTableCell>
                   {student.courses.map(course => (
                     <StyledTableCell key={course.id}>
                       {JSON.stringify(course.name).slice(1, -1)}
@@ -84,7 +94,10 @@ function ZStudentTable({listStudents, selectStudent, deleteOnClick}) {
                       onClick={() => selectStudent(student.id)}>
                       Select
                     </button>
-                    <DeleteIcon key={student.id} onClick={() => deleteOnClick(student.id)} />
+                    <DeleteIcon
+                      key={student.id}
+                      onClick={() => deleteOnClick(student.id)}
+                    />
                   </StyledTableCell>
                 </StyledTableRow>
               ))}

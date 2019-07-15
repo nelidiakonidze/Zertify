@@ -57,7 +57,7 @@ function ZCourseForm({listCourses}) {
 
   //initial values + callback
   const {inputs, handleInputChange, handleSubmit, errors} = useZSForm(
-    {studentName: '', studentLastname: '', courseId: ''},
+    {studentName: '', studentLastname: '', studentEmail: '', courseId: ''},
     studentCreated,
     Svalidate,
   );
@@ -91,6 +91,20 @@ function ZCourseForm({listCourses}) {
             value={inputs.studentLastname}
           />
           {errors.studentLastname && <p>{errors.studentLastname}</p>}
+        </ThemeProvider>
+        <ThemeProvider theme={theme}>
+          <TextField
+            require
+            className={classes.margin}
+            label='Email'
+            variant='outlined'
+            id='mui-theme-provider-outlined-input'
+            name='studentEmail'
+            type='email'
+            onChange={handleInputChange}
+            value={inputs.studentEmail}
+          />
+          {errors.studentEmail && <p>{errors.studentEmail}</p>}
         </ThemeProvider>
         <ThemeProvider theme={theme}>
           <FormControl className={classes.margin}>
