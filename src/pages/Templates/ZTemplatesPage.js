@@ -11,7 +11,7 @@ const ZTemplatePage = ({selectedTemplate, selectTemplate}) => {
     <div>
       <ZSideNav />
       <section className='flex-templates'>
-        <section className='flex-main-templates'>
+        <section className='flex-main'>
           <h1>Select a template for the certificate</h1>
           <ZTemplate1
             selectTemplate={selectTemplate}

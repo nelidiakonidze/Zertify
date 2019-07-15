@@ -14,7 +14,7 @@
 }
 
 .cc-slider {
-  width: 90vw;
+  width: 85vw;
   height: auto;
   background-color: transparent;
   border-radius: 4px;
@@ -22,7 +22,7 @@
 
 .cc-slider .cc-list > div {
   display: inline-block;
-  margin-left: 0px;
+  margin: 0px;
 }
 
 .cc-slider .cc-dots {

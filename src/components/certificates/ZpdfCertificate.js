@@ -41,8 +41,9 @@ class ZpdfCertificate extends React.Component {
                 src='https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/spaces%2F-LWNQxQf-dm-dr94dDMj%2Favatar.png?generation=1547672003797954&alt=media'
               />
               <View style={styles.bottom}>
-                <Text style={styles.pLight}>Edera - Online course company</Text>
-                <Text style={styles.pLight}> https://www.ed-era.com/</Text>
+                <Text style={styles.pLight}>Edera </Text>
+                <Text style={styles.pLight}>Online course company</Text>
+                <Text style={styles.pLight}>https://www.ed-era.com/</Text>
               </View>
             </View>
             <View style={styles.sectionRight}>
@@ -89,8 +90,8 @@ const styles = StyleSheet.create({
   sectionLeft: {
     flexDirection: 'column',
     width: '25%',
-    padding: '10',
-    paddingRight: '20',
+    padding: 10,
+    paddingRight: 20,
     '@media max-width: 400': {
       width: '100%',
     },
@@ -98,7 +99,7 @@ const styles = StyleSheet.create({
   },
   sectionRight: {
     backgroundColor: '#E2EDF5',
-    padding: '80',
+    padding: 60,
     flexDirection: 'column',
     width: '75%',
     '@media max-width: 400': {
@@ -106,21 +107,12 @@ const styles = StyleSheet.create({
     },
   },
   image: {
-    padding: '20',
+    padding: 20,
   },
-  //   imageBackground: {
-  //     position: 'absolute',
-  //     right: '0',
-  //     top: '0',
-  //     zIndex: '3',
-  // minWidth: "100%",
-  //   minHeight: "100%",
-  //   display: "block",
-  //   },
   pLight: {
-    fontSize: '14',
+    fontSize: 14,
     color: 'white',
-    paddingBottom: '10',
+    paddingBottom: 10,
   },
   bottom: {
     position: 'absolute',
