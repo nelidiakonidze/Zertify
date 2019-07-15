@@ -1,15 +1,15 @@
 .template1 {
-  background-image: url('https://i.imgur.com/vnaYhhc.png');
+  background-image: url('https://i.imgur.com/NH5juof.png');
   background-size: cover;
 }
 
 .template2 {
-  background-image: url('https://i.imgur.com/mZTdBwO.png');
+  background-image: url('https://i.imgur.com/vQpoJ3a.png');
   background-size: cover;
 }
 
 .template3 {
-  background-image: url('https://i.imgur.com/o93R6r7.png');
+  background-image: url('https://i.imgur.com/jrsf3h6.png');
   background-size: cover;
 }
 
@@ -55,7 +55,7 @@
   width: 500px;
   height: 380px;
   border-radius: 4px;
-  filter: grayscale(75%);
+  filter: grayscale(50%);
   mix-blend-mode: luminosity;
   cursor: pointer;
   position: relative;
