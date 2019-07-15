@@ -6,6 +6,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import DeleteIcon from '@material-ui/icons/Delete';
 import './ZStudenTable.css';
 
 // component style : theme for cells
@@ -49,55 +50,48 @@ const useStyles = makeStyles(theme => ({
 }));
 
 // component structure
-function ZStudentTable({listStudents, selectStudent}) {
+function ZStudentTable({listStudents, selectStudent, deleteOnClick}) {
   const classes = useStyles();
   return (
     <React.Fragment>
-    <h1 className='title'>Eligible students</h1>
-    <div className='table'>
-      <Paper className={classes.root}>
-        <Table className={classes.table}>
-          <TableHead>
-            <TableRow>
-              <StyledTableCell className={classes.head}>
-                First Name
-              </StyledTableCell>
-              <StyledTableCell className={classes.head}>
-                Last Name
-              </StyledTableCell>
-              <StyledTableCell className={classes.head}>Course</StyledTableCell>
-              <StyledTableCell className={classes.head}>
-                Select eligible student
-              </StyledTableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {listStudents.map(student => (
-              <StyledTableRow key={student.id}>
-                <StyledTableCell>
-                  {JSON.stringify(student.firstName).slice(1, -1)}
-                </StyledTableCell>
-                <StyledTableCell>
-                  {JSON.stringify(student.lastName).slice(1, -1)}
-                </StyledTableCell>
-                {student.courses.map(course => (
-                  <StyledTableCell key={course.id}>
-                    {JSON.stringify(course.name).slice(1, -1)}
+      <h1 className='title'>Eligible students</h1>
+      <div className='table'>
+        <Paper className={classes.root}>
+          <Table className={classes.table}>
+            <TableHead>
+              <TableRow>
+                <StyledTableCell className={classes.head}>First Name</StyledTableCell>
+                <StyledTableCell className={classes.head}>Last Name</StyledTableCell>
+                <StyledTableCell className={classes.head}>Course</StyledTableCell>
+                <StyledTableCell className={classes.head}>Select eligible student</StyledTableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {listStudents.map(student => (
+                <StyledTableRow key={student.id}>
+                  <StyledTableCell>
+                    {JSON.stringify(student.firstName).slice(1, -1)}
                   </StyledTableCell>
-                ))}
-                <StyledTableCell>
-                  <button
-                    className='button select-table-btn'
-                    onClick={() => selectStudent(student.id)}>
-                    Select
-                  </button>
-                </StyledTableCell>
-              </StyledTableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </Paper>
-    </div>
+                  <StyledTableCell>{JSON.stringify(student.lastName).slice(1, -1)}</StyledTableCell>
+                  {student.courses.map(course => (
+                    <StyledTableCell key={course.id}>
+                      {JSON.stringify(course.name).slice(1, -1)}
+                    </StyledTableCell>
+                  ))}
+                  <StyledTableCell>
+                    <button
+                      className='button select-table-btn'
+                      onClick={() => selectStudent(student.id)}>
+                      Select
+                    </button>
+                    <DeleteIcon key={student.id} onClick={() => deleteOnClick(student.id)} />
+                  </StyledTableCell>
+                </StyledTableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </Paper>
+      </div>
     </React.Fragment>
   );
 }

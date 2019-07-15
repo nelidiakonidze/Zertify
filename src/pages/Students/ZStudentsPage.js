@@ -4,7 +4,7 @@ import ZStudentTable from '../../components/lists/ZStudentTable';
 import ZFooter from '../../components/layout/ZFooter';
 import './ZStudentsPage.css';
 
-const ZStudentsPage = ({listStudents, selectStudent}) => {
+const ZStudentsPage = ({listStudents, selectStudent, deleteOnClick}) => {
   return (
     <React.Fragment>
       <ZSideNav />
@@ -12,6 +12,7 @@ const ZStudentsPage = ({listStudents, selectStudent}) => {
         <ZStudentTable
           listStudents={listStudents}
           selectStudent={selectStudent}
+          deleteOnClick={deleteOnClick}
         />
         <ZFooter />
       </section>
