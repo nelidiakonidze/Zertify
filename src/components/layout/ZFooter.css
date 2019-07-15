@@ -1,11 +1,9 @@
 .footer {
   display: flex;
   justify-content: center;
-  position: fixed;
-  bottom: 0px;
   color: orange;
-  padding: 30px;
-  padding-right: 0;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 .footer__link:link {
   color: black;
