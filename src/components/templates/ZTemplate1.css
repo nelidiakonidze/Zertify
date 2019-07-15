@@ -14,7 +14,7 @@
 }
 
 .cc-slider {
-  width: 90vw;
+  width: 85vw;
   height: auto;
   background-color: transparent;
   border-radius: 4px;
@@ -22,12 +22,12 @@
 
 .cc-slider .cc-list > div {
   display: inline-block;
-  margin-left: 0px;
+  margin: 0px;
 }
 
 .cc-slider .cc-dots {
   list-style: none;
-  padding: 10px;
+  padding: 20px 0 50px 0;
   margin: 0;
   text-align: center;
 }
@@ -47,13 +47,13 @@
 }
 
 .cc-slider .cc-dots > li.active button {
-  width: 14px;
+  width: 20px;
   background-color: #ce0059;
 }
 
 .cc {
-  width: 400px;
-  height: 280px;
+  width: 500px;
+  height: 380px;
   border-radius: 4px;
   filter: grayscale(75%);
   mix-blend-mode: luminosity;
@@ -64,6 +64,34 @@
   backface-visibility: hidden;
   transition: transform cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.5s;
   box-shadow: 10px 10px 30px -8px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 1560px) {
+  .cc {
+    width: 450px;
+    height: 330px;
+  }
+}
+@media (max-width: 1200px) {
+  .cc {
+    width: 400px;
+    height: 280px;
+  }
+}
+@media (max-width: 890px) {
+  .cc {
+    width: 300px;
+    height: 210px;
+  }
+  .cc-slider .cc-dots {
+    padding: 0 0 30px 0;
+  }
+}
+@media (max-width: 550px) {
+  .cc {
+    width: 250px;
+    height: 180px;
+  }
 }
 
 .cc:hover {

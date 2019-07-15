@@ -15,13 +15,10 @@ import green from '@material-ui/core/colors/green';
 //hooks for the form
 import useZSForm from './useZSForm';
 import Svalidate from './SFormValidationRules';
+import './ZForm.css';
 
 //style
 const useStyles = makeStyles(theme => ({
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
   margin: {
     margin: theme.spacing(1),
   },
@@ -34,8 +31,6 @@ const theme = createMuiTheme({
 });
 const BootstrapInput = withStyles(theme => ({
   root: {
-    display: 'flex',
-    flexWrap: 'wrap',
     borderRadius: 4,
     border: '1px solid #ced4da',
     transition: theme.transitions.create(['border-color', 'box-shadow']),
@@ -63,7 +58,7 @@ function ZCourseForm({listCourses}) {
   );
   return (
     <React.Fragment>
-      <form className={classes.root} onSubmit={handleSubmit}>
+      <form className='flex-inputs' onSubmit={handleSubmit}>
         <ThemeProvider theme={theme}>
           <TextField
             require

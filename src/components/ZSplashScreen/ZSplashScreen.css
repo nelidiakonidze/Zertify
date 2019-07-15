@@ -1,0 +1,28 @@
+.flex-splashscreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 45px);
+}
+
+.flex-splashscreen img {
+  margin-top: 50px;
+  height: auto;
+  max-width: 85vw;
+}
+
+@media (min-width: 1300px) {
+  .flex-splashscreen img {
+    max-width: 1150px;
+  }
+}
+
+.flex-splashscreen h1 {
+  font-size: 2rem;
+  margin: 10px;
+}
+.flex-splashscreen h2 {
+  font-size: 1.5rem;
+  margin: 10px;
+}
