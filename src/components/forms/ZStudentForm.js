@@ -21,6 +21,8 @@ import './ZForm.css';
 const useStyles = makeStyles(theme => ({
   margin: {
     margin: theme.spacing(1),
+    borderRadius: 4,
+    backgroundColor: 'whitesmoke',
   },
 }));
 
@@ -32,7 +34,7 @@ const theme = createMuiTheme({
 const BootstrapInput = withStyles(theme => ({
   root: {
     borderRadius: 4,
-    border: '1px solid #ced4da',
+    backgroundColor: 'whitesmoke',
     transition: theme.transitions.create(['border-color', 'box-shadow']),
   },
   margin: {
@@ -128,7 +130,7 @@ function ZCourseForm({listCourses}) {
           </FormControl>
           {errors.courseId && <p>{errors.courseId}</p>}
         </ThemeProvider>
-        <button className='button select-back-btn' type='submit'>
+        <button className='button' type='submit'>
           Submit student
         </button>
       </form>

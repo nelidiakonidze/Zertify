@@ -2,10 +2,11 @@ import React from 'react';
 import {NavLink} from 'react-router-dom';
 import SideNav, {NavItem, NavIcon, NavText} from '@trendmicro/react-sidenav';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
+import {Z_FIXED} from 'zlib';
 
 function ZSideNav() {
   return (
-    <SideNav style={{position: 'fixed'}}>
+    <SideNav style={{position: 'fixed', background: '#477DCA'}}>
       <SideNav.Toggle />
       <SideNav.Nav>
         <NavItem eventKey='home'>
@@ -39,38 +40,6 @@ function ZSideNav() {
             </NavLink>
           </NavText>
         </NavItem>
-        {/* <NavItem eventKey='courses'>
-          <NavIcon>
-            <NavLink
-              style={{textDecoration: 'none', color: 'white'}}
-              to='/courses'>
-              <i className='fas fa-book-open' style={{fontSize: '1.75em'}} />
-            </NavLink>
-          </NavIcon>
-          <NavText>
-            <NavLink
-              style={{textDecoration: 'none', color: 'white'}}
-              to='/courses'>
-              Courses
-            </NavLink>
-          </NavText>
-        </NavItem> */}
-        <NavItem eventKey='form'>
-          <NavIcon>
-            <NavLink
-              style={{textDecoration: 'none', color: 'white'}}
-              to='/form'>
-              <i className='far fa-file-alt' style={{fontSize: '1.75em'}} />
-            </NavLink>
-          </NavIcon>
-          <NavText>
-            <NavLink
-              style={{textDecoration: 'none', color: 'white'}}
-              to='/form'>
-              Form
-            </NavLink>
-          </NavText>
-        </NavItem>
         <NavItem eventKey='templates'>
           <NavIcon>
             <NavLink
@@ -84,6 +53,24 @@ function ZSideNav() {
               style={{textDecoration: 'none', color: 'white'}}
               to='/templates'>
               Templates
+            </NavLink>
+          </NavText>
+        </NavItem>
+        <NavItem
+          eventKey='form'
+          style={{position: 'fixed', left: '2px', bottom: '450px'}}>
+          <NavIcon>
+            <NavLink
+              style={{textDecoration: 'none', color: 'white'}}
+              to='/form'>
+              <i className='far fa-file-alt' style={{fontSize: '1.75em'}} />
+            </NavLink>
+          </NavIcon>
+          <NavText>
+            <NavLink
+              style={{textDecoration: 'none', color: 'white'}}
+              to='/form'>
+              Form
             </NavLink>
           </NavText>
         </NavItem>

@@ -12,8 +12,8 @@ import './ZStudenTable.css';
 // component style : theme for cells
 const StyledTableCell = withStyles(theme => ({
   head: {
-    backgroundColor: 'rgb(219, 61, 68)',
-    color: 'white',
+    backgroundColor: '#efa72d',
+    color: 'whitesmoke',
     fontSize: 18,
   },
   body: {
@@ -50,6 +50,8 @@ const useStyles = makeStyles(theme => ({
   h1: {
     fontSize: '2rem',
     margin: '10px',
+    color: 'whitesmoke',
+    textShadow: '1px 1px 3px rgba(0, 0, 0, 1)',
   },
   container: {
     minHeight: 'calc(100vh - 45px)',
@@ -57,6 +59,9 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  btn: {
+    cursor: 'pointer',
   },
 }));
 
@@ -107,11 +112,12 @@ function ZStudentTable({listStudents, selectStudent, deleteOnClick}) {
                   ))}
                   <StyledTableCell>
                     <button
-                      className='button select-table-btn'
+                      className='button'
                       onClick={() => selectStudent(student.id)}>
                       Select
                     </button>
                     <DeleteIcon
+                      className={classes.btn}
                       key={student.id}
                       onClick={() => deleteOnClick(student.id)}
                     />

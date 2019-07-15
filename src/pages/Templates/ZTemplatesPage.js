@@ -3,7 +3,6 @@ import ZSideNav from '../../components/layout/ZSideNav';
 import ZTemplate1 from '../../components/templates/ZTemplate1';
 import ZFooter from '../../components/layout/ZFooter';
 import './ZTemplatesPage.css';
-import ZButton from '../../components/layout/ZButton';
 import {Link} from 'react-router-dom';
 
 const ZTemplatePage = ({selectedTemplate, selectTemplate}) => {
@@ -17,9 +16,9 @@ const ZTemplatePage = ({selectedTemplate, selectTemplate}) => {
             selectTemplate={selectTemplate}
             selectedTemplate={selectedTemplate}
           />
-          <ZButton>
-            <Link to='/certificate'>Generate Certificate</Link>
-          </ZButton>
+          <Link to='/certificate'>
+            <button className='button'>Generate Certificate</button>
+          </Link>
         </section>
         <ZFooter />
       </section>

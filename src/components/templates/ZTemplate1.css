@@ -48,14 +48,14 @@
 
 .cc-slider .cc-dots > li.active button {
   width: 20px;
-  background-color: #ce0059;
+  background-color: #efa72d;
 }
 
 .cc {
   width: 500px;
   height: 380px;
   border-radius: 4px;
-  filter: grayscale(50%);
+  filter: opacity(50%);
   mix-blend-mode: luminosity;
   cursor: pointer;
   position: relative;
