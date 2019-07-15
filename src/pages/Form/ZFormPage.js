@@ -1,8 +1,8 @@
 import React from 'react';
 import ZSideNav from '../../components/layout/ZSideNav';
-import ZCourseForm from '../../components/forms2/ZCourseForm';
+import ZCourseForm from '../../components/forms/ZCourseForm';
 import ZFooter from '../../components/layout/ZFooter';
-import ZStudentForm from '../../components/forms2/ZStudentForm';
+import ZStudentForm from '../../components/forms/ZStudentForm';
 import './ZFormsPage.css';
 
 const ZFormsPage = ({listCourses}) => {
