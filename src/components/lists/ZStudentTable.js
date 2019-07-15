@@ -47,6 +47,9 @@ const useStyles = makeStyles(theme => ({
     position: 'sticky',
     top: 0,
   },
+  deleteIcon: {
+    cursor: 'pointer',
+  },
 }));
 
 // component structure
@@ -95,6 +98,7 @@ function ZStudentTable({listStudents, selectStudent, deleteOnClick}) {
                       Select
                     </button>
                     <DeleteIcon
+                      className={classes.deleteIcon}
                       key={student.id}
                       onClick={() => deleteOnClick(student.id)}
                     />
