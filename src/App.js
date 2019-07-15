@@ -26,6 +26,7 @@ class App extends React.Component {
     this.selectStudent = this.selectStudent.bind(this);
     this.selectTemplate = this.selectTemplate.bind(this);
     this.setColor = this.setColor.bind(this);
+    this.deleteOnClick = this.deleteOnClick.bind(this);
 
     //fetch data for students
     let urlStudents = 'https://zertify-server.herokuapp.com/api/students/';
@@ -78,13 +79,6 @@ class App extends React.Component {
     console.log('backend is calling');
   }
 
-  /** update the state of the selected student in the list via its id (number)  */
-  selectStudent(id) {
-    const selectedStudent = this.state.listStudents.find(student => student.id === id);
-    this.setState({selectedStudent});
-    //console.log('active student', selectedStudent);
-  }
-
   /** update the state of the selected template via its css color style */
   selectTemplate(index) {
     this.setState({selectedTemplate: index});
@@ -104,8 +98,14 @@ class App extends React.Component {
     }
   }
 
+  selectStudent(id) {
+    const selectedStudent = this.state.listStudents.find(student => student.id === id);
+    this.setState({selectedStudent});
+    //console.log('active student', selectedStudent);
+  }
+
   render() {
-    console.log('color render', this.state.selectedColor);
+    //console.log('color render', this.state.selectedColor);
 
     return (
       <Router>
