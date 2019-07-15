@@ -33,7 +33,7 @@ const StyledTableRow = withStyles(theme => ({
 // component style
 const useStyles = makeStyles(theme => ({
   root: {
-    height: 600,
+    maxHeight: '70vh',
     width: '85vw',
     marginTop: theme.spacing.unit * 3,
     overflow: 'auto',
@@ -53,6 +53,10 @@ const useStyles = makeStyles(theme => ({
   },
   container: {
     minHeight: 'calc(100vh - 45px)',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 }));
 
