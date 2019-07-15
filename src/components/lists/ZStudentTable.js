@@ -66,7 +66,7 @@ function ZStudentTable({listStudents, selectStudent, deleteOnClick}) {
   return (
     <div className={classes.container}>
       <h1 className={classes.h1}>
-        Select the eligible students for a certification
+        Select an eligible student for a certification
       </h1>
       <div>
         <Paper className={classes.root}>
@@ -80,11 +80,12 @@ function ZStudentTable({listStudents, selectStudent, deleteOnClick}) {
                   Last Name
                 </StyledTableCell>
                 <StyledTableCell className={classes.head}>
-                  Course
+                  Email
                 </StyledTableCell>
                 <StyledTableCell className={classes.head}>
-                  Select eligible student
+                  Course
                 </StyledTableCell>
+                <StyledTableCell className={classes.head}> </StyledTableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -95,6 +96,9 @@ function ZStudentTable({listStudents, selectStudent, deleteOnClick}) {
                   </StyledTableCell>
                   <StyledTableCell>
                     {JSON.stringify(student.lastName).slice(1, -1)}
+                  </StyledTableCell>
+                  <StyledTableCell>
+                    {JSON.stringify(student.email).slice(1, -1)}
                   </StyledTableCell>
                   {student.courses.map(course => (
                     <StyledTableCell key={course.id}>
