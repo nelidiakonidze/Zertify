@@ -34,7 +34,7 @@ const StyledTableRow = withStyles(theme => ({
 const useStyles = makeStyles(theme => ({
   root: {
     height: 600,
-    width: '150%',
+    width: '85vw',
     marginTop: theme.spacing.unit * 3,
     overflow: 'auto',
     justifyContent: 'center',
@@ -47,23 +47,40 @@ const useStyles = makeStyles(theme => ({
     position: 'sticky',
     top: 0,
   },
+  h1: {
+    fontSize: '2rem',
+    margin: '10px',
+  },
+  container: {
+    minHeight: 'calc(100vh - 45px)',
+  },
 }));
 
 // component structure
 function ZStudentTable({listStudents, selectStudent, deleteOnClick}) {
   const classes = useStyles();
   return (
-    <React.Fragment>
-      <h1 className='title'>Eligible students</h1>
-      <div className='table'>
+    <div className={classes.container}>
+      <h1 className={classes.h1}>
+        Select the eligible students for a certification
+      </h1>
+      <div>
         <Paper className={classes.root}>
           <Table className={classes.table}>
             <TableHead>
               <TableRow>
-                <StyledTableCell className={classes.head}>First Name</StyledTableCell>
-                <StyledTableCell className={classes.head}>Last Name</StyledTableCell>
-                <StyledTableCell className={classes.head}>Course</StyledTableCell>
-                <StyledTableCell className={classes.head}>Select eligible student</StyledTableCell>
+                <StyledTableCell className={classes.head}>
+                  First Name
+                </StyledTableCell>
+                <StyledTableCell className={classes.head}>
+                  Last Name
+                </StyledTableCell>
+                <StyledTableCell className={classes.head}>
+                  Course
+                </StyledTableCell>
+                <StyledTableCell className={classes.head}>
+                  Select eligible student
+                </StyledTableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -72,7 +89,9 @@ function ZStudentTable({listStudents, selectStudent, deleteOnClick}) {
                   <StyledTableCell>
                     {JSON.stringify(student.firstName).slice(1, -1)}
                   </StyledTableCell>
-                  <StyledTableCell>{JSON.stringify(student.lastName).slice(1, -1)}</StyledTableCell>
+                  <StyledTableCell>
+                    {JSON.stringify(student.lastName).slice(1, -1)}
+                  </StyledTableCell>
                   {student.courses.map(course => (
                     <StyledTableCell key={course.id}>
                       {JSON.stringify(course.name).slice(1, -1)}
@@ -84,7 +103,10 @@ function ZStudentTable({listStudents, selectStudent, deleteOnClick}) {
                       onClick={() => selectStudent(student.id)}>
                       Select
                     </button>
-                    <DeleteIcon key={student.id} onClick={() => deleteOnClick(student.id)} />
+                    <DeleteIcon
+                      key={student.id}
+                      onClick={() => deleteOnClick(student.id)}
+                    />
                   </StyledTableCell>
                 </StyledTableRow>
               ))}
@@ -92,7 +114,7 @@ function ZStudentTable({listStudents, selectStudent, deleteOnClick}) {
           </Table>
         </Paper>
       </div>
-    </React.Fragment>
+    </div>
   );
 }
 

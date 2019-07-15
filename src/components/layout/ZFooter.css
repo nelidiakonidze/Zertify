@@ -2,8 +2,8 @@
   display: flex;
   justify-content: center;
   color: orange;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .footer__link:link {
   color: black;
