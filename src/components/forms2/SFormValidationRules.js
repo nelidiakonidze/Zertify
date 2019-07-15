@@ -13,5 +13,8 @@ export default function Svalidate(inputs) {
   if (!inputs.studentEmail) {
     errors.studentEmail = 'required';
   }
+  if (!inputs.courseId) {
+    errors.courseId = 'required';
+  }
   return errors;
 }
