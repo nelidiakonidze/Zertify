@@ -1,16 +1,32 @@
 .flex-templates {
-  margin-top: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
   /* add a padding to not be overlapped by SideBar (64px large) + 30px padding*/
   padding-left: 94px;
   padding-right: 30px;
 }
-.btn-certificate {
-  margin-top: 80vh;
+
+.flex-templates .flex-main-templates {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 45px);
+  padding-bottom: 30px;
 }
+
+.flex-templates h1 {
+  font-size: 2rem;
+  margin-bottom: 50px;
+}
+
+/* .btn-certificate {
+  margin-top: 80vh;
+} */
+/* 
 @media (max-width: 1440px) {
   .flex-templates {
     width: 155vh;
@@ -53,4 +69,4 @@
     margin-left: 5%;
     margin-top: 45%;
   }
-}
+} */
