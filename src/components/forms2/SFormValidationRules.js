@@ -10,5 +10,8 @@ export default function Svalidate(inputs) {
   if (!inputs.studentLastname) {
     errors.studentLastname = 'required';
   }
+  if (!inputs.studentEmail) {
+    errors.studentEmail = 'required';
+  }
   return errors;
 }
