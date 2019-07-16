@@ -58,7 +58,7 @@ function ZSideNav() {
         </NavItem>
         <NavItem
           eventKey='form'
-          style={{position: 'fixed', left: '2px', bottom: '450px'}}>
+         >
           <NavIcon>
             <NavLink
               style={{textDecoration: 'none', color: 'white'}}

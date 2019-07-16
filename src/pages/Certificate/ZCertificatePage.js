@@ -8,12 +8,19 @@ const ZCertificatePage = ({selectedStudent, selectedColor}) => {
   return (
     <div>
       <section className='flex-btn'>
+         <Link to= '/certificate/sent'>
         <button className='button select-table-btn'>
           Send Certificate to student
         </button>
-        <Link to='/'>
-          <button className='button select-back-btn'>Go back</button>
         </Link>
+        <Link to='/'>
+          <button className='button select-back-btn'>
+            Go back
+            </button>
+        </Link>
+
+      
+
       </section>
       <PDFViewer className='size-pdf'>
         <ZpdfCertificate
