@@ -2,7 +2,6 @@ import React from 'react';
 import {NavLink} from 'react-router-dom';
 import SideNav, {NavItem, NavIcon, NavText} from '@trendmicro/react-sidenav';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
-import {Z_FIXED} from 'zlib';
 
 function ZSideNav() {
   return (
@@ -56,9 +55,7 @@ function ZSideNav() {
             </NavLink>
           </NavText>
         </NavItem>
-        <NavItem
-          eventKey='form'
-         >
+        <NavItem eventKey='form'>
           <NavIcon>
             <NavLink
               style={{textDecoration: 'none', color: 'white'}}

@@ -8,6 +8,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import DeleteIcon from '@material-ui/icons/Delete';
 import './ZStudenTable.css';
+import {Link} from 'react-router-dom';
 
 // component style : theme for cells
 const StyledTableCell = withStyles(theme => ({
@@ -111,11 +112,13 @@ function ZStudentTable({listStudents, selectStudent, deleteOnClick}) {
                     </StyledTableCell>
                   ))}
                   <StyledTableCell>
-                    <button
-                      className='button'
-                      onClick={() => selectStudent(student.id)}>
-                      Select
-                    </button>
+                    <Link to='/templates'>
+                      <button
+                        className='button'
+                        onClick={() => selectStudent(student.id)}>
+                        Select
+                      </button>
+                    </Link>
                     <DeleteIcon
                       className={classes.btn}
                       key={student.id}
