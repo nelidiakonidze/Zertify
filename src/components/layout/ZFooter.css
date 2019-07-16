@@ -1,36 +1,14 @@
 .footer {
   display: flex;
   justify-content: center;
-  color: orange;
+  color: whitesmoke;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 .footer__link:link {
-  color: black;
+  color: whitesmoke;
 }
 .footer__link:visited {
-  color: purple;
+  color: whitesmoke;
+  text-decoration: none;
 }
-/* @media (max-width: 1024px) {
-  .footer {
-    margin-bottom: 0;
-  }
-}
-
-@media (max-width: 768px) {
-  .footer {
-    margin-bottom: 0;
-  }
-}
-
-@media (max-width: 375px) {
-  .footer {
-    margin-bottom: 0;
-  }
-}
-
-@media (max-width: 320px) {
-  .footer {
-    margin-bottom: 0;
-  }
-} */

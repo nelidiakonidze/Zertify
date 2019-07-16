@@ -7,4 +7,5 @@
   /* add a padding to not be overlapped by SideBar (64px large) + 30px padding*/
   padding-left: 94px;
   padding-right: 30px;
+  background-color: #3f3d56;
 }

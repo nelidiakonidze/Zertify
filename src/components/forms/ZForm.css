@@ -1,6 +1,7 @@
 .flex-inputs {
   display: flex;
   flex-direction: row;
+  color: whitesmoke;
 }
 
 @media (max-width: 1090px) {

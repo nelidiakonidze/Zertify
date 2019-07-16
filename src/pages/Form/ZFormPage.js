@@ -10,8 +10,9 @@ const ZFormsPage = ({listCourses}) => {
     <div>
       <ZSideNav />
       <section className='flex-form'>
+        <h1>Add a new student or course to the database</h1>
+
         <section className='flex-main'>
-          <h1>Add a new student or course to the database</h1>
           <h2>New course: </h2>
           <ZCourseForm />
           <h2>New student:</h2>

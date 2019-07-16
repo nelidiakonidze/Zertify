@@ -16,6 +16,8 @@ import './ZForm.css';
 const useStyles = makeStyles(theme => ({
   margin: {
     margin: theme.spacing(1),
+    borderRadius: 4,
+    backgroundColor: 'whitesmoke',
   },
 }));
 
@@ -67,7 +69,7 @@ const ZCourseForm = () => {
           />
         </ThemeProvider>
         {errors.courseHours && <p>{errors.courseHours}</p>}
-        <button className='button select-back-btn' type='submit'>
+        <button className='button' type='submit'>
           Submit course
         </button>
       </form>

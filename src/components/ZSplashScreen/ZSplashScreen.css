@@ -21,8 +21,12 @@
 .flex-splashscreen h1 {
   font-size: 2rem;
   margin: 10px;
+  color: #efa72d;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
 }
 .flex-splashscreen h2 {
   font-size: 1.5rem;
   margin: 10px;
+  color: #efa72d;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
 }

@@ -16,7 +16,7 @@ class App extends React.Component {
       listCourses: [],
       selectedStudent: {},
       selectedTemplate: 0, // first template by default
-      selectedColor: '#db3d44', // red by default
+      selectedColor: '#90caf9', // blue by default
     };
 
     this.selectStudent = this.selectStudent.bind(this);
@@ -90,13 +90,13 @@ class App extends React.Component {
   setColor(index) {
     switch (index) {
       case 0:
-        return this.setState({selectedColor: '#db3d44'}); //red
+        return this.setState({selectedColor: '#90caf9'}); //blue
       case 1:
-        return this.setState({selectedColor: '#02C8FA'}); //blue
+        return this.setState({selectedColor: '#bcaaa4'}); //brown
       case 2:
-        return this.setState({selectedColor: '#57B894'}); //green
+        return this.setState({selectedColor: '#80cbc4'}); //green
       default:
-        return this.setState({selectedColor: '#57B894'}); //green
+        return this.setState({selectedColor: '#80cbc4'}); //green
     }
   }
 

@@ -2,45 +2,32 @@
 **** Button for all components
 ******************/
 .button {
-  background-color: #4caf50; /* Green */
-  border: 2px solid #4caf50;
-  color: white;
+  outline: none;
+  background-color: whitesmoke;
+  border: 4px solid #efa72d;
+  color: #efa72d;
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   margin: 8px 14px;
-  -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   cursor: pointer;
   box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 7px;
 }
 
-.select-table-btn {
-  background-color: #ff8e53;
-  color: white;
-  border: 2px solid #ff8e53;
-}
-
-.select-back-btn {
-  background-color: #db3d44;
-  color: white;
-  border: 2px solid #db3d44;
+.button .secondary-btn {
+  background-color: whitesmoke;
+  border: 4px solid #efa72d;
+  color: #efa72d;
 }
 
 .button:active,
-.button:hover {
-  outline: none;
-  background-color: white;
-  border: 2px solid #ff8e53;
-  color: #ff8e53;
-}
-
+.button:hover,
 .button:focus {
-  outline: none;
-  background-color: white;
-  border: 2px solid #4caf50;
-  color: #4caf50;
+  background-color: #efa72d;
+  border: 4px solid #efa72d;
+  color: white;
 }
