@@ -4,11 +4,11 @@ import ZpdfCertificate from '../../components/certificates/ZpdfCertificate';
 import './ZCertificatePage.css';
 import {Link} from 'react-router-dom';
 
-const ZCertificatePage = ({selectedStudent, selectedColor}) => {
+const ZCertificatePage = ({selectedStudent, selectedColor, sendEmail}) => {
   return (
     <div>
       <section className='flex-btn'>
-        <button className='button select-table-btn'>
+        <button className='button select-table-btn' onClick={sendEmail}>
           Send Certificate to student
         </button>
         <Link to='/'>

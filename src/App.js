@@ -3,7 +3,6 @@ import {Route, Switch, BrowserRouter as Router} from 'react-router-dom';
 import ZFormPage from './pages/Form/ZFormPage';
 import ZHomePage from './pages/Home/ZHomePage';
 import ZStudentsPage from './pages/Students/ZStudentsPage';
-// import ZCoursesPage from './pages/Courses/ZCoursesPage';
 import ZTemplatesPage from './pages/Templates/ZTemplatesPage';
 import ZNoPage from './pages/NoPage/ZNoPage';
 import ZCertifactePage from './pages/Certificate/ZCertificatePage';
@@ -23,6 +22,7 @@ class App extends React.Component {
     this.selectTemplate = this.selectTemplate.bind(this);
     this.setColor = this.setColor.bind(this);
     this.deleteOnClick = this.deleteOnClick.bind(this);
+    this.sendEmail = this.sendEmail.bind(this);
 
     //fetch data for students
     let urlStudents = 'https://zertify-server.herokuapp.com/api/students/';
@@ -53,7 +53,6 @@ class App extends React.Component {
   // // Delete row with student when onClick Bin Icon
   // -> Student get´s deleted from database
   // -> rerender of table without the student
-
   deleteOnClick(id) {
     id = parseInt(id);
     const options = {
@@ -81,6 +80,39 @@ class App extends React.Component {
     console.log('backend is calling');
   }
 
+  // post the certificate informations
+  sendEmail() {
+    const urlCertificate =
+      'https://zertify-server.herokuapp.com/api/certificate';
+    const Zconfig = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        firstName: this.state.selectedStudent.firstName,
+        lastName: this.state.selectedStudent.lastName,
+        email: this.state.selectedStudent.email,
+        name: this.state.selectedStudent.courses[0].name,
+        hours: this.state.selectedStudent.courses[0].hours,
+      }),
+    };
+
+    fetch(urlCertificate, Zconfig)
+      .then(response => response.json())
+      .then(response => {
+        if (response.error) {
+          alert(response.error);
+        } else {
+          alert('Email sent');
+        }
+      })
+      .catch(event => {
+        console.error(event);
+        alert("Sorry, we're having trouble sending your email");
+      });
+  }
+
   /** update the state of the selected template via its css color style */
   selectTemplate(index) {
     this.setState({selectedTemplate: index});
@@ -105,7 +137,7 @@ class App extends React.Component {
       student => student.id === id,
     );
     this.setState({selectedStudent});
-    //console.log('active student', selectedStudent);
+    console.log('active student', selectedStudent);
   }
 
   render() {
@@ -145,6 +177,7 @@ class App extends React.Component {
                 <ZCertifactePage
                   selectedStudent={this.state.selectedStudent}
                   selectedColor={this.state.selectedColor}
+                  sendEmail={this.sendEmail}
                 />
               )}
             />
