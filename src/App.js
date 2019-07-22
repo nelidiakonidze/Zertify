@@ -91,11 +91,14 @@ class App extends React.Component {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        firstName: this.state.selectedStudent.firstName,
-        lastName: this.state.selectedStudent.lastName,
-        email: this.state.selectedStudent.email,
-        name: this.state.selectedStudent.courses[0].name,
-        hours: this.state.selectedStudent.courses[0].hours,
+        hash: 'hashABC',
+        settings: JSON.stringify({
+          firstName: this.state.selectedStudent.firstName,
+          lastName: this.state.selectedStudent.lastName,
+          email: this.state.selectedStudent.email,
+          name: this.state.selectedStudent.courses[0].name,
+          hours: this.state.selectedStudent.courses[0].hours,
+        }),
       }),
     };
 
@@ -173,7 +176,8 @@ class App extends React.Component {
               )}
             />
             <Route
-              exact path='/certificate'
+              exact
+              path='/certificate'
               render={() => (
                 <ZCertifactePage
                   selectedStudent={this.state.selectedStudent}
@@ -182,8 +186,8 @@ class App extends React.Component {
                 />
               )}
             />
-             
-             <Route
+
+            <Route
               path='/certificate/sent'
               render={() => (
                 <ZpdfCertifacteSent
@@ -192,9 +196,7 @@ class App extends React.Component {
                 />
               )}
             />
-            
-            
-         
+
             <Route component={ZNoPage} />
           </Switch>
         </div>
