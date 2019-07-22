@@ -6,6 +6,7 @@ import ZStudentsPage from './pages/Students/ZStudentsPage';
 import ZTemplatesPage from './pages/Templates/ZTemplatesPage';
 import ZNoPage from './pages/NoPage/ZNoPage';
 import ZCertifactePage from './pages/Certificate/ZCertificatePage';
+import ZpdfCertifacteSent from './components/certificates/ZpdfCertificateSent';
 
 class App extends React.Component {
   constructor() {
@@ -172,7 +173,7 @@ class App extends React.Component {
               )}
             />
             <Route
-              path='/certificate'
+              exact path='/certificate'
               render={() => (
                 <ZCertifactePage
                   selectedStudent={this.state.selectedStudent}
@@ -181,6 +182,19 @@ class App extends React.Component {
                 />
               )}
             />
+             
+             <Route
+              path='/certificate/sent'
+              render={() => (
+                <ZpdfCertifacteSent
+                  selectedStudent={this.state.selectedStudent}
+                  selectedColor={this.state.selectedColor}
+                />
+              )}
+            />
+            
+            
+         
             <Route component={ZNoPage} />
           </Switch>
         </div>
