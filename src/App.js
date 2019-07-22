@@ -98,6 +98,7 @@ class App extends React.Component {
           email: this.state.selectedStudent.email,
           name: this.state.selectedStudent.courses[0].name,
           hours: this.state.selectedStudent.courses[0].hours,
+          color: this.state.selectedColor,
         }),
       }),
     };
