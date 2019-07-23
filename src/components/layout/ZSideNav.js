@@ -10,7 +10,9 @@ function ZSideNav() {
       <SideNav.Nav>
         <NavItem eventKey='home'>
           <NavIcon>
-            <NavLink style={{textDecoration: 'none', color: 'white'}} to='/'>
+            <NavLink
+              style={{textDecoration: 'none', color: 'white', padding: '17px'}}
+              to='/'>
               <i className='fa fa-fw fa-home' style={{fontSize: '1.75em'}} />
             </NavLink>
           </NavIcon>
@@ -23,7 +25,7 @@ function ZSideNav() {
         <NavItem eventKey='students'>
           <NavIcon>
             <NavLink
-              style={{textDecoration: 'none', color: 'white'}}
+              style={{textDecoration: 'none', color: 'white', padding: '23px'}}
               to='/students'>
               <i
                 className='fas fa-user-graduate'
@@ -42,7 +44,7 @@ function ZSideNav() {
         <NavItem eventKey='templates'>
           <NavIcon>
             <NavLink
-              style={{textDecoration: 'none', color: 'white'}}
+              style={{textDecoration: 'none', color: 'white', padding: '23px'}}
               to='/templates'>
               <i className='fas fa-award' style={{fontSize: '1.75em'}} />
             </NavLink>
@@ -58,7 +60,7 @@ function ZSideNav() {
         <NavItem eventKey='form'>
           <NavIcon>
             <NavLink
-              style={{textDecoration: 'none', color: 'white'}}
+              style={{textDecoration: 'none', color: 'white', padding: '24px'}}
               to='/form'>
               <i className='far fa-file-alt' style={{fontSize: '1.75em'}} />
             </NavLink>
