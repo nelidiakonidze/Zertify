@@ -14,6 +14,7 @@ ol.flex_list {
   padding: 2vw;
   font-size: 1.5rem;
   background: #efa72d;
+  opacity: 0.8;
   border-radius: 3px;
   box-shadow: 5px 5px 5px #242430;
 }
@@ -37,4 +38,13 @@ li:hover {
 
 i {
   margin: 5px;
+}
+
+.particles {
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: fixed;
 }

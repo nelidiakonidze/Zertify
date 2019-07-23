@@ -9,3 +9,12 @@
   padding-right: 30px;
   background-color: #3f3d56;
 }
+
+.particles {
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+}

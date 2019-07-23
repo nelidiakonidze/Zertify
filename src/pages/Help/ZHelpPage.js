@@ -1,11 +1,28 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 import ZSideNav from '../../components/layout/ZSideNav';
+import Particles from 'react-particles-js';
 import './ZHelp.css';
+
+const particlesOptions = {
+  particles: {
+    number: {
+      value: 50,
+      density: {
+        enable: true,
+        value_area: 900,
+      },
+    },
+    style: {
+      color: '#CD923A',
+    },
+  },
+};
 
 const ZHelpPage = () => {
   return (
     <div>
+      <Particles className='particles' params={particlesOptions} />
       <ZSideNav />
       <div className='flex_container'>
         <h1>Instructions</h1>
