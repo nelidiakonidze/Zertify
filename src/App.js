@@ -17,6 +17,7 @@ class App extends React.Component {
       selectedStudent: {},
       selectedTemplate: 0, // first template by default
       selectedColor: '#90caf9', // blue by default
+      certificateSettings: {},
     };
 
     this.selectStudent = this.selectStudent.bind(this);
@@ -32,7 +33,6 @@ class App extends React.Component {
       .then(data => {
         this.setState({
           listStudents: data.students,
-          //listCourses: data.courses
         });
         console.log('fetch students data ', this.state.listStudents);
       })
@@ -49,7 +49,21 @@ class App extends React.Component {
         console.log('fetch courses data ', this.state.listCourses);
       })
       .catch(error => console.log('error: ', error));
+
+    //fetch data for certificate
+    let urlCertificate =
+      'https://zertify-server.herokuapp.com/api/certificate/';
+    fetch(urlCertificate)
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          certificateSettings: data.settings,
+        });
+        console.log('fetch certificate data ', this.state.certificateSettings);
+      })
+      .catch(error => console.log('error: ', error));
   }
+  // end of the constructor
 
   // // Delete row with student when onClick Bin Icon
   // -> Student get´s deleted from database
@@ -189,7 +203,7 @@ class App extends React.Component {
             />
 
             <Route
-              path='/certificate/sent'
+              path='/certificate/sent/:hash'
               render={() => (
                 <ZpdfCertifacteSent
                   selectedStudent={this.state.selectedStudent}
