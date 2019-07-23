@@ -7,6 +7,7 @@ import ZTemplatesPage from './pages/Templates/ZTemplatesPage';
 import ZNoPage from './pages/NoPage/ZNoPage';
 import ZCertifactePage from './pages/Certificate/ZCertificatePage';
 import ZpdfCertifacteSent from './components/certificates/ZpdfCertificateSent';
+import ZHelpPage from './pages/Help/ZHelpPage';
 
 class App extends React.Component {
   constructor() {
@@ -66,16 +67,10 @@ class App extends React.Component {
         console.log(data);
         this.setState(state => {
           return {
-            listStudents: state.listStudents.filter(
-              student => student.id !== id,
-            ),
+            listStudents: state.listStudents.filter(student => student.id !== id),
           };
         });
-        window.confirm(
-          `Are you sure to delete ${data.student.firstName} ${
-            data.student.lastName
-          }`,
-        );
+        window.confirm(`Are you sure to delete ${data.student.firstName} ${data.student.lastName}`);
       })
       .catch(error => console.log(error));
     console.log('backend is calling');
@@ -83,8 +78,7 @@ class App extends React.Component {
 
   // post the certificate informations
   sendEmail() {
-    const urlCertificate =
-      'https://zertify-server.herokuapp.com/api/certificate';
+    const urlCertificate = 'https://zertify-server.herokuapp.com/api/certificate';
     const Zconfig = {
       method: 'POST',
       headers: {
@@ -134,9 +128,7 @@ class App extends React.Component {
   }
 
   selectStudent(id) {
-    const selectedStudent = this.state.listStudents.find(
-      student => student.id === id,
-    );
+    const selectedStudent = this.state.listStudents.find(student => student.id === id);
     this.setState({selectedStudent});
     console.log('active student', selectedStudent);
   }
@@ -159,10 +151,7 @@ class App extends React.Component {
                 />
               )}
             />
-            <Route
-              path='/form'
-              render={() => <ZFormPage listCourses={this.state.listCourses} />}
-            />
+            <Route path='/form' render={() => <ZFormPage listCourses={this.state.listCourses} />} />
             <Route
               path='/templates'
               render={() => (
@@ -173,7 +162,8 @@ class App extends React.Component {
               )}
             />
             <Route
-              exact path='/certificate'
+              exact
+              path='/certificate'
               render={() => (
                 <ZCertifactePage
                   selectedStudent={this.state.selectedStudent}
@@ -182,8 +172,8 @@ class App extends React.Component {
                 />
               )}
             />
-             
-             <Route
+
+            <Route
               path='/certificate/sent'
               render={() => (
                 <ZpdfCertifacteSent
@@ -192,9 +182,9 @@ class App extends React.Component {
                 />
               )}
             />
-            
-            
-         
+
+            <Route path='/help' component={ZHelpPage} />
+
             <Route component={ZNoPage} />
           </Switch>
         </div>
