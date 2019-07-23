@@ -6,9 +6,8 @@ import {
   Document,
   Image,
   StyleSheet,
-  PDFViewer
-} 
-from '@react-pdf/renderer';
+  PDFViewer,
+} from '@react-pdf/renderer';
 
 class ZpdfCertifacteSent extends React.Component {
   constructor(props) {
@@ -23,55 +22,84 @@ class ZpdfCertifacteSent extends React.Component {
         today.getUTCDate();
     this.state = {
       date: date,
+      hash: props.match.params.hash,
+      certificateSettings: {},
     };
+    //console.log('hash', );
   }
+
+  //fetch data for certificate
+  componentDidMount() {
+    let urlCertificate = `https://zertify-server.herokuapp.com/api/certificate/${
+      this.state.hash
+    }`;
+    fetch(urlCertificate)
+      .then(response => response.json())
+      .then(data => {
+        console.log('data', data);
+        this.setState({
+          certificateSettings: JSON.parse(data.certificate.settings),
+        });
+      })
+      .catch(error => console.log('error: ', error));
+  }
+
   render() {
-    return (
+    console.log('settings', this.state.certificateSettings);
+    console.log('hash', this.state.hash);
+
+    if (Object.keys(this.state.certificateSettings).length === 0) {
+      return <h1>Loading ... </h1>;
+    } else {
+      return (
         <PDFViewer style={styles.document}>
-      <Document >
-        <Page
-          size='A4'
-          orientation='landscape'
-          style={{backgroundColor: this.props.selectedColor}}>
-          <View style={styles.container}>
-            <View
-              style={[
-                styles.sectionLeft,
-                {backgroundColor: this.props.selectedColor},
-              ]}>
-              <Image
-                style={styles.image}
-                src='https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/spaces%2F-LWNQxQf-dm-dr94dDMj%2Favatar.png?generation=1547672003797954&alt=media'
-              />
-              <View style={styles.bottom}>
-                <Text style={styles.pLight}>Edera </Text>
-                <Text style={styles.pLight}>Online course company</Text>
-                <Text style={styles.pLight}>https://www.ed-era.com/</Text>
+          <Document>
+            <Page
+              size='A4'
+              orientation='landscape'
+              style={{backgroundColor: this.state.certificateSettings.color}}>
+              <View style={styles.container}>
+                <View
+                  style={[
+                    styles.sectionLeft,
+                    {backgroundColor: this.state.certificateSettings.color},
+                  ]}>
+                  <Image
+                    style={styles.image}
+                    src='https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/spaces%2F-LWNQxQf-dm-dr94dDMj%2Favatar.png?generation=1547672003797954&alt=media'
+                  />
+                  <View style={styles.bottom}>
+                    <Text style={styles.pLight}>Edera </Text>
+                    <Text style={styles.pLight}>Online course company</Text>
+                    <Text style={styles.pLight}>https://www.ed-era.com/</Text>
+                  </View>
+                </View>
+                <View style={styles.sectionRight}>
+                  <Text style={styles.h1}> Certificate of completion</Text>
+                  <Text style={styles.p}>
+                    issued by EDERA on {this.state.date}
+                  </Text>
+                  <Text style={styles.p}> states that </Text>
+                  <Text style={styles.h2}>
+                    {this.state.certificateSettings.firstName}{' '}
+                    {this.state.certificateSettings.lastName}
+                  </Text>
+                  <Text style={styles.p}>
+                    has successfully completed the online course:
+                  </Text>
+                  <Text style={styles.h2}>
+                    {this.state.certificateSettings.name}
+                  </Text>
+                  <Text style={styles.p}>
+                    {this.state.certificateSettings.hours} hours
+                  </Text>
+                </View>
               </View>
-            </View>
-            <View style={styles.sectionRight}>
-              <Text style={styles.h1}> Certificate of completion</Text>
-              <Text style={styles.p}>issued by EDERA on {this.state.date}</Text>
-              <Text style={styles.p}> states that </Text>
-              <Text style={styles.h2}>
-                {this.props.selectedStudent.firstName}{' '}
-                {this.props.selectedStudent.lastName}
-              </Text>
-              <Text style={styles.p}>
-                has successfully completed the online course:
-              </Text>
-              <Text style={styles.h2}>
-                {this.props.selectedStudent.courses[0].name}
-              </Text>
-              <Text style={styles.p}>
-                {this.props.selectedStudent.courses[0].hours} hours
-              </Text>
-            </View>
-          </View>
-        </Page>
-      </Document>
-      </PDFViewer>
-    );
+            </Page>
+          </Document>
+        </PDFViewer>
+      );
+    }
   }
 }
 
@@ -139,9 +167,8 @@ const styles = StyleSheet.create({
     paddingBottom: '10',
   },
 
-  document : {
-      height: '100vh',
-      width: '100vw'
-      
-    },
+  document: {
+    height: '100vh',
+    width: '100vw',
+  },
 });

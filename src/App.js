@@ -17,7 +17,6 @@ class App extends React.Component {
       selectedStudent: {},
       selectedTemplate: 0, // first template by default
       selectedColor: '#90caf9', // blue by default
-      certificateSettings: {},
     };
 
     this.selectStudent = this.selectStudent.bind(this);
@@ -47,19 +46,6 @@ class App extends React.Component {
           listCourses: data.courses,
         });
         console.log('fetch courses data ', this.state.listCourses);
-      })
-      .catch(error => console.log('error: ', error));
-
-    //fetch data for certificate
-    let urlCertificate =
-      'https://zertify-server.herokuapp.com/api/certificate/';
-    fetch(urlCertificate)
-      .then(response => response.json())
-      .then(data => {
-        this.setState({
-          certificateSettings: data.settings,
-        });
-        console.log('fetch certificate data ', this.state.certificateSettings);
       })
       .catch(error => console.log('error: ', error));
   }
@@ -203,6 +189,7 @@ class App extends React.Component {
             />
 
             <Route
+              exact
               path='/certificate/sent/:hash'
               component={ZpdfCertifacteSent}
             />
