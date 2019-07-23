@@ -202,7 +202,10 @@ class App extends React.Component {
               )}
             />
 
-            <Route path='/certificate/sent/' component={ZpdfCertifacteSent} />
+            <Route
+              path='/certificate/sent/:hash'
+              component={ZpdfCertifacteSent}
+            />
 
             <Route component={ZNoPage} />
           </Switch>
