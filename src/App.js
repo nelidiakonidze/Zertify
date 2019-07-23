@@ -202,15 +202,7 @@ class App extends React.Component {
               )}
             />
 
-            <Route
-              path='/certificate/sent/:hash'
-              render={() => (
-                <ZpdfCertifacteSent
-                  selectedStudent={this.state.selectedStudent}
-                  selectedColor={this.state.selectedColor}
-                />
-              )}
-            />
+            <Route path='/certificate/sent/' component={ZpdfCertifacteSent} />
 
             <Route component={ZNoPage} />
           </Switch>
