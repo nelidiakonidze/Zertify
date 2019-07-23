@@ -5,7 +5,7 @@ import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 
 function ZSideNav() {
   return (
-    <SideNav style={{position: 'fixed', background: '#477DCA'}}>
+    <SideNav style={{position: 'fixed', background: '#477DCA60', boxShadow: "0px 6px 12px 0px rgba(0,0,0,0.75)" }}>
       <SideNav.Toggle />
       <SideNav.Nav>
         <NavItem eventKey='home'>
