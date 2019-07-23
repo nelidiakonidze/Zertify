@@ -8,6 +8,8 @@ import ZNoPage from './pages/NoPage/ZNoPage';
 import ZCertifactePage from './pages/Certificate/ZCertificatePage';
 import ZpdfCertifacteSent from './components/certificates/ZpdfCertificateSent';
 
+import './components/Spinner.css';
+
 class App extends React.Component {
   constructor() {
     super();
@@ -16,7 +18,8 @@ class App extends React.Component {
       listCourses: [],
       selectedStudent: {},
       selectedTemplate: 0, // first template by default
-      selectedColor: '#90caf9', // blue by default
+      selectedColor: '#90caf9', // blue by default,
+      studentsLoading: true,
     };
 
     this.selectStudent = this.selectStudent.bind(this);
@@ -26,13 +29,14 @@ class App extends React.Component {
     this.sendEmail = this.sendEmail.bind(this);
 
     //fetch data for students
+
     let urlStudents = 'https://zertify-server.herokuapp.com/api/students/';
     fetch(urlStudents)
       .then(response => response.json())
       .then(data => {
         this.setState({
           listStudents: data.students,
-          //listCourses: data.courses
+          //studentsLoading: false,
         });
         console.log('fetch students data ', this.state.listStudents);
       })
@@ -45,6 +49,7 @@ class App extends React.Component {
       .then(data => {
         this.setState({
           listCourses: data.courses,
+          coursesLoading: false,
         });
         console.log('fetch courses data ', this.state.listCourses);
       })
@@ -142,65 +147,71 @@ class App extends React.Component {
   }
 
   render() {
-    //console.log('color render', this.state.selectedColor);
+    //if (this.state.coursesLoading || this.state.studentsLoading) {
+     /// return <CircularProgress className= 'CircularProgress'/>
+    //} else {
+      return (
+        <Router>
+          <div className='App'>
+            <Switch>
+              <Route exact path='/' component={ZHomePage} />
+              <Route
+                path='/students'
+                render={() => (
+                  <ZStudentsPage
+                    listStudents={this.state.listStudents}
+                    selectStudent={this.selectStudent}
+                    deleteOnClick={this.deleteOnClick}
+                    circularProgress={this.state.studentLoading}
+                    
+                    //showSpinner={this.state.showSpinner}
+                  />
+                )}
+              />
+              <Route
+                path='/form'
+                render={() => (
+                  <ZFormPage listCourses={this.state.listCourses} />
+                )}
+              />
+              <Route
+                path='/templates'
+                render={() => (
+                  <ZTemplatesPage
+                    selectTemplate={this.selectTemplate}
+                    selectedTemplate={this.state.selectedTemplate}
+                  />
+                )}
+              />
+              <Route
+                exact
+                path='/certificate'
+                render={() => (
+                  <ZCertifactePage
+                    selectedStudent={this.state.selectedStudent}
+                    selectedColor={this.state.selectedColor}
+                    sendEmail={this.sendEmail}
+                  />
+                )}
+              />
 
-    return (
-      <Router>
-        <div className='App'>
-          <Switch>
-            <Route exact path='/' component={ZHomePage} />
-            <Route
-              path='/students'
-              render={() => (
-                <ZStudentsPage
-                  listStudents={this.state.listStudents}
-                  selectStudent={this.selectStudent}
-                  deleteOnClick={this.deleteOnClick}
-                />
-              )}
-            />
-            <Route
-              path='/form'
-              render={() => <ZFormPage listCourses={this.state.listCourses} />}
-            />
-            <Route
-              path='/templates'
-              render={() => (
-                <ZTemplatesPage
-                  selectTemplate={this.selectTemplate}
-                  selectedTemplate={this.state.selectedTemplate}
-                />
-              )}
-            />
-            <Route
-              exact path='/certificate'
-              render={() => (
-                <ZCertifactePage
-                  selectedStudent={this.state.selectedStudent}
-                  selectedColor={this.state.selectedColor}
-                  sendEmail={this.sendEmail}
-                />
-              )}
-            />
-             
-             <Route
-              path='/certificate/sent'
-              render={() => (
-                <ZpdfCertifacteSent
-                  selectedStudent={this.state.selectedStudent}
-                  selectedColor={this.state.selectedColor}
-                />
-              )}
-            />
-            
-            
-         
-            <Route component={ZNoPage} />
-          </Switch>
-        </div>
-      </Router>
-    );
+              <Route
+                path='/certificate/sent'
+                render={() => (
+                  <ZpdfCertifacteSent
+                    selectedStudent={this.state.selectedStudent}
+                    selectedColor={this.state.selectedColor}
+                  />
+                )}
+              />
+
+              <Route component={ZNoPage} />
+            </Switch>
+          </div>
+        </Router>
+      );
+    }
   }
-}
+
 
 export default App;

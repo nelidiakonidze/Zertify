@@ -9,6 +9,10 @@ import Paper from '@material-ui/core/Paper';
 import DeleteIcon from '@material-ui/icons/Delete';
 import './ZStudenTable.css';
 import {Link} from 'react-router-dom';
+import CircularProgress from '@material-ui/core/CircularProgress';
+
+
+   
 
 // component style : theme for cells
 const StyledTableCell = withStyles(theme => ({
@@ -66,10 +70,19 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+
+
+
+
 // component structure
-function ZStudentTable({listStudents, selectStudent, deleteOnClick}) {
+function ZStudentTable({listStudents, selectStudent, deleteOnClick, circularProgress }) {
   const classes = useStyles();
-  return (
+  if (circularProgress===true) {
+    return <CircularProgress />
+
+  } else {
+    return (
+
     <div className={classes.container}>
       <h1 className={classes.h1}>
         Select an eligible student for a certification
@@ -133,6 +146,7 @@ function ZStudentTable({listStudents, selectStudent, deleteOnClick}) {
       </div>
     </div>
   );
+  }
 }
 
 export default ZStudentTable;
