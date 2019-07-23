@@ -64,6 +64,12 @@ const useStyles = makeStyles(theme => ({
   btn: {
     cursor: 'pointer',
   },
+  flexIcons: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center'
+  }
 }));
 
 // component structure
@@ -111,7 +117,7 @@ function ZStudentTable({listStudents, selectStudent, deleteOnClick}) {
                       {JSON.stringify(course.name).slice(1, -1)}
                     </StyledTableCell>
                   ))}
-                  <StyledTableCell>
+                  <StyledTableCell className={classes.flexIcons}>
                     <Link to='/templates'>
                       <button
                         className='button'
