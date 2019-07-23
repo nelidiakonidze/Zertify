@@ -187,11 +187,8 @@ class App extends React.Component {
               )}
             />
 
-<<<<<<< HEAD
             <Route path='/help' component={ZHelpPage} />
 
-=======
->>>>>>> 8350adaff58c95a8e2a0f6ec485b3a058c70fddd
             <Route component={ZNoPage} />
           </Switch>
         </div>
