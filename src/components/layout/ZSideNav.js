@@ -17,7 +17,14 @@ function ZSideNav() {
             </NavLink>
           </NavIcon>
           <NavText>
-            <NavLink style={{textDecoration: 'none', color: 'white'}} to='/'>
+            <NavLink
+              style={{
+                textDecoration: 'none',
+                color: 'white',
+                padding: '24px',
+                paddingRight: '100px',
+              }}
+              to='/'>
               Home
             </NavLink>
           </NavText>
@@ -35,7 +42,12 @@ function ZSideNav() {
           </NavIcon>
           <NavText>
             <NavLink
-              style={{textDecoration: 'none', color: 'white'}}
+              style={{
+                textDecoration: 'none',
+                color: 'white',
+                padding: '24px',
+                paddingRight: '100px',
+              }}
               to='/students'>
               Students
             </NavLink>
@@ -51,7 +63,12 @@ function ZSideNav() {
           </NavIcon>
           <NavText>
             <NavLink
-              style={{textDecoration: 'none', color: 'white'}}
+              style={{
+                textDecoration: 'none',
+                color: 'white',
+                padding: '24px',
+                paddingRight: '100px',
+              }}
               to='/templates'>
               Templates
             </NavLink>
@@ -67,7 +84,12 @@ function ZSideNav() {
           </NavIcon>
           <NavText>
             <NavLink
-              style={{textDecoration: 'none', color: 'white'}}
+              style={{
+                textDecoration: 'none',
+                color: 'white',
+                padding: '24px',
+                paddingRight: '100px',
+              }}
               to='/form'>
               Form
             </NavLink>
