@@ -1,20 +1,20 @@
 .flex_container {
   display: flex;
   flex-direction: column;
-
+  justify-content: center;
   align-items: center;
-  margin: 75px;
-  padding: 10px;
+  margin: 95px;
+  padding: 95px;
 }
 
 ol.flex_list {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 2vw;
+  padding: 20px;
+  padding-left: 70px;
   font-size: 1.5rem;
-  background: #efa72d;
-  opacity: 0.8;
+  background: lightyellow;
+  opacity: 0.7;
   border-radius: 3px;
   box-shadow: 5px 5px 5px #242430;
 }
@@ -24,7 +24,6 @@ span {
 }
 
 h1 {
-  text-decoration: underline;
   color: #efa72d;
 }
 

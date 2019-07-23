@@ -5,27 +5,17 @@
   justify-content: center;
   color: #efa72d;
 }
-.particles {
-  z-index: -1;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  position: fixed;
-}
+
 img {
-  border-radius: 4px;
-  box-shadow: 4px 4px 4px gray;
-}
-.flex-splashscreen img {
   margin-top: 5px;
+  margin: 20px;
   height: auto;
-  margin: 70px;
-  max-width: 85vw;
+  max-width: 70vw;
+  border-radius: 5px;
 }
 
-@media (min-width: 1300px) {
-  .flex-splashscreen img {
+@media (width: 1300px) {
+  div img {
     max-width: 1150px;
   }
 }
@@ -47,17 +37,26 @@ img {
   flex-direction: row;
   justify-content: center;
   padding: 5px;
+  text-decoration: none;
 }
 
-button:active,
-button:hover,
-button:focus {
+@media (width: 320px) {
+  .instruction_btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.splashScreenBtn:active,
+.splashScreenBtn:hover,
+.splashScreenBtn:focus {
   background-color: #efa72d;
   border: 4px solid #efa72d;
   color: white;
 }
 
-button {
+.splashScreenBtn {
   outline: none;
   background-color: whitesmoke;
   border: 4px solid #efa72d;
@@ -65,11 +64,21 @@ button {
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
   font-size: 16px;
+  width: auto;
   margin: 8px 14px;
   transition-duration: 0.4s;
   cursor: pointer;
   box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 7px;
+}
+
+@media (width: 320px) {
+  .splashScreenBtn {
+    flex-direction: column;
+    min-width: 226px;
+    min-height: 64px;
+    align-items: center;
+    justify-content: center;
+  }
 }

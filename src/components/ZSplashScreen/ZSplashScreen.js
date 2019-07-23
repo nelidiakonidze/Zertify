@@ -10,13 +10,10 @@ const ZSplashScreen = () => {
         <h2 className='flex-splashscreen'>Certification Creator</h2>
         <div className='instruction_btn'>
           <NavLink to='/students'>
-            <button>Select elegible Student</button>
+            <button className='splashScreenBtn'>Select elegible Student</button>
           </NavLink>
           <NavLink to='/form'>
-            <button>Add new Student/Course</button>
-          </NavLink>
-          <NavLink to='/help'>
-            <button>Help</button>
+            <button className='splashScreenBtn'>Add new Student/Course</button>
           </NavLink>
         </div>
         <img

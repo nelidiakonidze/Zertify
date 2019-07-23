@@ -58,12 +58,19 @@ function ZSideNav() {
         </NavItem>
         <NavItem eventKey='help'>
           <NavIcon>
-            <NavLink style={{textDecoration: 'none', color: 'white'}} to='/help'>
+            <NavLink style={{textDecoration: 'none', color: 'white', padding: '15px'}} to='/help'>
               <i class='fas fa-question-circle' style={{fontSize: '1.75em'}} />
             </NavLink>
           </NavIcon>
           <NavText>
-            <NavLink style={{textDecoration: 'none', color: 'white'}} to='/help'>
+            <NavLink
+              style={{
+                textDecoration: 'none',
+                color: 'white',
+                padding: '23px',
+                paddingRight: '100px',
+              }}
+              to='/help'>
               Help
             </NavLink>
           </NavText>
