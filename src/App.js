@@ -50,9 +50,8 @@ class App extends React.Component {
       })
       .catch(error => console.log('error: ', error));
   }
-  // end of the constructor
 
-  // // Delete row with student when onClick Bin Icon
+  // Delete row with student when onClick Bin Icon
   // -> Student get´s deleted from database
   // -> rerender of table without the student
   deleteOnClick(id) {
@@ -113,12 +112,17 @@ class App extends React.Component {
         } else {
           console.log('response', response);
           alert('Email sent');
-          alert(
-            `Copy this permalink in the url: http://localhost:3000/certificate/sent/${
-              response.hashed
-            }`,
-          );
-          console.log('history', this.props);
+
+          // const myUrl = `/certificate/sent/${response.hashed}`;
+
+          // alert(
+          //   `Copy this permalink in the url: http://localhost:3000/certificate/sent/${
+          //     response.hashed
+          //   }`,
+          // );
+
+          // history.push(myUrl);
+          // console.log('history', this.props);
         }
       })
       .catch(event => {
