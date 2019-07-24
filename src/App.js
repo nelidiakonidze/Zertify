@@ -33,7 +33,6 @@ class App extends React.Component {
       .then(data => {
         this.setState({
           listStudents: data.students,
-          //listCourses: data.courses
         });
         console.log('fetch students data ', this.state.listStudents);
       })
@@ -51,6 +50,7 @@ class App extends React.Component {
       })
       .catch(error => console.log('error: ', error));
   }
+  // end of the constructor
 
   // // Delete row with student when onClick Bin Icon
   // -> Student get´s deleted from database
@@ -178,13 +178,9 @@ class App extends React.Component {
             />
 
             <Route
-              path='/certificate/sent'
-              render={() => (
-                <ZpdfCertifacteSent
-                  selectedStudent={this.state.selectedStudent}
-                  selectedColor={this.state.selectedColor}
-                />
-              )}
+              exact
+              path='/certificate/sent/:hash'
+              component={ZpdfCertifacteSent}
             />
 
             <Route path='/help' component={ZHelpPage} />
