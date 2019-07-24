@@ -9,10 +9,12 @@ const ZSplashScreen = () => {
       <h2>The Edera Certification Generator</h2>
       <section>
         <NavLink to='/students'>
-          <button className='button'>Select an elegible student</button>
+          <button className='button swing'>Select an elegible student</button>
         </NavLink>
         <NavLink to='/form'>
-          <button className='button'>Create new student or course</button>
+          <button className='button' id='btn-secondary'>
+            Create new student or course
+          </button>
         </NavLink>
       </section>
       <img
