@@ -23,6 +23,12 @@
   color: #efa72d;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
 }
+.flex-404 p {
+  font-size: 1.1rem;
+  margin: 10px;
+  color: #efa72d;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
+}
 
 .flex-404 img {
   margin-top: 50px;

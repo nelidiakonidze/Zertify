@@ -19,7 +19,7 @@ const ZCertificatePage = ({selectedStudent, selectedColor, sendEmail}) => {
             </button>
           </Link>
           <Link to='/'>
-            <button className='button select-back-btn'>Go back</button>
+            <button className='button select-back-btn'>Cancel</button>
           </Link>
         </section>
         <PDFViewer className='size-pdf'>
