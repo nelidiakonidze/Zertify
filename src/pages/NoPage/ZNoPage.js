@@ -1,7 +1,6 @@
 import React from 'react';
 import './ZNoPage.css';
 import ZSideNav from '../../components/layout/ZSideNav';
-import ZFooter from '../../components/layout/ZFooter';
 
 const ZNoPage = () => {
   return (
