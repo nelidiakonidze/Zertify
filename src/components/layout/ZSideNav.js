@@ -15,7 +15,9 @@ function ZSideNav() {
       <SideNav.Nav>
         <NavItem eventKey='home'>
           <NavIcon>
-            <NavLink style={{textDecoration: 'none', color: 'white', padding: '13px'}} to='/'>
+            <NavLink
+              style={{textDecoration: 'none', color: 'white', padding: '13px'}}
+              to='/'>
               <i className='fa fa-fw fa-home' style={{fontSize: '1.75em'}} />
             </NavLink>
           </NavIcon>
@@ -37,7 +39,10 @@ function ZSideNav() {
             <NavLink
               style={{textDecoration: 'none', color: 'white', padding: '18px'}}
               to='/students'>
-              <i className='fas fa-user-graduate' style={{fontSize: '1.75em'}} />
+              <i
+                className='fas fa-user-graduate'
+                style={{fontSize: '1.75em'}}
+              />
             </NavLink>
           </NavIcon>
           <NavText>
@@ -56,7 +61,7 @@ function ZSideNav() {
         <NavItem eventKey='templates'>
           <NavIcon>
             <NavLink
-              style={{textDecoration: 'none', color: 'white', padding: '15px'}}
+              style={{textDecoration: 'none', color: 'white', padding: '19px'}}
               to='/templates'>
               <i className='fas fa-award' style={{fontSize: '1.75em'}} />
             </NavLink>
@@ -76,8 +81,10 @@ function ZSideNav() {
         </NavItem>
         <NavItem eventKey='form'>
           <NavIcon>
-            <NavLink style={{textDecoration: 'none', color: 'white', padding: '15px'}} to='/form'>
-              <i className='far fa-file-alt' style={{fontSize: '1.75em'}} />
+            <NavLink
+              style={{textDecoration: 'none', color: 'white', padding: '20px'}}
+              to='/form'>
+              <i class='fas fa-user-plus' style={{fontSize: '1.75em'}} />
             </NavLink>
           </NavIcon>
           <NavText>
@@ -95,7 +102,9 @@ function ZSideNav() {
         </NavItem>
         <NavItem eventKey='help'>
           <NavIcon>
-            <NavLink style={{textDecoration: 'none', color: 'white', padding: '15px'}} to='/help'>
+            <NavLink
+              style={{textDecoration: 'none', color: 'white', padding: '15px'}}
+              to='/help'>
               <i class='fas fa-question-circle' style={{fontSize: '1.75em'}} />
             </NavLink>
           </NavIcon>
