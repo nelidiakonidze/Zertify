@@ -1,0 +1,49 @@
+.flex_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 95px;
+  padding: 95px;
+}
+
+ol.flex_list {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  padding-left: 70px;
+  font-size: 1.5rem;
+  background: lightyellow;
+  opacity: 0.7;
+  border-radius: 3px;
+  box-shadow: 5px 5px 5px #242430;
+}
+
+span {
+  font-weight: bold;
+}
+
+h1 {
+  color: #efa72d;
+}
+
+li {
+  padding: 10px;
+}
+li:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+}
+
+i {
+  margin: 5px;
+}
+
+.particles {
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+}

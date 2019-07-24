@@ -5,14 +5,17 @@ import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 
 function ZSideNav() {
   return (
-    <SideNav style={{position: 'fixed', background: '#477DCA60', boxShadow: "0px 6px 12px 0px rgba(0,0,0,0.75)" }}>
+    <SideNav
+      style={{
+        position: 'fixed',
+        background: '#477DCA60',
+        boxShadow: '0px 6px 12px 0px rgba(0,0,0,0.75)',
+      }}>
       <SideNav.Toggle />
       <SideNav.Nav>
         <NavItem eventKey='home'>
           <NavIcon>
-            <NavLink
-              style={{textDecoration: 'none', color: 'white', padding: '17px'}}
-              to='/'>
+            <NavLink style={{textDecoration: 'none', color: 'white', padding: '13px'}} to='/'>
               <i className='fa fa-fw fa-home' style={{fontSize: '1.75em'}} />
             </NavLink>
           </NavIcon>
@@ -32,12 +35,9 @@ function ZSideNav() {
         <NavItem eventKey='students'>
           <NavIcon>
             <NavLink
-              style={{textDecoration: 'none', color: 'white', padding: '23px'}}
+              style={{textDecoration: 'none', color: 'white', padding: '18px'}}
               to='/students'>
-              <i
-                className='fas fa-user-graduate'
-                style={{fontSize: '1.75em'}}
-              />
+              <i className='fas fa-user-graduate' style={{fontSize: '1.75em'}} />
             </NavLink>
           </NavIcon>
           <NavText>
@@ -56,7 +56,7 @@ function ZSideNav() {
         <NavItem eventKey='templates'>
           <NavIcon>
             <NavLink
-              style={{textDecoration: 'none', color: 'white', padding: '23px'}}
+              style={{textDecoration: 'none', color: 'white', padding: '15px'}}
               to='/templates'>
               <i className='fas fa-award' style={{fontSize: '1.75em'}} />
             </NavLink>
@@ -76,9 +76,7 @@ function ZSideNav() {
         </NavItem>
         <NavItem eventKey='form'>
           <NavIcon>
-            <NavLink
-              style={{textDecoration: 'none', color: 'white', padding: '24px'}}
-              to='/form'>
+            <NavLink style={{textDecoration: 'none', color: 'white', padding: '15px'}} to='/form'>
               <i className='far fa-file-alt' style={{fontSize: '1.75em'}} />
             </NavLink>
           </NavIcon>
@@ -92,6 +90,25 @@ function ZSideNav() {
               }}
               to='/form'>
               Form
+            </NavLink>
+          </NavText>
+        </NavItem>
+        <NavItem eventKey='help'>
+          <NavIcon>
+            <NavLink style={{textDecoration: 'none', color: 'white', padding: '15px'}} to='/help'>
+              <i class='fas fa-question-circle' style={{fontSize: '1.75em'}} />
+            </NavLink>
+          </NavIcon>
+          <NavText>
+            <NavLink
+              style={{
+                textDecoration: 'none',
+                color: 'white',
+                padding: '23px',
+                paddingRight: '100px',
+              }}
+              to='/help'>
+              Help
             </NavLink>
           </NavText>
         </NavItem>
