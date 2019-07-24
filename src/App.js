@@ -18,7 +18,6 @@ class App extends React.Component {
       selectedStudent: {},
       selectedTemplate: 0, // first template by default
       selectedColor: '#90caf9', // blue by default
-      // certificateHash: '',
     };
 
     this.selectStudent = this.selectStudent.bind(this);
@@ -50,19 +49,6 @@ class App extends React.Component {
         console.log('fetch courses data ', this.state.listCourses);
       })
       .catch(error => console.log('error: ', error));
-
-    // let urlCertificate = `https://zertify-server.herokuapp.com/api/certificate/${
-    //   this.state.hash
-    // }`;
-    // fetch(urlCertificate)
-    //   .then(response => response.json())
-    //   .then(data => {
-    //     console.log('data', data);
-    //     this.setState({
-    //       certificateHash: data.certificate.hash,
-    //     });
-    //   })
-    //   .catch(error => console.log('error: ', error));
   }
   // end of the constructor
 
@@ -125,9 +111,14 @@ class App extends React.Component {
         if (response.error) {
           alert(response.error);
         } else {
+          console.log('response', response);
           alert('Email sent');
-          history.push('/certificate/sent/hardcoded');
-          //history.push('/certificate/sent/response.certificate.hash')
+          alert(
+            `Copy this permalink in the url: http://localhost:3000/certificate/sent/${
+              response.hashed
+            }`,
+          );
+          console.log('history', this.props);
         }
       })
       .catch(event => {
@@ -164,8 +155,6 @@ class App extends React.Component {
   }
 
   render() {
-    //console.log('color render', this.state.selectedColor);
-
     return (
       <Router>
         <div className='App'>

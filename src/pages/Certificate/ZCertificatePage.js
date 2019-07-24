@@ -6,7 +6,6 @@ import {Link} from 'react-router-dom';
 import ZNoPage from '../NoPage/ZNoPage';
 
 const ZCertificatePage = ({selectedStudent, selectedColor, sendEmail}) => {
-  console.log('length', Object.keys(selectedStudent).length);
   if (Object.keys(selectedStudent).length === 0) {
     return <ZNoPage />;
   } else {
