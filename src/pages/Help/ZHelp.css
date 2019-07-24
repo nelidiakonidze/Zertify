@@ -19,23 +19,27 @@ ol.flex_list {
   box-shadow: 5px 5px 5px #242430;
 }
 
-span {
+.flex_container span {
   font-weight: bold;
 }
 
-h1 {
+.flex_container h1 {
+  font-size: 1.5rem;
+  margin: 10px;
+  margin-top: 50px;
   color: #efa72d;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
 }
 
-li {
+.flex_container li {
   padding: 10px;
 }
-li:hover {
+.flex_container li:hover {
   cursor: pointer;
   transform: scale(1.01);
 }
 
-i {
+.flex_container i {
   margin: 5px;
 }
 
