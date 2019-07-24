@@ -50,9 +50,8 @@ class App extends React.Component {
       })
       .catch(error => console.log('error: ', error));
   }
-  // end of the constructor
 
-  // // Delete row with student when onClick Bin Icon
+  // Delete row with student when onClick Bin Icon
   // -> Student get´s deleted from database
   // -> rerender of table without the student
   deleteOnClick(id) {
@@ -67,25 +66,33 @@ class App extends React.Component {
         console.log(data);
         this.setState(state => {
           return {
-            listStudents: state.listStudents.filter(student => student.id !== id),
+            listStudents: state.listStudents.filter(
+              student => student.id !== id,
+            ),
           };
         });
-        window.confirm(`Are you sure to delete ${data.student.firstName} ${data.student.lastName}`);
+        window.confirm(
+          `Are you sure to delete ${data.student.firstName} ${
+            data.student.lastName
+          }`,
+        );
       })
       .catch(error => console.log(error));
     console.log('backend is calling');
   }
 
   // post the certificate informations
-  sendEmail() {
-    const urlCertificate = 'https://zertify-server.herokuapp.com/api/certificate';
+  sendEmail(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    const urlCertificate =
+      'https://zertify-server.herokuapp.com/api/certificate';
     const Zconfig = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        hash: 'hashABC',
         settings: JSON.stringify({
           firstName: this.state.selectedStudent.firstName,
           lastName: this.state.selectedStudent.lastName,
@@ -103,7 +110,19 @@ class App extends React.Component {
         if (response.error) {
           alert(response.error);
         } else {
+          console.log('response', response);
           alert('Email sent');
+
+          // const myUrl = `/certificate/sent/${response.hashed}`;
+
+          // alert(
+          //   `Copy this permalink in the url: http://localhost:3000/certificate/sent/${
+          //     response.hashed
+          //   }`,
+          // );
+
+          // history.push(myUrl);
+          // console.log('history', this.props);
         }
       })
       .catch(event => {
@@ -132,14 +151,14 @@ class App extends React.Component {
   }
 
   selectStudent(id) {
-    const selectedStudent = this.state.listStudents.find(student => student.id === id);
+    const selectedStudent = this.state.listStudents.find(
+      student => student.id === id,
+    );
     this.setState({selectedStudent});
     console.log('active student', selectedStudent);
   }
 
   render() {
-    //console.log('color render', this.state.selectedColor);
-
     return (
       <Router>
         <div className='App'>
@@ -155,7 +174,10 @@ class App extends React.Component {
                 />
               )}
             />
-            <Route path='/form' render={() => <ZFormPage listCourses={this.state.listCourses} />} />
+            <Route
+              path='/form'
+              render={() => <ZFormPage listCourses={this.state.listCourses} />}
+            />
             <Route
               path='/templates'
               render={() => (
