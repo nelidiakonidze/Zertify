@@ -5,13 +5,7 @@ function ZFooter() {
   return (
     <div className='footer'>
       <div>
-        <span>Copyright &copy; 2019 By Edera</span>
-        {/* <a
-          target='_blank'
-          rel='noopener noreferrer'
-          href='https://www.ed-era.com/'>
-          EdEra
-        </a> */}
+        <span>&copy; 2019 Edera - https://www.ed-era.com</span>
       </div>
     </div>
   );
