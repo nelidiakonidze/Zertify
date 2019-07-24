@@ -25,7 +25,6 @@ class ZpdfCertifacteSent extends React.Component {
       hash: props.match.params.hash,
       certificateSettings: {},
     };
-    //console.log('hash', );
   }
 
   //fetch data for certificate
@@ -46,7 +45,6 @@ class ZpdfCertifacteSent extends React.Component {
 
   render() {
     console.log('settings', this.state.certificateSettings);
-    console.log('hash', this.state.hash);
 
     if (Object.keys(this.state.certificateSettings).length === 0) {
       return <h1>Loading ... </h1>;

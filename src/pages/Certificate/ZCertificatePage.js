@@ -13,7 +13,7 @@ const ZCertificatePage = ({selectedStudent, selectedColor, sendEmail}) => {
     return (
       <div>
         <section className='flex-btn'>
-          <Link to='/certificate/sent'>
+          <Link to='/certificate/sent/:hash'>
             <button className='button swing' onClick={sendEmail}>
               Send Certificate to student
             </button>

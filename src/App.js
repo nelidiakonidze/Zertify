@@ -18,6 +18,7 @@ class App extends React.Component {
       selectedStudent: {},
       selectedTemplate: 0, // first template by default
       selectedColor: '#90caf9', // blue by default
+      // certificateHash: '',
     };
 
     this.selectStudent = this.selectStudent.bind(this);
@@ -49,6 +50,19 @@ class App extends React.Component {
         console.log('fetch courses data ', this.state.listCourses);
       })
       .catch(error => console.log('error: ', error));
+
+    // let urlCertificate = `https://zertify-server.herokuapp.com/api/certificate/${
+    //   this.state.hash
+    // }`;
+    // fetch(urlCertificate)
+    //   .then(response => response.json())
+    //   .then(data => {
+    //     console.log('data', data);
+    //     this.setState({
+    //       certificateHash: data.certificate.hash,
+    //     });
+    //   })
+    //   .catch(error => console.log('error: ', error));
   }
   // end of the constructor
 
@@ -67,25 +81,33 @@ class App extends React.Component {
         console.log(data);
         this.setState(state => {
           return {
-            listStudents: state.listStudents.filter(student => student.id !== id),
+            listStudents: state.listStudents.filter(
+              student => student.id !== id,
+            ),
           };
         });
-        window.confirm(`Are you sure to delete ${data.student.firstName} ${data.student.lastName}`);
+        window.confirm(
+          `Are you sure to delete ${data.student.firstName} ${
+            data.student.lastName
+          }`,
+        );
       })
       .catch(error => console.log(error));
     console.log('backend is calling');
   }
 
   // post the certificate informations
-  sendEmail() {
-    const urlCertificate = 'https://zertify-server.herokuapp.com/api/certificate';
+  sendEmail(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    const urlCertificate =
+      'https://zertify-server.herokuapp.com/api/certificate';
     const Zconfig = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        hash: 'hashABC',
         settings: JSON.stringify({
           firstName: this.state.selectedStudent.firstName,
           lastName: this.state.selectedStudent.lastName,
@@ -104,6 +126,8 @@ class App extends React.Component {
           alert(response.error);
         } else {
           alert('Email sent');
+          history.push('/certificate/sent/hardcoded');
+          //history.push('/certificate/sent/response.certificate.hash')
         }
       })
       .catch(event => {
@@ -132,7 +156,9 @@ class App extends React.Component {
   }
 
   selectStudent(id) {
-    const selectedStudent = this.state.listStudents.find(student => student.id === id);
+    const selectedStudent = this.state.listStudents.find(
+      student => student.id === id,
+    );
     this.setState({selectedStudent});
     console.log('active student', selectedStudent);
   }
@@ -155,7 +181,10 @@ class App extends React.Component {
                 />
               )}
             />
-            <Route path='/form' render={() => <ZFormPage listCourses={this.state.listCourses} />} />
+            <Route
+              path='/form'
+              render={() => <ZFormPage listCourses={this.state.listCourses} />}
+            />
             <Route
               path='/templates'
               render={() => (
