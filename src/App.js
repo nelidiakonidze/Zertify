@@ -7,7 +7,6 @@ import ZTemplatesPage from './pages/Templates/ZTemplatesPage';
 import ZNoPage from './pages/NoPage/ZNoPage';
 import ZCertifactePage from './pages/Certificate/ZCertificatePage';
 import ZpdfCertifacteSent from './components/certificates/ZpdfCertificateSent';
-import './components/Spinner.css';
 import ZHelpPage from './pages/Help/ZHelpPage';
 
 class App extends React.Component {
@@ -185,7 +184,7 @@ class App extends React.Component {
                   deleteOnClick={this.deleteOnClick}
                   circularProgress={this.state.studentsLoading}
 
-                  //showSpinner={this.state.showSpinner}
+                 
                 />
               )}
             />
