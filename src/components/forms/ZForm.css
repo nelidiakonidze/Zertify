@@ -1,0 +1,26 @@
+.flex-inputs {
+  display: flex;
+  flex-direction: row;
+  color: whitesmoke;
+}
+
+@media (max-width: 1090px) {
+  .flex-inputs {
+    display: flex;
+    flex-direction: column;
+    margin-left: 150px;
+    margin-right: 150px;
+  }
+}
+@media (max-width: 700px) {
+  .flex-inputs {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+}
+@media (max-width: 550px) {
+  .flex-inputs {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
