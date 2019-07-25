@@ -8,6 +8,7 @@ import ZNoPage from './pages/NoPage/ZNoPage';
 import ZCertifactePage from './pages/Certificate/ZCertificatePage';
 import ZpdfCertifacteSent from './components/certificates/ZpdfCertificateSent';
 import './components/Spinner.css';
+import ZHelpPage from './pages/Help/ZHelpPage';
 
 class App extends React.Component {
   constructor() {
@@ -60,7 +61,7 @@ class App extends React.Component {
       .catch(error => console.log('error: ', error));
   }
 
-  // // Delete row with student when onClick Bin Icon
+  // Delete row with student when onClick Bin Icon
   // -> Student get´s deleted from database
   // -> rerender of table without the student
   deleteOnClick(id) {
@@ -91,7 +92,9 @@ class App extends React.Component {
   }
 
   // post the certificate informations
-  sendEmail() {
+  sendEmail(e) {
+    e.preventDefault();
+    e.stopPropagation();
     const urlCertificate =
       'https://zertify-server.herokuapp.com/api/certificate';
     const Zconfig = {
@@ -100,7 +103,6 @@ class App extends React.Component {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        hash: 'hashABC',
         settings: JSON.stringify({
           firstName: this.state.selectedStudent.firstName,
           lastName: this.state.selectedStudent.lastName,
@@ -118,7 +120,19 @@ class App extends React.Component {
         if (response.error) {
           alert(response.error);
         } else {
+          console.log('response', response);
           alert('Email sent');
+
+          // const myUrl = `/certificate/sent/${response.hashed}`;
+
+          // alert(
+          //   `Copy this permalink in the url: http://localhost:3000/certificate/sent/${
+          //     response.hashed
+          //   }`,
+          // );
+
+          // history.push(myUrl);
+          // console.log('history', this.props);
         }
       })
       .catch(event => {
@@ -151,16 +165,12 @@ class App extends React.Component {
       student => student.id === id,
     );
     this.setState({selectedStudent});
-    console.log('active student', selectedStudent);
+    
   }
 
   render() {
-    console.log('render...');
-    //if (this.state.coursesLoading || this.state.studentsLoading) {
-    /// return <CircularProgress className= 'CircularProgress'/>
-    //} else {
-    console.log('start app.js');
-    console.log('studentsLoading', this.state.studentsLoading);
+  
+   
     return (
       <Router>
         <div className='App'>
@@ -205,14 +215,12 @@ class App extends React.Component {
             />
 
             <Route
-              path='/certificate/sent'
-              render={() => (
-                <ZpdfCertifacteSent
-                  selectedStudent={this.state.selectedStudent}
-                  selectedColor={this.state.selectedColor}
-                />
-              )}
+              exact
+              path='/certificate/sent/:hash'
+              component={ZpdfCertifacteSent}
             />
+
+            <Route path='/help' component={ZHelpPage} />
 
             <Route component={ZNoPage} />
           </Switch>

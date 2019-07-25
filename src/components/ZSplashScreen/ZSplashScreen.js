@@ -1,4 +1,5 @@
 import React from 'react';
+import {NavLink} from 'react-router-dom';
 import './ZSplashScreen.css';
 
 const ZSplashScreen = () => {
@@ -6,9 +7,20 @@ const ZSplashScreen = () => {
     <div className='flex-splashscreen'>
       <h1>Welcome to Zertify</h1>
       <h2>The Edera Certification Generator</h2>
-      <img src='https://i.imgur.com/K27lINZ.png' alt='TemplatesChoice' />
-      {/* <img src='https://i.imgur.com/lFxUsdV.jpg' alt='TemplatesChoice2' />
-  <img src='https://i.imgur.com/bPBtyoZ.jpg' alt='TemplatesChoice3' /> */}
+      <section>
+        <NavLink to='/students'>
+          <button className='button swing'>Select an elegible student</button>
+        </NavLink>
+        <NavLink to='/form'>
+          <button className='button' id='btn-secondary'>
+            Create new student or course
+          </button>
+        </NavLink>
+      </section>
+      <img
+        src='https://i.imgur.com/K27lINZ.png'
+        alt='splashscreen illustration from Undraw '
+      />
     </div>
   );
 };
