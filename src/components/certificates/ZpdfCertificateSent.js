@@ -9,6 +9,7 @@ import {
   PDFViewer,
 } from '@react-pdf/renderer';
 import './ZpdfCertificateSent.css';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 class ZpdfCertifacteSent extends React.Component {
   constructor(props) {
@@ -62,10 +63,13 @@ class ZpdfCertifacteSent extends React.Component {
         </section>
       );
     } else if (Object.keys(this.state.certificateSettings).length === 0) {
-      console.log('if hash', this.state.hash);
-      return <h1>Loading ... </h1>;
+     
+      return (
+        <div style={styles.spinner}>
+          <CircularProgress style={{width:"100px"}}/>
+        </div>
+      )
     } else {
-      console.log('else hash', this.state.hash);
       return (
         <PDFViewer style={styles.document}>
           <Document>
@@ -186,4 +190,14 @@ const styles = StyleSheet.create({
     height: '100vh',
     width: '100vw',
   },
+  spinner: {
+    minHeight: '100vh',
+    width: '100vw',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
+    
+  }
 });
