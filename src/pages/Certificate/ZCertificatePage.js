@@ -38,16 +38,13 @@ const ZCertificatePage = props => {
           alert(response.error);
         } else {
           console.log('response', response);
-
-          const myUrl = `/certificate/sent/${response.hashed}`;
-
-          alert('Email sent');
+          const myUrl = `/edera/${response.hashed}/certificate.pdf`;
+          alert('The certificate has been sent by email to the student');
           history.push(myUrl);
         }
       })
       .catch(event => {
         console.error(event);
-        //alert("Sorry, we're having trouble sending your email");
       });
   };
 
