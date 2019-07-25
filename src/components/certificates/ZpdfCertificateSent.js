@@ -8,6 +8,7 @@ import {
   StyleSheet,
   PDFViewer,
 } from '@react-pdf/renderer';
+import './ZpdfCertificateSent.css';
 
 class ZpdfCertifacteSent extends React.Component {
   constructor(props) {
@@ -24,6 +25,7 @@ class ZpdfCertifacteSent extends React.Component {
       date: date,
       hash: props.match.params.hash,
       certificateSettings: {},
+      error: false,
     };
   }
 
@@ -40,15 +42,30 @@ class ZpdfCertifacteSent extends React.Component {
           certificateSettings: JSON.parse(data.certificate.settings),
         });
       })
-      .catch(error => console.log('error: ', error));
+      .catch(error => {
+        console.log('error: ', error);
+        this.setState({error: true});
+      });
   }
 
   render() {
     console.log('settings', this.state.certificateSettings);
-
-    if (Object.keys(this.state.certificateSettings).length === 0) {
+    if (this.state.error) {
+      return (
+        <section className='flex-certificate-final'>
+          <h1>Something went wrong...</h1>
+          <h2>
+            The link seems to be invalid, please contact Edera at
+            <a href='mailto:info@ed-era.com'> info@ed-era.com </a>
+          </h2>
+          <img src='https://media.giphy.com/media/Bp3dFfoqpCKFyXuSzP/source.gif' />
+        </section>
+      );
+    } else if (Object.keys(this.state.certificateSettings).length === 0) {
+      console.log('if hash', this.state.hash);
       return <h1>Loading ... </h1>;
     } else {
+      console.log('else hash', this.state.hash);
       return (
         <PDFViewer style={styles.document}>
           <Document>
