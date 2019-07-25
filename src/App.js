@@ -7,7 +7,6 @@ import ZTemplatesPage from './pages/Templates/ZTemplatesPage';
 import ZNoPage from './pages/NoPage/ZNoPage';
 import ZCertifactePage from './pages/Certificate/ZCertificatePage';
 import ZpdfCertifacteSent from './components/certificates/ZpdfCertificateSent';
-
 import './components/Spinner.css';
 
 class App extends React.Component {
@@ -29,20 +28,25 @@ class App extends React.Component {
     this.sendEmail = this.sendEmail.bind(this);
 
     //fetch data for students
-
+    //update state:
+  
     let urlStudents = 'https://zertify-server.herokuapp.com/api/students/';
+    //this.setState({listStudents: data.students }); 
     fetch(urlStudents)
       .then(response => response.json())
       .then(data => {
         this.setState({
           listStudents: data.students,
-          //studentsLoading: false,
+          studentsLoading: false,
         });
+        console.log('listStudents:', this.state.listStudents)
         console.log('fetch students data ', this.state.listStudents);
       })
       .catch(error => console.log('error: ', error));
 
+     
     //fetch data for courses
+
     let urlCourses = 'https://zertify-server.herokuapp.com/api/courses/';
     fetch(urlCourses)
       .then(response => response.json())
@@ -151,71 +155,71 @@ class App extends React.Component {
   }
 
   render() {
+    console.log('render...');
     //if (this.state.coursesLoading || this.state.studentsLoading) {
-     /// return <CircularProgress className= 'CircularProgress'/>
+    /// return <CircularProgress className= 'CircularProgress'/>
     //} else {
-      return (
-        <Router>
-          <div className='App'>
-            <Switch>
-              <Route exact path='/' component={ZHomePage} />
-              <Route
-                path='/students'
-                render={() => (
-                  <ZStudentsPage
-                    listStudents={this.state.listStudents}
-                    selectStudent={this.selectStudent}
-                    deleteOnClick={this.deleteOnClick}
-                    circularProgress={this.state.studentLoading}
-                    
-                    //showSpinner={this.state.showSpinner}
-                  />
-                )}
-              />
-              <Route
-                path='/form'
-                render={() => (
-                  <ZFormPage listCourses={this.state.listCourses} />
-                )}
-              />
-              <Route
-                path='/templates'
-                render={() => (
-                  <ZTemplatesPage
-                    selectTemplate={this.selectTemplate}
-                    selectedTemplate={this.state.selectedTemplate}
-                  />
-                )}
-              />
-              <Route
-                exact
-                path='/certificate'
-                render={() => (
-                  <ZCertifactePage
-                    selectedStudent={this.state.selectedStudent}
-                    selectedColor={this.state.selectedColor}
-                    sendEmail={this.sendEmail}
-                  />
-                )}
-              />
+    console.log('start app.js');
+    console.log('studentsLoading', this.state.studentsLoading);
+    return (
+      <Router>
+        <div className='App'>
+          <Switch>
+            <Route exact path='/' component={ZHomePage} />
+            <Route
+              path='/students'
+              render={() => (
+                <ZStudentsPage
+                  listStudents={this.state.listStudents}
+                  selectStudent={this.selectStudent}
+                  deleteOnClick={this.deleteOnClick}
+                  circularProgress={this.state.studentsLoading}
 
-              <Route
-                path='/certificate/sent'
-                render={() => (
-                  <ZpdfCertifacteSent
-                    selectedStudent={this.state.selectedStudent}
-                    selectedColor={this.state.selectedColor}
-                  />
-                )}
-              />
+                  //showSpinner={this.state.showSpinner}
+                />
+              )}
+            />
+            <Route
+              path='/form'
+              render={() => <ZFormPage listCourses={this.state.listCourses} />}
+            />
+            <Route
+              path='/templates'
+              render={() => (
+                <ZTemplatesPage
+                  selectTemplate={this.selectTemplate}
+                  selectedTemplate={this.state.selectedTemplate}
+                />
+              )}
+            />
+            <Route
+              exact
+              path='/certificate'
+              render={() => (
+                <ZCertifactePage
+                  selectedStudent={this.state.selectedStudent}
+                  selectedColor={this.state.selectedColor}
+                  sendEmail={this.sendEmail}
+                />
+              )}
+            />
 
-              <Route component={ZNoPage} />
-            </Switch>
-          </div>
-        </Router>
-      );
-    }
+            <Route
+              path='/certificate/sent'
+              render={() => (
+                <ZpdfCertifacteSent
+                  selectedStudent={this.state.selectedStudent}
+                  selectedColor={this.state.selectedColor}
+                />
+              )}
+            />
+
+            <Route component={ZNoPage} />
+          </Switch>
+        </div>
+      </Router>
+    );
   }
-
+}
 
 export default App;

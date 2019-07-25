@@ -83,8 +83,11 @@ const useStyles = makeStyles(theme => ({
 // component structure
 function ZStudentTable({listStudents, selectStudent, deleteOnClick, circularProgress }) {
   const classes = useStyles();
+
+  console.log("end")
+  console.log("circularProgress", circularProgress )
   if (circularProgress===true) {
-    return <CircularProgress />
+    return <CircularProgress className={classes.container} style={{width:"100px"}} />
 
   } else {
     return (

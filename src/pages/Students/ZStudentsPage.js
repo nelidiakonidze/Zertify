@@ -5,7 +5,9 @@ import ZFooter from '../../components/layout/ZFooter';
 import './ZStudentsPage.css';
 
 
-const ZStudentsPage = ({listStudents, selectStudent, deleteOnClick, circularProgress}) => {  
+const ZStudentsPage = ({listStudents, selectStudent, deleteOnClick, circularProgress}) => {
+ console.log("child ZStudent") 
+ console.log("circularProgress", circularProgress) 
 return (
     <React.Fragment>
       <ZSideNav />
