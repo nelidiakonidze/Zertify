@@ -10,8 +10,8 @@ import ZpdfCertifacteSent from './components/certificates/ZpdfCertificateSent';
 import ZHelpPage from './pages/Help/ZHelpPage';
 
 class App extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       listStudents: [],
       listCourses: [],
@@ -24,7 +24,6 @@ class App extends React.Component {
     this.selectTemplate = this.selectTemplate.bind(this);
     this.setColor = this.setColor.bind(this);
     this.deleteOnClick = this.deleteOnClick.bind(this);
-    this.sendEmail = this.sendEmail.bind(this);
 
     //fetch data for students
     let urlStudents = 'https://zertify-server.herokuapp.com/api/students/';
@@ -79,56 +78,6 @@ class App extends React.Component {
       })
       .catch(error => console.log(error));
     console.log('backend is calling');
-  }
-
-  // post the certificate informations
-  sendEmail(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    const urlCertificate =
-      'https://zertify-server.herokuapp.com/api/certificate';
-    const Zconfig = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        settings: JSON.stringify({
-          firstName: this.state.selectedStudent.firstName,
-          lastName: this.state.selectedStudent.lastName,
-          email: this.state.selectedStudent.email,
-          name: this.state.selectedStudent.courses[0].name,
-          hours: this.state.selectedStudent.courses[0].hours,
-          color: this.state.selectedColor,
-        }),
-      }),
-    };
-
-    fetch(urlCertificate, Zconfig)
-      .then(response => response.json())
-      .then(response => {
-        if (response.error) {
-          alert(response.error);
-        } else {
-          console.log('response', response);
-          alert('Email sent');
-
-          // const myUrl = `/certificate/sent/${response.hashed}`;
-
-          // alert(
-          //   `Copy this permalink in the url: http://localhost:3000/certificate/sent/${
-          //     response.hashed
-          //   }`,
-          // );
-
-          // history.push(myUrl);
-          // console.log('history', this.props);
-        }
-      })
-      .catch(event => {
-        console.error(event);
-        alert("Sorry, we're having trouble sending your email");
-      });
   }
 
   /** update the state of the selected template via its css color style */
@@ -194,7 +143,6 @@ class App extends React.Component {
                 <ZCertifactePage
                   selectedStudent={this.state.selectedStudent}
                   selectedColor={this.state.selectedColor}
-                  sendEmail={this.sendEmail}
                 />
               )}
             />
