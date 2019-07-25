@@ -149,7 +149,7 @@ class App extends React.Component {
 
             <Route
               exact
-              path='/certificate/sent/:hash'
+              path='/edera/:hash/certificate.pdf'
               component={ZpdfCertifacteSent}
             />
 
