@@ -5,18 +5,25 @@ import './ZCertificatePage.css';
 import {Link} from 'react-router-dom';
 import ZNoPage from '../NoPage/ZNoPage';
 
-const ZCertificatePage = ({selectedStudent, selectedColor, sendEmail}) => {
+const ZCertificatePage = ({
+  selectedStudent,
+  selectedColor,
+  sendEmail,
+  certificateHash,
+}) => {
   if (Object.keys(selectedStudent).length === 0) {
     return <ZNoPage />;
   } else {
+    console.log('url', certificateHash);
     return (
       <div>
         <section className='flex-btn'>
-          {/* <Link to='/certificate/sent/:hash'> */}
-          <button className='button swing' onClick={sendEmail}>
-            Send Certificate to student
-          </button>
-          {/* </Link> */}
+          <Link
+            to={`http://localhost:3000/certificate/sent/${certificateHash}`}>
+            <button className='button swing' onClick={sendEmail}>
+              Send Certificate to student
+            </button>
+          </Link>
           <Link to='/'>
             <button className='button' id='btn-secondary'>
               Cancel

@@ -18,6 +18,7 @@ class App extends React.Component {
       selectedStudent: {},
       selectedTemplate: 0, // first template by default
       selectedColor: '#90caf9', // blue by default
+      certificateHash: '',
     };
 
     this.selectStudent = this.selectStudent.bind(this);
@@ -111,18 +112,17 @@ class App extends React.Component {
           alert(response.error);
         } else {
           console.log('response', response);
-          alert('Email sent');
-
+          alert('Your certificate has been sent by email');
           // const myUrl = `/certificate/sent/${response.hashed}`;
-
-          // alert(
-          //   `Copy this permalink in the url: http://localhost:3000/certificate/sent/${
-          //     response.hashed
-          //   }`,
-          // );
-
+          alert(
+            `Copy this permalink in the url: http://localhost:3000/certificate/sent/${
+              response.hashed
+            }`,
+          );
+          this.setState({certificateHash: response.hashed});
           // history.push(myUrl);
           // console.log('history', this.props);
+          console.log('certificateHash', this.state.certificateHash);
         }
       })
       .catch(event => {
@@ -159,6 +159,8 @@ class App extends React.Component {
   }
 
   render() {
+    console.log('render App.js...');
+
     return (
       <Router>
         <div className='App'>
@@ -201,8 +203,12 @@ class App extends React.Component {
 
             <Route
               exact
-              path='/certificate/sent/:hash'
-              component={ZpdfCertifacteSent}
+              path={`/certificate/sent/${this.state.certificateHash}`}
+              render={() => (
+                <ZpdfCertifacteSent
+                  selectedStudent={this.state.certificateHash}
+                />
+              )}
             />
 
             <Route path='/help' component={ZHelpPage} />
