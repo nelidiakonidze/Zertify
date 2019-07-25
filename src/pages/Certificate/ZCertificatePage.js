@@ -7,15 +7,13 @@ import ZNoPage from '../NoPage/ZNoPage';
 import {withRouter} from 'react-router-dom';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-
 const ZCertificatePage = props => {
   const {selectedStudent, selectedColor, history} = props;
   // post the certificate informations
   const sendEmail = e => {
     e.preventDefault();
     e.stopPropagation();
-    const urlCertificate =
-      'https://zertify-server.herokuapp.com/api/certificate';
+    const urlCertificate = 'https://zertify-server.herokuapp.com/api/certificate';
     const Zconfig = {
       method: 'POST',
       headers: {
@@ -40,9 +38,9 @@ const ZCertificatePage = props => {
           alert(response.error);
         } else {
           console.log('response', response);
-          const myUrl = `/edera/${response.hashed}/certificate.pdf`;
+          // const myUrl = `/edera/${response.hashed}/certificate.pdf`;
           alert('The certificate has been sent by email to the student');
-          history.push(myUrl);
+          // history.push(myUrl);
         }
       })
       .catch(event => {
@@ -56,11 +54,9 @@ const ZCertificatePage = props => {
     return (
       <div>
         <section className='flex-btn'>
-          <Link to='/certificate/sent/:hash'>
-            <button className='button swing' onClick={sendEmail}>
-              Send Certificate to student
-            </button>
-          </Link>
+          <button className='button swing' onClick={sendEmail}>
+            Send Certificate to student
+          </button>
           <Link to='/'>
             <button className='button' id='btn-secondary'>
               Cancel
@@ -68,10 +64,7 @@ const ZCertificatePage = props => {
           </Link>
         </section>
         <PDFViewer className='size-pdf'>
-          <ZpdfCertificate
-            selectedStudent={selectedStudent}
-            selectedColor={selectedColor}
-          />
+          <ZpdfCertificate selectedStudent={selectedStudent} selectedColor={selectedColor} />
         </PDFViewer>
       </div>
     );
