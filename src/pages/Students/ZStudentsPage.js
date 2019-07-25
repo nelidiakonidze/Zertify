@@ -4,8 +4,11 @@ import ZStudentTable from '../../components/lists/ZStudentTable';
 import ZFooter from '../../components/layout/ZFooter';
 import './ZStudentsPage.css';
 
-const ZStudentsPage = ({listStudents, selectStudent, deleteOnClick}) => {
-  return (
+
+const ZStudentsPage = ({listStudents, selectStudent, deleteOnClick, circularProgress}) => {
+ console.log("child ZStudent") 
+ console.log("circularProgress", circularProgress) 
+return (
     <React.Fragment>
       <ZSideNav />
       <section className='flex-students'>
@@ -13,6 +16,7 @@ const ZStudentsPage = ({listStudents, selectStudent, deleteOnClick}) => {
           listStudents={listStudents}
           selectStudent={selectStudent}
           deleteOnClick={deleteOnClick}
+          circularProgress={circularProgress}
         />
         <ZFooter />
       </section>

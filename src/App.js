@@ -17,7 +17,8 @@ class App extends React.Component {
       listCourses: [],
       selectedStudent: {},
       selectedTemplate: 0, // first template by default
-      selectedColor: '#90caf9', // blue by default
+      selectedColor: '#90caf9', // blue by default,
+      studentsLoading: true,
     };
 
     this.selectStudent = this.selectStudent.bind(this);
@@ -26,24 +27,32 @@ class App extends React.Component {
     this.deleteOnClick = this.deleteOnClick.bind(this);
 
     //fetch data for students
+    //update state:
+  
     let urlStudents = 'https://zertify-server.herokuapp.com/api/students/';
+    //this.setState({listStudents: data.students }); 
     fetch(urlStudents)
       .then(response => response.json())
       .then(data => {
         this.setState({
           listStudents: data.students,
+          studentsLoading: false,
         });
+        console.log('listStudents:', this.state.listStudents)
         console.log('fetch students data ', this.state.listStudents);
       })
       .catch(error => console.log('error: ', error));
 
+     
     //fetch data for courses
+
     let urlCourses = 'https://zertify-server.herokuapp.com/api/courses/';
     fetch(urlCourses)
       .then(response => response.json())
       .then(data => {
         this.setState({
           listCourses: data.courses,
+          coursesLoading: false,
         });
         console.log('fetch courses data ', this.state.listCourses);
       })
@@ -104,10 +113,12 @@ class App extends React.Component {
       student => student.id === id,
     );
     this.setState({selectedStudent});
-    console.log('active student', selectedStudent);
+    
   }
 
   render() {
+  
+   
     return (
       <Router>
         <div className='App'>
@@ -120,6 +131,9 @@ class App extends React.Component {
                   listStudents={this.state.listStudents}
                   selectStudent={this.selectStudent}
                   deleteOnClick={this.deleteOnClick}
+                  circularProgress={this.state.studentsLoading}
+
+                 
                 />
               )}
             />
