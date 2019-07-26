@@ -22,33 +22,25 @@ class App extends React.Component {
     };
 
     this.urlCourses = 'https://zertify-server.herokuapp.com/api/courses/';
+    this.urlStudents = 'https://zertify-server.herokuapp.com/api/students/';
 
     this.selectStudent = this.selectStudent.bind(this);
     this.selectTemplate = this.selectTemplate.bind(this);
     this.setColor = this.setColor.bind(this);
     this.deleteOnClick = this.deleteOnClick.bind(this);
     this.updateFetchCoursesHandler = this.updateFetchCoursesHandler.bind(this);
+    this.updateFetchStudentsHandler = this.updateFetchStudentsHandler.bind(
+      this,
+    );
 
     //fetch data for students
-    const urlStudents = 'https://zertify-server.herokuapp.com/api/students/';
-    fetch(urlStudents)
-      .then(response => response.json())
-      .then(data => {
-        this.setState({
-          listStudents: data.students,
-          studentsLoading: false,
-        });
-        console.log('listStudents:', this.state.listStudents);
-        console.log('fetch students data ', this.state.listStudents);
-      })
-      .catch(error => console.log('error: ', error));
+    this.updateFetchStudentsHandler();
 
     //fetch data for courses
     this.updateFetchCoursesHandler();
   }
 
   updateFetchCoursesHandler() {
-    console.log('update.....................');
     //fetch data for courses
     fetch(this.urlCourses)
       .then(response => response.json())
@@ -58,6 +50,21 @@ class App extends React.Component {
           coursesLoading: false,
         });
         console.log('fetch courses data ', this.state.listCourses);
+      })
+      .catch(error => console.log('error: ', error));
+  }
+
+  updateFetchStudentsHandler() {
+    //fetch data for students
+    fetch(this.urlStudents)
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          listStudents: data.students,
+          studentsLoading: false,
+        });
+        console.log('listStudents:', this.state.listStudents);
+        console.log('fetch students data ', this.state.listStudents);
       })
       .catch(error => console.log('error: ', error));
   }
@@ -141,6 +148,7 @@ class App extends React.Component {
                 <ZFormPage
                   listCourses={this.state.listCourses}
                   updateFetchCoursesHandler={this.updateFetchCoursesHandler}
+                  updateFetchStudentsHandler={this.updateFetchStudentsHandler}
                 />
               )}
             />

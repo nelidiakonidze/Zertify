@@ -5,7 +5,11 @@ import ZFooter from '../../components/layout/ZFooter';
 import ZStudentForm from '../../components/forms/ZStudentForm';
 import './ZFormsPage.css';
 
-const ZFormsPage = ({listCourses, updateFetchCoursesHandler}) => {
+const ZFormsPage = ({
+  listCourses,
+  updateFetchCoursesHandler,
+  updateFetchStudentsHandler,
+}) => {
   return (
     <div>
       <ZSideNav />
@@ -19,6 +23,7 @@ const ZFormsPage = ({listCourses, updateFetchCoursesHandler}) => {
           <ZStudentForm
             listCourses={listCourses}
             updateFetchCoursesHandler={updateFetchCoursesHandler}
+            updateFetchStudentsHandler={updateFetchStudentsHandler}
           />
         </section>
         <ZFooter />
