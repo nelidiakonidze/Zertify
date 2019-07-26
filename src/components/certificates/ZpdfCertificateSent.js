@@ -59,16 +59,18 @@ class ZpdfCertifacteSent extends React.Component {
             The link seems to be invalid, please contact Edera at
             <a href='mailto:info@ed-era.com'> info@ed-era.com </a>
           </h2>
-          <img src='https://media.giphy.com/media/Bp3dFfoqpCKFyXuSzP/source.gif' />
+          <img
+            src='https://media.giphy.com/media/Bp3dFfoqpCKFyXuSzP/source.gif'
+            alt='GIF of someone lost'
+          />
         </section>
       );
     } else if (Object.keys(this.state.certificateSettings).length === 0) {
-     
       return (
         <div style={styles.spinner}>
-          <CircularProgress style={{width:"100px"}}/>
+          <CircularProgress style={{width: '100px'}} />
         </div>
-      )
+      );
     } else {
       return (
         <PDFViewer style={styles.document}>
@@ -198,6 +200,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     textAlign: 'center',
-    
-  }
+  },
 });
