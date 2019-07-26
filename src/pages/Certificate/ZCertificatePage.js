@@ -13,7 +13,8 @@ const ZCertificatePage = props => {
   const sendEmail = e => {
     e.preventDefault();
     e.stopPropagation();
-    const urlCertificate = 'https://zertify-server.herokuapp.com/api/certificate';
+    const urlCertificate =
+      'https://zertify-server.herokuapp.com/api/certificate';
     const Zconfig = {
       method: 'POST',
       headers: {
@@ -37,10 +38,7 @@ const ZCertificatePage = props => {
         if (response.error) {
           alert(response.error);
         } else {
-          console.log('response', response);
-          // const myUrl = `/edera/${response.hashed}/certificate.pdf`;
           alert('The certificate has been sent by email to the student');
-          // history.push(myUrl);
         }
       })
       .catch(event => {
@@ -64,7 +62,10 @@ const ZCertificatePage = props => {
           </Link>
         </section>
         <PDFViewer className='size-pdf'>
-          <ZpdfCertificate selectedStudent={selectedStudent} selectedColor={selectedColor} />
+          <ZpdfCertificate
+            selectedStudent={selectedStudent}
+            selectedColor={selectedColor}
+          />
         </PDFViewer>
       </div>
     );

@@ -50,11 +50,9 @@ const useZForm = (initialValues, callback, validate) => {
           } else {
             callback();
             handleReset();
-            console.log('new student added to db');
           }
         })
         .catch(event => {
-          console.error(event);
           alert("Sorry, we're having trouble adding your new course");
         });
     }

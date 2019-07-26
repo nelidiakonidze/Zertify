@@ -38,8 +38,6 @@ class App extends React.Component {
           listStudents: data.students,
           studentsLoading: false,
         });
-        console.log('listStudents:', this.state.listStudents);
-        console.log('fetch students data ', this.state.listStudents);
       })
       .catch(error => console.log('error: ', error));
 
@@ -48,7 +46,6 @@ class App extends React.Component {
   }
 
   updateFetchCoursesHandler() {
-    console.log('update.....................');
     //fetch data for courses
     fetch(this.urlCourses)
       .then(response => response.json())
@@ -57,7 +54,6 @@ class App extends React.Component {
           listCourses: data.courses,
           coursesLoading: false,
         });
-        console.log('fetch courses data ', this.state.listCourses);
       })
       .catch(error => console.log('error: ', error));
   }
@@ -74,7 +70,6 @@ class App extends React.Component {
     fetch(`https://zertify-server.herokuapp.com/api/students/${id}`, options)
       .then(res => res.json())
       .then(data => {
-        console.log(data);
         this.setState(state => {
           return {
             listStudents: state.listStudents.filter(
@@ -89,7 +84,6 @@ class App extends React.Component {
         );
       })
       .catch(error => console.log(error));
-    console.log('backend is calling');
   }
 
   /** update the state of the selected template via its css color style */

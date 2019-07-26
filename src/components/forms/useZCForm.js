@@ -35,8 +35,6 @@ const useZForm = (initialValues, callback, validate) => {
           hours: inputs.courseHours,
         }),
       };
-      console.log('inputs', JSON.stringify(inputs));
-      console.log('name', inputs.courseName);
 
       fetch(urlCourses, Zconfig)
         .then(response => response.json())
@@ -46,11 +44,9 @@ const useZForm = (initialValues, callback, validate) => {
           } else {
             callback();
             handleReset();
-            console.log('new course added to db');
           }
         })
         .catch(event => {
-          console.error(event);
           alert("Sorry, we're having trouble adding your new course");
         });
     }

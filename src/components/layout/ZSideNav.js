@@ -84,7 +84,7 @@ function ZSideNav() {
             <NavLink
               style={{textDecoration: 'none', color: 'white', padding: '20px'}}
               to='/form'>
-              <i class='fas fa-user-plus' style={{fontSize: '1.75em'}} />
+              <i className='fas fa-user-plus' style={{fontSize: '1.75em'}} />
             </NavLink>
           </NavIcon>
           <NavText>
@@ -105,7 +105,10 @@ function ZSideNav() {
             <NavLink
               style={{textDecoration: 'none', color: 'white', padding: '15px'}}
               to='/help'>
-              <i class='fas fa-question-circle' style={{fontSize: '1.75em'}} />
+              <i
+                className='fas fa-question-circle'
+                style={{fontSize: '1.75em'}}
+              />
             </NavLink>
           </NavIcon>
           <NavText>

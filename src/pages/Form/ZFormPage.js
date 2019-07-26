@@ -16,10 +16,7 @@ const ZFormsPage = ({listCourses, updateFetchCoursesHandler}) => {
           <h2>New course: </h2>
           <ZCourseForm updateFetchCoursesHandler={updateFetchCoursesHandler} />
           <h2>New student:</h2>
-          <ZStudentForm
-            listCourses={listCourses}
-            updateFetchCoursesHandler={updateFetchCoursesHandler}
-          />
+          <ZStudentForm listCourses={listCourses} />
         </section>
         <ZFooter />
       </section>

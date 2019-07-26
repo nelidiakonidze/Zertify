@@ -38,19 +38,16 @@ class ZpdfCertifacteSent extends React.Component {
     fetch(urlCertificate)
       .then(response => response.json())
       .then(data => {
-        console.log('data', data);
         this.setState({
           certificateSettings: JSON.parse(data.certificate.settings),
         });
       })
       .catch(error => {
-        console.log('error: ', error);
         this.setState({error: true});
       });
   }
 
   render() {
-    console.log('settings', this.state.certificateSettings);
     if (this.state.error) {
       return (
         <section className='flex-certificate-final'>
@@ -63,12 +60,11 @@ class ZpdfCertifacteSent extends React.Component {
         </section>
       );
     } else if (Object.keys(this.state.certificateSettings).length === 0) {
-     
       return (
         <div style={styles.spinner}>
-          <CircularProgress style={{width:"100px"}}/>
+          <CircularProgress style={{width: '100px'}} />
         </div>
-      )
+      );
     } else {
       return (
         <PDFViewer style={styles.document}>
@@ -198,6 +194,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     textAlign: 'center',
-    
-  }
+  },
 });
