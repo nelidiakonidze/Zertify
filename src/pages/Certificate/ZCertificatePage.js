@@ -37,10 +37,7 @@ const ZCertificatePage = props => {
         if (response.error) {
           alert(response.error);
         } else {
-          console.log('response', response);
-          // const myUrl = `/edera/${response.hashed}/certificate.pdf`;
           alert('The certificate has been sent by email to the student');
-          // history.push(myUrl);
         }
       })
       .catch(event => {

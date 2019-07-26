@@ -38,19 +38,16 @@ class ZpdfCertifacteSent extends React.Component {
     fetch(urlCertificate)
       .then(response => response.json())
       .then(data => {
-        console.log('data', data);
         this.setState({
           certificateSettings: JSON.parse(data.certificate.settings),
         });
       })
       .catch(error => {
-        console.log('error: ', error);
         this.setState({error: true});
       });
   }
 
   render() {
-    console.log('settings', this.state.certificateSettings);
     if (this.state.error) {
       return (
         <section className='flex-certificate-final'>

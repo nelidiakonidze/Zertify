@@ -22,7 +22,6 @@ const ZFormsPage = ({
           <h2>New student:</h2>
           <ZStudentForm
             listCourses={listCourses}
-            updateFetchCoursesHandler={updateFetchCoursesHandler}
             updateFetchStudentsHandler={updateFetchStudentsHandler}
           />
         </section>

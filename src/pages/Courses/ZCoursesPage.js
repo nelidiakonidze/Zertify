@@ -9,7 +9,6 @@ const ZCoursesPage = ({listCourses}) => {
     <div>
       <ZSideNav />
       <section className='flex-courses'>
-        {/* getting state from app.js and then passing it to CourseTable */}
         <ZCourseTable listCourses={listCourses} />
         <ZFooter />
       </section>
