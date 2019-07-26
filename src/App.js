@@ -21,16 +21,16 @@ class App extends React.Component {
       studentsLoading: true,
     };
 
+    this.urlCourses = 'https://zertify-server.herokuapp.com/api/courses/';
+
     this.selectStudent = this.selectStudent.bind(this);
     this.selectTemplate = this.selectTemplate.bind(this);
     this.setColor = this.setColor.bind(this);
     this.deleteOnClick = this.deleteOnClick.bind(this);
+    this.updateFetchCoursesHandler = this.updateFetchCoursesHandler.bind(this);
 
     //fetch data for students
-    //update state:
-  
-    let urlStudents = 'https://zertify-server.herokuapp.com/api/students/';
-    //this.setState({listStudents: data.students }); 
+    const urlStudents = 'https://zertify-server.herokuapp.com/api/students/';
     fetch(urlStudents)
       .then(response => response.json())
       .then(data => {
@@ -38,16 +38,19 @@ class App extends React.Component {
           listStudents: data.students,
           studentsLoading: false,
         });
-        console.log('listStudents:', this.state.listStudents)
+        console.log('listStudents:', this.state.listStudents);
         console.log('fetch students data ', this.state.listStudents);
       })
       .catch(error => console.log('error: ', error));
 
-     
     //fetch data for courses
+    this.updateFetchCoursesHandler();
+  }
 
-    let urlCourses = 'https://zertify-server.herokuapp.com/api/courses/';
-    fetch(urlCourses)
+  updateFetchCoursesHandler() {
+    console.log('update.....................');
+    //fetch data for courses
+    fetch(this.urlCourses)
       .then(response => response.json())
       .then(data => {
         this.setState({
@@ -113,12 +116,9 @@ class App extends React.Component {
       student => student.id === id,
     );
     this.setState({selectedStudent});
-    
   }
 
   render() {
-  
-   
     return (
       <Router>
         <div className='App'>
@@ -132,14 +132,17 @@ class App extends React.Component {
                   selectStudent={this.selectStudent}
                   deleteOnClick={this.deleteOnClick}
                   circularProgress={this.state.studentsLoading}
-
-                 
                 />
               )}
             />
             <Route
               path='/form'
-              render={() => <ZFormPage listCourses={this.state.listCourses} />}
+              render={() => (
+                <ZFormPage
+                  listCourses={this.state.listCourses}
+                  updateFetchCoursesHandler={this.updateFetchCoursesHandler}
+                />
+              )}
             />
             <Route
               path='/templates'
