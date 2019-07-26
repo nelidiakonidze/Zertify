@@ -5,18 +5,21 @@ import ZFooter from '../../components/layout/ZFooter';
 import ZStudentForm from '../../components/forms/ZStudentForm';
 import './ZFormsPage.css';
 
-const ZFormsPage = ({listCourses}) => {
+const ZFormsPage = ({listCourses, updateFetchCoursesHandler}) => {
   return (
     <div>
       <ZSideNav />
       <section className='flex-form'>
-        <h1>Add a new student or course to the database</h1>
+        <h1>Add a new student or a new course</h1>
 
         <section className='flex-main'>
           <h2>New course: </h2>
-          <ZCourseForm />
+          <ZCourseForm updateFetchCoursesHandler={updateFetchCoursesHandler} />
           <h2>New student:</h2>
-          <ZStudentForm listCourses={listCourses} />
+          <ZStudentForm
+            listCourses={listCourses}
+            updateFetchCoursesHandler={updateFetchCoursesHandler}
+          />
         </section>
         <ZFooter />
       </section>

@@ -7,7 +7,6 @@ import React from 'react';
 import {makeStyles, createMuiTheme} from '@material-ui/core/styles';
 import {ThemeProvider} from '@material-ui/styles';
 import TextField from '@material-ui/core/TextField';
-import green from '@material-ui/core/colors/green';
 //hooks for the form
 import useZCForm from './useZCForm';
 import Cvalidate from './CFormValidationRules';
@@ -23,12 +22,13 @@ const useStyles = makeStyles(theme => ({
 
 //to keep the style of this function AND have state we must use hooks
 // tutorial link : https://upmostly.com/tutorials/form-validation-using-custom-react-hooks/
-const ZCourseForm = () => {
+const ZCourseForm = ({updateFetchCoursesHandler}) => {
   const classes = useStyles();
 
   //callback
   const courseCreated = () => {
     alert(`New course ${inputs.courseName} created`);
+    updateFetchCoursesHandler();
   };
 
   //initial values + callback
