@@ -44,12 +44,13 @@ const BootstrapInput = withStyles(theme => ({
 
 //to keep the style of this function AND have state we must use hooks
 // tutorial link : https://upmostly.com/tutorials/form-validation-using-custom-react-hooks/
-function ZCourseForm({listCourses}) {
+function ZCourseForm({listCourses, updateFetchStudentsHandler}) {
   const classes = useStyles();
 
   //callback
   const studentCreated = () => {
     alert(`New student ${inputs.studentName} created`);
+    updateFetchStudentsHandler();
   };
 
   //initial values + callback

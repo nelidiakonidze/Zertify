@@ -5,10 +5,9 @@ import './ZCertificatePage.css';
 import {Link} from 'react-router-dom';
 import ZNoPage from '../NoPage/ZNoPage';
 import {withRouter} from 'react-router-dom';
-import CircularProgress from '@material-ui/core/CircularProgress';
 
 const ZCertificatePage = props => {
-  const {selectedStudent, selectedColor, history} = props;
+  const {selectedStudent, selectedColor} = props;
   // post the certificate informations
   const sendEmail = e => {
     e.preventDefault();

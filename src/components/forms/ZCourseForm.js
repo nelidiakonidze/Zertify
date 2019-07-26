@@ -4,7 +4,7 @@
 
 import React from 'react';
 //template
-import {makeStyles, createMuiTheme} from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 import {ThemeProvider} from '@material-ui/styles';
 import TextField from '@material-ui/core/TextField';
 //hooks for the form
