@@ -10,12 +10,26 @@ const useZForm = (initialValues, callback, validate) => {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // reset form field to inital values (empty)
+  const handleInputChange = event => {
+    event.persist();
+    setInputs(inputs => ({
+      ...inputs,
+      [event.target.name]: event.target.value,
+    }));
+  };
+
+  const handleSubmit = event => {
+    if (event) event.preventDefault();
+    setIsSubmitting(true);
+    setErrors(validate(inputs));
+  };
+
+  // reset form field to inital values
   const handleReset = () => {
     setInputs({...initialValues});
   };
 
-  //after a change in the input value and isSubmitting true, check if the errors object contains keys
+  //after a change in the input value and isSubmitting true, check if the error object contains keys
   useEffect(() => {
     if (
       Object.keys(errors).length === 0 &&
@@ -51,20 +65,6 @@ const useZForm = (initialValues, callback, validate) => {
         });
     }
   });
-
-  const handleSubmit = event => {
-    if (event) event.preventDefault();
-    setIsSubmitting(true);
-    setErrors(validate(inputs));
-  };
-
-  const handleInputChange = event => {
-    event.persist();
-    setInputs(inputs => ({
-      ...inputs,
-      [event.target.name]: event.target.value,
-    }));
-  };
 
   return {
     handleSubmit,
