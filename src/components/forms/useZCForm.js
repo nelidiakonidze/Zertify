@@ -5,11 +5,12 @@ import {useState, useEffect} from 'react';
 
 // custom Hook
 const useZForm = (initialValues, callback, validate) => {
-  //set inital state
+  // set inital state
   const [inputs, setInputs] = useState({initialValues});
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // update field value with the user input
   const handleInputChange = event => {
     event.persist();
     setInputs(inputs => ({
@@ -18,6 +19,7 @@ const useZForm = (initialValues, callback, validate) => {
     }));
   };
 
+  // submit the form if there is no errors
   const handleSubmit = event => {
     if (event) event.preventDefault();
     setIsSubmitting(true);
@@ -29,7 +31,8 @@ const useZForm = (initialValues, callback, validate) => {
     setInputs({...initialValues});
   };
 
-  //after a change in the input value and isSubmitting true, check if the error object contains keys
+  // after a change in the input value, check if the error object contains keys
+  // if isSubmitting is true, if fields are not empty
   useEffect(() => {
     if (
       Object.keys(errors).length === 0 &&
@@ -37,7 +40,7 @@ const useZForm = (initialValues, callback, validate) => {
       inputs.courseName !== '' &&
       inputs.courseHours !== ''
     ) {
-      //to post the form data to update the database
+      // config to send the new course info to the database
       const urlCourses = 'https://zertify-server.herokuapp.com/api/courses';
       const Zconfig = {
         method: 'POST',
@@ -49,14 +52,14 @@ const useZForm = (initialValues, callback, validate) => {
           hours: inputs.courseHours,
         }),
       };
-
+      // send the new course info to the database
       fetch(urlCourses, Zconfig)
         .then(response => response.json())
         .then(response => {
           if (response.error) {
             alert(response.error);
           } else {
-            callback();
+            callback(); //alert message + update the courses list with the new course (frontend)
             handleReset();
           }
         })
