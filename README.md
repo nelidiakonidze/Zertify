@@ -3,6 +3,8 @@
 A certification creator WebApp. Fully functional [backend](https://github.com/nelidiakonidze/zerify-server) implemented. Select/Create a Student, choose a Template which suits you. In the end of the process you automatically send an Email to the selected/created student. 
 In collaboration with [Edera](https://www.ed-era.com/).
 
+Check our  [presentation](https://sites.google.com/view/zertify/home) to discover more about the requirements of the project and the challenges we faced.
+
 Final project of [Wild Code School Bootcamp](https://www.wildcodeschool.com/en-GB) by [Camille](https://github.com/Campalo), [Neli](https://github.com/nelidiakonidze), [Beta](https://github.com/Hiiiij) and [Raphael](https://github.com/datingel). 
 
 ## App
